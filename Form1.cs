@@ -10,13 +10,23 @@ using System.Windows.Forms;
 
 namespace Arac_Kiralama
 {
-    public partial class FRM_KullaniciOlusturGirisYap : Form
+    public partial class KullaniciOlusturGirisYap : Form
     {
-        public FRM_KullaniciOlusturGirisYap()
+        public KullaniciOlusturGirisYap()
         {
             InitializeComponent();
         }
 
-       
+        private void pnl_KullaniciOlustur_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pnl_GirisYap_Click(object sender, EventArgs e)
+        {
+            GirisYap girisYap = new GirisYap();
+            this.Hide();
+            girisYap.Show();
+        }
     }
 }

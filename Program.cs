@@ -16,7 +16,7 @@ namespace Arac_Kiralama
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FRM_KullaniciOlusturGirisYap());
+            Application.Run(new KullaniciOlusturGirisYap());
         }
     }
 }

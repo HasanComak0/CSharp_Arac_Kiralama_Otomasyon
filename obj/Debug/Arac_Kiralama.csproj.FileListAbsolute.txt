@@ -1,0 +1,12 @@
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\Arac_Kiralama.exe.config
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\Arac_Kiralama.exe
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\Arac_Kiralama.pdb
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.csproj.AssemblyReference.cache
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.Properties.Resources.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.csproj.GenerateResource.cache
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.csproj.CoreCompileInputs.cache
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.exe
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.pdb
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.exe.config
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.KullaniciOlusturGirisYap.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.GirisYap.resources

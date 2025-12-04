@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAEAAAABAACAYAAADyoyQXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAA/7JJREFUeF7s3XuUXnd933vP6GLJsmz5bgvbGBljG4ExUSBARLgphQCCEhjgOHQO
+        DwAACw8BkvkDpQAA/7JJREFUeF7s3XuUXnd933vP6GLJsmz5bgvbGBljG4ExUSBARLgphQCCEhjgOHQO
         zVmZnkMKQ5vkTBO6cqZNSIYTWjpN2nRaQk8nzUqQCaFHoQVkLknFzQhDAAUcI/D9bsuyZes6c87nlzCJ
         LX62R9Jc9t7P67XW+x+Wl7Fmnpln70ff72+fAAAAAAAAAABU9afT0jlpXXpW2pBeln4yDaSfSUPp3Wkk
         vTe9L02k/5y2/KCr07ZKX0w7jugbaVel+ysdSP/fEZX/7ch/7r5U+3d+PR35/789Hfnf+Yk082cpfSiV
@@ -2580,7 +2580,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAACAAAAAgACAYAAACyp9MwAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAP+WSURBVHhe7L133G1XVS78lt3e
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAP+WSURBVHhe7L133G1XVS78lt3e
         fkoqCRBCDD1iRAwhQigiF5GrgBECF7mofIqIiMhVRBEB8YoIiPwEAxcbqCAgIqIiJWBAQEQgBCkxlFQx
         kBBCysnJ+sbzjPHMNfY6GxRpSRh/PL/ZRp9z75O8z1xrL3VdVygUCoVCoVAoFAqFQuFrgKuuvvzYz192
         6W3P/dQnTnrvv7z7+9/05r97xJ/86R/9/P/9jaf/7pOf/Et/8HM/97Ov+OEf/uHTTz755HPucMfv+PRt
@@ -19835,6 +19835,13 @@
         fO9V/1XnUX87nhiXDOj4hj1nOM9L//oH8a0cwQ/8QT/PNv8NGX2eIc43bCK/oUucYgN94gItcbzOg1rn
         bwdkEQ/9Jh+BtOarLXP5NwfPS8XpTcXwZZ5ZZIKOS8lDP3QffPR+79dv/+2//Ze/99mv/LbH/i11cHBw
         cHBwcHBwcHBw8EXCw5P/LzRQ1BQsy5cAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHoAAABeCAIAAABjBpeTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cwAAEnMBjCK5BwAAADlJREFUeF7twQENAAAAwqD3T20ONyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAu1QCGwgABSAoROwAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
