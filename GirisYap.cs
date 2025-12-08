@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,11 +27,14 @@ namespace Arac_Kiralama
         private void GirisYap_Load(object sender, EventArgs e)
         {
             KodOlustur();
+            //string md5Sifre = MD5Sifrele("hasan123");
+           // vt.UpdateDelete("update tbl_kullanici set sifre ='" + md5Sifre + "' where kullanici_id = 1");
+           // MessageBox.Show("ŞİFRE GÜNCELLENDİ");
         }
         //Kullanıcının göreve göre  müşteri olup olmadığını falan kontrol etmem lazım yarın devam et.
         private void btn_GirisYap_Click(object sender, EventArgs e)
         {
-            DataTable dt = vt.Select(@"select * from tbl_kullanici");
+            DataTable dt = vt.Select(@"select kullanici_id,kullaniciAdi,sifre,gorev_id,profil_resim_yolu from tbl_kullanici");
             if (dt.Rows.Count > 0)
             {
                 string gelenKullaniciAdi = dt.Rows[0]["kullaniciAdi"].ToString();
@@ -41,7 +45,7 @@ namespace Arac_Kiralama
                     MessageBox.Show("Kullanıcı Adı Hatalı Tekrar Deneyiniz. Kalan hak: " + hak);
                     hak--;
                 }
-                else if(txt_sifre.Text != gelenSifre)
+                else if(MD5Sifrele(txt_sifre.Text) != gelenSifre)
                 {
                     MessageBox.Show("Şifre Hatalı Tekrar Deneyiniz. Kalan hak: " + hak);
                     hak--;    
@@ -50,15 +54,18 @@ namespace Arac_Kiralama
                 {
                     MessageBox.Show("Doğrulama Kodu Hatalı Tekrar Deneyiniz. Kalan hak: " + hak);
                     hak--;
+                }                       
+                else
+                {
+                    AnaMenu anamenu = new AnaMenu();
+                    anamenu.Show();
+                    this.Hide();
                 }
-                else if (hak == 0)
+                if (hak == 0)
                 {
                     MessageBox.Show("Deneme Hakkınız Kalmadı Çıkış Yapılıyor...");
-                    Application.Exit();
+                    Environment.Exit(0);
                 }
-                AnaMenu anamenu = new AnaMenu();
-                anamenu.Show();
-                this.Hide();
             }
             else
             {
@@ -84,6 +91,33 @@ namespace Arac_Kiralama
                 yazi += secilen_Kod;
             }
             txt_Kod.Text = yazi;
+        }
+
+        public string MD5Sifrele(string sifrelenecekMetin)
+        {
+
+            // MD5CryptoServiceProvider sınıfının bir örneğini oluşturduk.
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            //Parametre olarak gelen veriyi byte dizisine dönüştürdük.
+            byte[] dizi = Encoding.UTF8.GetBytes(sifrelenecekMetin);
+            //dizinin hash'ini hesaplattık.
+            dizi = md5.ComputeHash(dizi);
+            //Hashlenmiş verileri depolamak için StringBuilder nesnesi oluşturduk.
+            StringBuilder sb = new StringBuilder();
+            //Her byte'i dizi içerisinden alarak string türüne dönüştürdük.
+
+            foreach (byte ba in dizi)
+            {
+                sb.Append(ba.ToString("x2").ToLower());
+            }
+
+            //hexadecimal(onaltılık) stringi geri döndürdük.
+            return sb.ToString();
+        }
+
+        private void btn_SifremiUnuttum_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
