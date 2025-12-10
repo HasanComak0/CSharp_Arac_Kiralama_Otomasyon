@@ -12,3 +12,4 @@ C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.GirisYap.resources
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.AnaMenu.resources
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.SifreDegistirme.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.KullaniciOlustur.resources

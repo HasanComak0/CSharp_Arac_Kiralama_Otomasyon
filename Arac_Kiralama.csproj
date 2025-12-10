@@ -79,6 +79,12 @@
     <Compile Include="GirisYap.Designer.cs">
       <DependentUpon>GirisYap.cs</DependentUpon>
     </Compile>
+    <Compile Include="KullaniciOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciOlustur.Designer.cs">
+      <DependentUpon>KullaniciOlustur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SifreDegistirme.cs">
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GirisYap.resx">
       <DependentUpon>GirisYap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullaniciOlustur.resx">
+      <DependentUpon>KullaniciOlustur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

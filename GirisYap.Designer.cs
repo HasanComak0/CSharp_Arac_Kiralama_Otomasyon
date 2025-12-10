@@ -30,6 +30,8 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_sifreGizleGoster = new System.Windows.Forms.Button();
+            this.btn_SifremiUnuttum = new System.Windows.Forms.Button();
             this.btn_Yenile = new System.Windows.Forms.Button();
             this.btn_GirisYap = new System.Windows.Forms.Button();
             this.txt_Kod = new System.Windows.Forms.TextBox();
@@ -38,7 +40,6 @@
             this.txt_sifre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_kullaniciAdi = new System.Windows.Forms.TextBox();
-            this.btn_SifremiUnuttum = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_sifreGizleGoster);
             this.groupBox1.Controls.Add(this.btn_SifremiUnuttum);
             this.groupBox1.Controls.Add(this.btn_Yenile);
             this.groupBox1.Controls.Add(this.btn_GirisYap);
@@ -68,11 +70,31 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // btn_sifreGizleGoster
+            // 
+            this.btn_sifreGizleGoster.Location = new System.Drawing.Point(320, 111);
+            this.btn_sifreGizleGoster.Name = "btn_sifreGizleGoster";
+            this.btn_sifreGizleGoster.Size = new System.Drawing.Size(110, 28);
+            this.btn_sifreGizleGoster.TabIndex = 12;
+            this.btn_sifreGizleGoster.Text = "Şifre Göster";
+            this.btn_sifreGizleGoster.UseVisualStyleBackColor = true;
+            this.btn_sifreGizleGoster.Click += new System.EventHandler(this.btn_sifreGizleGoster_Click);
+            // 
+            // btn_SifremiUnuttum
+            // 
+            this.btn_SifremiUnuttum.Location = new System.Drawing.Point(208, 190);
+            this.btn_SifremiUnuttum.Name = "btn_SifremiUnuttum";
+            this.btn_SifremiUnuttum.Size = new System.Drawing.Size(111, 48);
+            this.btn_SifremiUnuttum.TabIndex = 11;
+            this.btn_SifremiUnuttum.Text = "Şifremi Unuttum";
+            this.btn_SifremiUnuttum.UseVisualStyleBackColor = true;
+            this.btn_SifremiUnuttum.Click += new System.EventHandler(this.btn_SifremiUnuttum_Click);
+            // 
             // btn_Yenile
             // 
             this.btn_Yenile.Location = new System.Drawing.Point(320, 148);
             this.btn_Yenile.Name = "btn_Yenile";
-            this.btn_Yenile.Size = new System.Drawing.Size(72, 28);
+            this.btn_Yenile.Size = new System.Drawing.Size(110, 28);
             this.btn_Yenile.TabIndex = 10;
             this.btn_Yenile.Text = "Yenile";
             this.btn_Yenile.UseVisualStyleBackColor = true;
@@ -116,7 +138,6 @@
             // 
             this.txt_sifre.Location = new System.Drawing.Point(112, 114);
             this.txt_sifre.Name = "txt_sifre";
-            this.txt_sifre.PasswordChar = '*';
             this.txt_sifre.Size = new System.Drawing.Size(190, 22);
             this.txt_sifre.TabIndex = 3;
             // 
@@ -135,16 +156,6 @@
             this.txt_kullaniciAdi.Name = "txt_kullaniciAdi";
             this.txt_kullaniciAdi.Size = new System.Drawing.Size(190, 22);
             this.txt_kullaniciAdi.TabIndex = 1;
-            // 
-            // btn_SifremiUnuttum
-            // 
-            this.btn_SifremiUnuttum.Location = new System.Drawing.Point(208, 190);
-            this.btn_SifremiUnuttum.Name = "btn_SifremiUnuttum";
-            this.btn_SifremiUnuttum.Size = new System.Drawing.Size(111, 48);
-            this.btn_SifremiUnuttum.TabIndex = 11;
-            this.btn_SifremiUnuttum.Text = "Şifremi Unuttum";
-            this.btn_SifremiUnuttum.UseVisualStyleBackColor = true;
-            this.btn_SifremiUnuttum.Click += new System.EventHandler(this.btn_SifremiUnuttum_Click);
             // 
             // GirisYap
             // 
@@ -176,5 +187,6 @@
         private System.Windows.Forms.Button btn_Yenile;
         private System.Windows.Forms.Button btn_GirisYap;
         private System.Windows.Forms.Button btn_SifremiUnuttum;
+        private System.Windows.Forms.Button btn_sifreGizleGoster;
     }
 }

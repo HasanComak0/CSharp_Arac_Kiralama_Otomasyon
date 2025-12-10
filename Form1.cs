@@ -19,7 +19,9 @@ namespace Arac_Kiralama
 
         private void pnl_KullaniciOlustur_Click(object sender, EventArgs e)
         {
-            
+            KullaniciOlustur kullaniciOlustur = new KullaniciOlustur();
+            this.Hide();
+            kullaniciOlustur.Show();
         }
 
         private void pnl_GirisYap_Click(object sender, EventArgs e)

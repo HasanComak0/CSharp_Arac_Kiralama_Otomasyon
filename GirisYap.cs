@@ -26,15 +26,20 @@ namespace Arac_Kiralama
         int hak = 3;
         private void GirisYap_Load(object sender, EventArgs e)
         {
-            KodOlustur();
-            //string md5Sifre = MD5Sifrele("hasan123");
-           // vt.UpdateDelete("update tbl_kullanici set sifre ='" + md5Sifre + "' where kullanici_id = 1");
-           // MessageBox.Show("ŞİFRE GÜNCELLENDİ");
+            txt_sifre.UseSystemPasswordChar = true;
+            
+            txt_Kod.Text = KodOlustur();
+            //string md5Sifre = MD5Sifrele("ugur123");
+            //vt.UpdateDelete("update tbl_kullanici set sifre ='" + md5Sifre + "' where kullanici_id = 2");
+             //MessageBox.Show("ŞİFRE GÜNCELLENDİ");
+             //Mert.31
+             //Yusuf.34
         }
         //Kullanıcının göreve göre  müşteri olup olmadığını falan kontrol etmem lazım yarın devam et.
         private void btn_GirisYap_Click(object sender, EventArgs e)
         {
-            DataTable dt = vt.Select(@"select kullanici_id,kullaniciAdi,sifre,gorev_id,profil_resim_yolu from tbl_kullanici");
+            DataTable dt = vt.Select($@"select kullanici_id,kullaniciAdi,sifre,gorev_id,profil_resim_yolu from tbl_kullanici
+                                        where kullaniciAdi = '{txt_kullaniciAdi.Text}'");
             if (dt.Rows.Count > 0)
             {
                 string gelenKullaniciAdi = dt.Rows[0]["kullaniciAdi"].ToString();
@@ -44,17 +49,20 @@ namespace Arac_Kiralama
                 {
                     MessageBox.Show("Kullanıcı Adı Hatalı Tekrar Deneyiniz. Kalan hak: " + hak);
                     hak--;
+                    txt_Kod.Text = KodOlustur();
                 }
-                else if(MD5Sifrele(txt_sifre.Text) != gelenSifre)
+                else if (MD5Sifrele(txt_sifre.Text) != gelenSifre)
                 {
                     MessageBox.Show("Şifre Hatalı Tekrar Deneyiniz. Kalan hak: " + hak);
-                    hak--;    
+                    hak--;
+                    txt_Kod.Text = KodOlustur();
                 }
-                else if(txt_kodOnay.Text.ToUpper() != txt_Kod.Text)
+                else if (txt_kodOnay.Text.ToUpper() != txt_Kod.Text)
                 {
                     MessageBox.Show("Doğrulama Kodu Hatalı Tekrar Deneyiniz. Kalan hak: " + hak);
                     hak--;
-                }                       
+                    txt_Kod.Text = KodOlustur();
+                }
                 else
                 {
                     AnaMenu anamenu = new AnaMenu();
@@ -64,22 +72,22 @@ namespace Arac_Kiralama
                 if (hak == 0)
                 {
                     MessageBox.Show("Deneme Hakkınız Kalmadı Çıkış Yapılıyor...");
-                    Environment.Exit(0);
+                    Application.Exit();
                 }
             }
             else
             {
                 MessageBox.Show("Kullanıcı Bulunamadı.");
             }
-            
+
         }
-        
+
         private void btn_Yenile_Click(object sender, EventArgs e)
         {
-            KodOlustur();
-                
+            txt_Kod.Text = KodOlustur();
+
         }
-        private void KodOlustur()
+        public string KodOlustur()
         {
             yazi = "";
 
@@ -90,7 +98,7 @@ namespace Arac_Kiralama
                 string secilen_Kod = onayKodu[sayi].ToString();
                 yazi += secilen_Kod;
             }
-            txt_Kod.Text = yazi;
+            return yazi;
         }
 
         public string MD5Sifrele(string sifrelenecekMetin)
@@ -117,7 +125,25 @@ namespace Arac_Kiralama
 
         private void btn_SifremiUnuttum_Click(object sender, EventArgs e)
         {
+            SifreDegistirme sifreDegistirme = new SifreDegistirme();
+            sifreDegistirme.Show();
+            this.Hide();
+        }
 
+        bool sifreGizliMi = false;
+        private void btn_sifreGizleGoster_Click(object sender, EventArgs e)
+        {
+            if (sifreGizliMi)
+            {
+                btn_sifreGizleGoster.Text = "Şifre Göster";
+                txt_sifre.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                btn_sifreGizleGoster.Text = "Şifre Gizle";
+                txt_sifre.UseSystemPasswordChar= false;
+            }
+            sifreGizliMi = !sifreGizliMi;
         }
     }
 }
