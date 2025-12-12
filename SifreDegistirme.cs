@@ -26,44 +26,18 @@ namespace Arac_Kiralama
         Random random = new Random();
         string yazi = "";
         string dogrulamaKodu;
-        GirisYap girisYap = new GirisYap();
 
+        GirisYap girisYap = new GirisYap();
+        Mail_islemler mail = new Mail_islemler();
         private void btn_KodGonder_Click(object sender, EventArgs e)
         {
-            dogrulamaKodu = girisYap.KodOlustur();
-            try
-            {
-
-                string smtpServer = "smtp.gmail.com";
-                int smtpPort = 587;
-                string smtpUser = "";//mail gönderen hesap
-                string smtpPass = "";
-
-                MailMessage mail = new MailMessage();
-                SmtpClient smtpClient = new SmtpClient(smtpServer);
-
-                mail.From = new MailAddress(smtpUser);
-                mail.To.Add(txt_ePosta.Text);//mail gönderilecek hesap
-                mail.Subject = "Personel Kayıt Kodu";//mail konusu
-                mail.Body = "Yeni Personeli Kaydetmeyi Onaylamak İçin Verilen Kodu Sisteme Giriniz: " + dogrulamaKodu;//mail içeriği(asıl yazılan mesaj)
-
-                smtpClient.Port = smtpPort;
-                smtpClient.Credentials = new NetworkCredential(smtpUser, smtpPass);
-                smtpClient.EnableSsl = true;
-
-                smtpClient.Send(mail);
-                MessageBox.Show("Mail Hesabınıza Gönderilen Kodu Giriniz.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("E-posta Gönderilirken Bir Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-
-
+            dogrulamaKodu = mail.KodOlustur();
+            mail.EmailGonder(txt_ePosta.Text);
 
         }
+
+        
+
         private void btn_SifreDegistirOnay_Click(object sender, EventArgs e)
         {
             //BLOKLAR BOŞ KALIRSA HATA VERMİYO
@@ -143,7 +117,7 @@ namespace Arac_Kiralama
                     {
                         vt.UpdateDelete($@"update tbl_kullanici set sifre = '{girisYap.MD5Sifrele(txt_sifreTekrar.Text)}' where kullanici_id = {int.Parse(gelenKullaniciID)}");
                         MessageBox.Show("Şifre Başarıyla Değiştirildi");
-                        AnaMenu anaMenu = new AnaMenu();
+                        AnaMenu anaMenu = new AnaMenu(gelenKullaniciAdi);
                         anaMenu.Show();
                         this.Hide();
                     }
@@ -225,7 +199,7 @@ namespace Arac_Kiralama
                     {
                         vt.UpdateDelete($@"update tbl_kullanici set sifre = '{girisYap.MD5Sifrele(txt_sifreTekrar.Text)}' where kullanici_id = {int.Parse(gelenKullaniciID)}");
                         MessageBox.Show("Şifre Başarıyla Değiştirildi");
-                        AnaMenu anaMenu = new AnaMenu();
+                        AnaMenu anaMenu = new AnaMenu(gelenKullaniciAdi);
                         anaMenu.Show();
                         this.Hide();
                     }
@@ -282,6 +256,6 @@ namespace Arac_Kiralama
             return false;
         }
 
-
+        
     }
 }

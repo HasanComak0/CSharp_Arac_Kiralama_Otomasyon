@@ -280,7 +280,7 @@
             // 
             this.lbl_Uyarilar.AutoSize = true;
             this.lbl_Uyarilar.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Uyarilar.Location = new System.Drawing.Point(426, 307);
+            this.lbl_Uyarilar.Location = new System.Drawing.Point(12, 474);
             this.lbl_Uyarilar.Name = "lbl_Uyarilar";
             this.lbl_Uyarilar.Size = new System.Drawing.Size(82, 16);
             this.lbl_Uyarilar.TabIndex = 51;
@@ -290,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 497);
+            this.ClientSize = new System.Drawing.Size(633, 522);
             this.Controls.Add(this.lbl_Uyarilar);
             this.Controls.Add(this.mtb_telefon);
             this.Controls.Add(this.dtp_dogumTarihi);

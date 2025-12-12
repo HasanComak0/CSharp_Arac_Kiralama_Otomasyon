@@ -13,3 +13,15 @@ C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.AnaMenu.resources
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.SifreDegistirme.resources
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.KullaniciOlustur.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.KullaniciSifreDegistirme.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\dotenv.net.dll
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Buffers.dll
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Memory.dll
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Buffers.xml
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Memory.xml
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kir.496018E2.Up2Date
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\.env
