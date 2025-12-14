@@ -73,7 +73,7 @@ namespace Arac_Kiralama
                 cbx_pozisyon.SelectedIndex = 0;
             }
         }
-        int kullaniciGorevID;
+        public int kullaniciGorevID;
         private void AnaMenu_Load(object sender, EventArgs e)
         {
             DataTable dt = vt.Select($@"select gorev_id from tbl_kullanici
@@ -109,8 +109,6 @@ namespace Arac_Kiralama
 
         private void btn_kullaniciSifreDegistir_Click(object sender, EventArgs e)
         {
-
-
             KullaniciSifreDegistirme kullaniciSifre = new KullaniciSifreDegistirme(txt_kullaniciAdi.Text);
             kullaniciSifre.ShowDialog();
         }
@@ -127,18 +125,18 @@ namespace Arac_Kiralama
                     MessageBox.Show("Kullanıcı Adı Boş Kalamaz.");
                     return;
                 }
-                DataTable dt2 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= " + txt_pKullaniciAdi.Text);
+            DataTable dt2 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pKullaniciAdi.Text}'");
 
-                if (dt2.Rows.Count > 0)
+            if (dt2.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu Kullanıcı Adı Zaten Alınmış";
                     return;
                 }
-                DataTable dt3 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= " + txt_pTcNo.Text);
+                DataTable dt3 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pTcNo.Text}'");
 
-                if (dt3.Rows.Count > 0)
+            if (dt3.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu TC'ye Sahip Biri Zaten Var";
                     return;
@@ -178,16 +176,16 @@ namespace Arac_Kiralama
                     lbl_Uyarilar.Text = "Telefon Numarası Boş Bırakılamaz.";
                     return;
                 }
-                DataTable dt4 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= " + mtb_pTelefon.Text);
-                if (dt4.Rows.Count > 0)
+                DataTable dt4 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{mtb_pTelefon.Text}'");
+            if (dt4.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
                     return;
                 }
-                DataTable dt5 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= " + txt_pEposta.Text);
-                if (dt5.Rows.Count > 0)
+                DataTable dt5 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pEposta.Text}'");
+            if (dt5.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
                     return;
@@ -275,8 +273,9 @@ namespace Arac_Kiralama
         string dogrulamaKodu;
         private void btn_kodGonder_Click(object sender, EventArgs e)
         {
+            dogrulamaKodu = "";
             dogrulamaKodu = mail.KodOlustur();
-            mail.EmailGonder(txt_pEposta.Text);
+            mail.EmailGonder(txt_pEposta.Text,dogrulamaKodu);
             
         }
         private void tbpg_personelEkle_Enter(object sender, EventArgs e)
@@ -352,16 +351,16 @@ namespace Arac_Kiralama
                 MessageBox.Show("Kullanıcı Adı Boş Kalamaz.");
                 return;
             }
-            DataTable dt2 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= " + txt_pKullaniciAdi.Text);
+            DataTable dt2 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pKullaniciAdi.Text}'");
 
             if (dt2.Rows.Count > 0)
             {
                 lbl_Uyarilar.Text = "Bu Kullanıcı Adı Zaten Alınmış";
                 return;
             }
-            DataTable dt3 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= " + txt_pTcNo.Text);
+            DataTable dt3 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pTcNo.Text}'");
 
             if (dt3.Rows.Count > 0)
             {
@@ -403,15 +402,15 @@ namespace Arac_Kiralama
                 lbl_Uyarilar.Text = "Telefon Numarası Boş Bırakılamaz.";
                 return;
             }
-            DataTable dt4 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= " + mtb_pTelefon.Text);
+            DataTable dt4 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{mtb_pTelefon.Text}'");
             if (dt4.Rows.Count > 0)
             {
                 lbl_Uyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
                 return;
             }
-            DataTable dt5 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= " + txt_pEposta.Text);
+            DataTable dt5 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+                                        join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pEposta.Text}'");
             if (dt5.Rows.Count > 0)
             {
                 lbl_Uyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
@@ -442,7 +441,7 @@ namespace Arac_Kiralama
                 MessageBox.Show("Şifreler Uyuşmuyor.");
                 return;
             }
-            else if (txt_pOnayKodu.Text.ToUpper() != dogrulamaKodu)
+            if (txt_pOnayKodu.Text.ToUpper() != dogrulamaKodu)
             {
                 MessageBox.Show("Doğrulama Kodu Hatalı");
                 return;
@@ -509,7 +508,7 @@ namespace Arac_Kiralama
                 return;
             }
             DataTable dt2 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= " + txt_mKullaniciAdi.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_mKullaniciAdi.Text}'");
 
             if (dt2.Rows.Count > 0)
             {
@@ -517,7 +516,7 @@ namespace Arac_Kiralama
                 return;
             }
             DataTable dt3 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= " + txt_mTcNo.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= '{txt_mTcNo.Text}'");
 
             if (dt3.Rows.Count > 0)
             {
@@ -560,14 +559,14 @@ namespace Arac_Kiralama
                 return;
             }
             DataTable dt4 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= " + mtb_mTelefon.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= '{mtb_mTelefon.Text}'");
             if (dt4.Rows.Count > 0)
             {
                 lbl_mUyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
                 return;
             }
             DataTable dt5 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= " + txt_mEposta.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= '{txt_mEposta.Text}'");
             if (dt5.Rows.Count > 0)
             {
                 lbl_mUyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
@@ -652,8 +651,9 @@ namespace Arac_Kiralama
 
         private void btn_kodGonder2_Click(object sender, EventArgs e)
         {
+            dogrulamaKodu = "";
             dogrulamaKodu = mail.KodOlustur();
-            mail.EmailGonder(txt_mEposta.Text);
+            mail.EmailGonder(txt_mEposta.Text,dogrulamaKodu);
         }
 
         private void dgv_Musteriler_SelectionChanged(object sender, EventArgs e)
@@ -731,7 +731,7 @@ namespace Arac_Kiralama
                 return;
             }
             DataTable dt2 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= " + txt_mKullaniciAdi.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_mKullaniciAdi.Text}'");
 
             if (dt2.Rows.Count > 0)
             {
@@ -739,7 +739,7 @@ namespace Arac_Kiralama
                 return;
             }
             DataTable dt3 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= " + txt_mTcNo.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= '{txt_mTcNo.Text}'");
 
             if (dt3.Rows.Count > 0)
             {
@@ -782,14 +782,14 @@ namespace Arac_Kiralama
                 return;
             }
             DataTable dt4 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= " + mtb_mTelefon.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= '{mtb_mTelefon.Text}'");
             if (dt4.Rows.Count > 0)
             {
                 lbl_mUyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
                 return;
             }
             DataTable dt5 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= " + txt_mEposta.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= '{txt_mEposta.Text}'");
             if (dt5.Rows.Count > 0)
             {
                 lbl_mUyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
@@ -871,14 +871,55 @@ namespace Arac_Kiralama
             txt_mEposta.Clear();
         }
 
+
+
+
+
+
+        //TOOL STRİP BUTTON İŞLEMLERİ
         private void tsb_profil_Islemleri_Click(object sender, EventArgs e)
         {
+            if (aktifForm != null)
+            {
+                aktifForm.Close();
+                aktifForm = null;
+            }
+
+            panelContainer.Controls.Clear();
             TabControl.Visible = true;
+            panelContainer.Controls.Add(TabControl);
         }
 
         private void tsb_aracIslemleri_Click(object sender, EventArgs e)
         {
             TabControl.Visible=false;
+            FormAc(new FrmAracIslemleri());
+
+
+
+
+        }
+
+
+
+        Form aktifForm = null;
+
+        void FormAc(Form frm)
+        {
+            // Önce varsa eski formu kapat
+            if (aktifForm != null)
+                aktifForm.Close();
+
+            aktifForm = frm;
+
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(frm);
+
+            frm.Show();
         }
     }
 }

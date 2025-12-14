@@ -32,18 +32,18 @@ namespace Arac_Kiralama
         Mail_islemler mail = new Mail_islemler();
         private void btn_kodGonder_Click(object sender, EventArgs e)
         {
-
+            dogrulamaKodu = "";
             dogrulamaKodu = mail.KodOlustur();
-            mail.EmailGonder(txt_ePosta.Text);
+            mail.EmailGonder(txt_ePosta.Text,dogrulamaKodu);
         }
 
 
 
 
-        List<string> kullanicilar = new List<string>();
-        List<string> emailler = new List<string>();
-        List<string> telefonlar = new List<string>();
-        List<string> tcler = new List<string>();
+        //List<string> kullanicilar = new List<string>();
+        //List<string> emailler = new List<string>();
+        //List<string> telefonlar = new List<string>();
+        //List<string> tcler = new List<string>();
 
         SifreDegistirme sifreDegistirme = new SifreDegistirme();
 
@@ -52,18 +52,18 @@ namespace Arac_Kiralama
             DataTable dt = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
                                         join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= "+ txt_kullaniciAdi.Text);
 
-            kullanicilar.Clear();
-            emailler.Clear();
-            telefonlar.Clear();
-            tcler.Clear();
+            //kullanicilar.Clear();
+            //emailler.Clear();
+            //telefonlar.Clear();
+            //tcler.Clear();
 
-            foreach (DataRow row in dt.Rows)
-            {
-                kullanicilar.Add(row["kullaniciAdi"].ToString());
-                emailler.Add(row["email"].ToString());
-                telefonlar.Add(row["telefon"].ToString());
-                tcler.Add(row["tc_no"].ToString());
-            }
+            //foreach (DataRow row in dt.Rows)
+            //{
+            //    kullanicilar.Add(row["kullaniciAdi"].ToString());
+            //    emailler.Add(row["email"].ToString());
+            //    telefonlar.Add(row["telefon"].ToString());
+            //    tcler.Add(row["tc_no"].ToString());
+            //}
 
             if (dt.Rows.Count > 0)
             {
@@ -77,7 +77,7 @@ namespace Arac_Kiralama
                     return;
                 }
                 DataTable dt2 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= " + txt_kullaniciAdi.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_kullaniciAdi.Text}'");
 
                 if (dt2.Rows.Count > 0)
                 {
@@ -85,7 +85,7 @@ namespace Arac_Kiralama
                     return;
                 }
                 DataTable dt3 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= " + txt_tcNo.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= '{txt_tcNo.Text}'");
 
                 if (dt3.Rows.Count > 0)
                 {
@@ -129,14 +129,14 @@ namespace Arac_Kiralama
                 }
               
                 DataTable dt4 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= " + mtb_telefon.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= '{mtb_telefon.Text}'");
                 if (dt4.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
                     return;
                 }
                 DataTable dt5 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= " + txt_ePosta.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= '{txt_ePosta.Text}'");
                 if (dt5.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";

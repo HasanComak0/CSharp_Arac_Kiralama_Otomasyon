@@ -21,9 +21,7 @@ namespace Arac_Kiralama
         {
             InitializeComponent();
         }
-        //string[] onayKodu = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        //Random random = new Random();
-        //string yazi = "";
+        
         int hak = 3;
         private void GirisYap_Load(object sender, EventArgs e)
         {
@@ -89,19 +87,7 @@ namespace Arac_Kiralama
             txt_Kod.Text = mail.KodOlustur();
 
         }
-        //public string KodOlustur()
-        //{
-        //    yazi = "";
-
-        //    for (int i = 0; i < 6; i++)
-        //    {
-        //        txt_Kod.Text = "";
-        //        int sayi = random.Next(0, onayKodu.Length);
-        //        string secilen_Kod = onayKodu[sayi].ToString();
-        //        yazi += secilen_Kod;
-        //    }
-        //    return yazi;
-        //}
+        
 
         public string MD5Sifrele(string sifrelenecekMetin)
         {

@@ -22,17 +22,16 @@ namespace Arac_Kiralama
 
         VTI.Veritabani vt = new VTI.Veritabani();
 
-        string[] onayKodu = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        Random random = new Random();
-        string yazi = "";
+        
         string dogrulamaKodu;
 
         GirisYap girisYap = new GirisYap();
         Mail_islemler mail = new Mail_islemler();
         private void btn_KodGonder_Click(object sender, EventArgs e)
         {
+            dogrulamaKodu = "";
             dogrulamaKodu = mail.KodOlustur();
-            mail.EmailGonder(txt_ePosta.Text);
+            mail.EmailGonder(txt_ePosta.Text,dogrulamaKodu);
 
         }
 

@@ -116,6 +116,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsb_profil_Islemleri = new System.Windows.Forms.ToolStripButton();
             this.tsb_aracIslemleri = new System.Windows.Forms.ToolStripButton();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.TabControl.SuspendLayout();
             this.tbpg_profil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -124,6 +125,7 @@
             this.tbpg_MusteriEkle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Musteriler)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -132,10 +134,11 @@
             this.TabControl.Controls.Add(this.tbpg_personelEkle);
             this.TabControl.Controls.Add(this.tbpg_MusteriEkle);
             this.TabControl.Controls.Add(this.tabPage3);
-            this.TabControl.Location = new System.Drawing.Point(5, 30);
+            this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1919, 633);
+            this.TabControl.Size = new System.Drawing.Size(1924, 656);
             this.TabControl.TabIndex = 0;
             this.TabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControl_Selecting);
             // 
@@ -165,7 +168,7 @@
             this.tbpg_profil.Location = new System.Drawing.Point(4, 25);
             this.tbpg_profil.Name = "tbpg_profil";
             this.tbpg_profil.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_profil.Size = new System.Drawing.Size(1911, 604);
+            this.tbpg_profil.Size = new System.Drawing.Size(1916, 631);
             this.tbpg_profil.TabIndex = 0;
             this.tbpg_profil.Text = "Profil";
             this.tbpg_profil.UseVisualStyleBackColor = true;
@@ -409,7 +412,7 @@
             this.tbpg_personelEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_personelEkle.Name = "tbpg_personelEkle";
             this.tbpg_personelEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_personelEkle.Size = new System.Drawing.Size(1911, 604);
+            this.tbpg_personelEkle.Size = new System.Drawing.Size(1913, 612);
             this.tbpg_personelEkle.TabIndex = 1;
             this.tbpg_personelEkle.Text = "Personel Ekle";
             this.tbpg_personelEkle.UseVisualStyleBackColor = true;
@@ -726,7 +729,7 @@
             this.tbpg_MusteriEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_MusteriEkle.Name = "tbpg_MusteriEkle";
             this.tbpg_MusteriEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1911, 604);
+            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1916, 627);
             this.tbpg_MusteriEkle.TabIndex = 2;
             this.tbpg_MusteriEkle.Text = "Müşteri Ekle";
             this.tbpg_MusteriEkle.UseVisualStyleBackColor = true;
@@ -1014,7 +1017,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1911, 604);
+            this.tabPage3.Size = new System.Drawing.Size(1913, 612);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1027,7 +1030,7 @@
             this.tsb_aracIslemleri});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1924, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 31);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1049,15 +1052,25 @@
             this.tsb_aracIslemleri.Text = "Araç İşlemleri";
             this.tsb_aracIslemleri.Click += new System.EventHandler(this.tsb_aracIslemleri_Click);
             // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.TabControl);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 31);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1924, 656);
+            this.panelContainer.TabIndex = 2;
+            // 
             // AnaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 687);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.TabControl);
             this.Name = "AnaMenu";
             this.Text = "AnaMenu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AnaMenu_Load);
             this.TabControl.ResumeLayout(false);
             this.tbpg_profil.ResumeLayout(false);
@@ -1071,6 +1084,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Musteriler)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1165,5 +1179,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsb_profil_Islemleri;
         private System.Windows.Forms.ToolStripButton tsb_aracIslemleri;
+        private System.Windows.Forms.Panel panelContainer;
     }
 }

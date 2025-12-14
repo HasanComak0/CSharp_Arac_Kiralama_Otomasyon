@@ -32,11 +32,9 @@ namespace Arac_Kiralama
             return yazi;
         }
         
-        public void EmailGonder(string gonderilecekEmail)
+        public void EmailGonder(string gonderilecekEmail, string kod)
         {
             DotEnv.Load();
-
-            dogrulamaKodu = KodOlustur();
             try
             {
 
@@ -54,7 +52,7 @@ namespace Arac_Kiralama
                 mail.From = new MailAddress(smtpUser);
                 mail.To.Add(gonderilecekEmail);//mail gönderilecek hesap
                 mail.Subject = "Personel Kayıt Kodu";//mail konusu
-                mail.Body = "Yeni Personeli Kaydetmeyi Onaylamak İçin Verilen Kodu Sisteme Giriniz: " + dogrulamaKodu;//mail içeriği(asıl yazılan mesaj)
+                mail.Body = "Yeni Personeli Kaydetmeyi Onaylamak İçin Verilen Kodu Sisteme Giriniz: " + kod;//mail içeriği(asıl yazılan mesaj)
 
                 smtpClient.Port = Convert.ToInt32(smtpPort);
                 smtpClient.Credentials = new NetworkCredential(smtpUser, smtpPass);

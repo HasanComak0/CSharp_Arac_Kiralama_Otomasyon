@@ -25,3 +25,4 @@ C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Numeric
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kir.496018E2.Up2Date
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\.env
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.FrmAracIslemleri.resources
