@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -95,6 +95,12 @@
     <Compile Include="FrmAracIslemleri.Designer.cs">
       <DependentUpon>FrmAracIslemleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_odemeIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_odemeIslemleri.Designer.cs">
+      <DependentUpon>frm_odemeIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="GirisYap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAracIslemleri.resx">
       <DependentUpon>FrmAracIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_odemeIslemleri.resx">
+      <DependentUpon>frm_odemeIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GirisYap.resx">
       <DependentUpon>GirisYap.cs</DependentUpon>

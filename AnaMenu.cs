@@ -895,12 +895,13 @@ namespace Arac_Kiralama
             TabControl.Visible=false;
             FormAc(new FrmAracIslemleri());
 
-
-
-
         }
 
-
+        private void tsb_odemeIslemleri_Click(object sender, EventArgs e)
+        {
+            TabControl.Visible = false;
+            FormAc( new frm_odemeIslemleri());
+        }
 
         Form aktifForm = null;
 
@@ -921,5 +922,7 @@ namespace Arac_Kiralama
 
             frm.Show();
         }
+
+        
     }
 }

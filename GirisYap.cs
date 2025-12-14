@@ -30,9 +30,9 @@ namespace Arac_Kiralama
             txt_Kod.Text = mail.KodOlustur();
             //string md5Sifre = MD5Sifrele("ugur123");
             //vt.UpdateDelete("update tbl_kullanici set sifre ='" + md5Sifre + "' where kullanici_id = 2");
-             //MessageBox.Show("ŞİFRE GÜNCELLENDİ");
-             //Mert.3131
-             //Yusuf.34
+            //MessageBox.Show("ŞİFRE GÜNCELLENDİ");
+            //Mert.3131
+            // Yusuf.34
         }
         //Kullanıcının göreve göre  müşteri olup olmadığını falan kontrol etmem lazım yarın devam et.
         public string gelenKullaniciAdi;

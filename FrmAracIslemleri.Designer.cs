@@ -30,6 +30,13 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpg_AracIslemleri = new System.Windows.Forms.TabPage();
+            this.btn_aracTemizle = new System.Windows.Forms.Button();
+            this.btn_AracGuncelle = new System.Windows.Forms.Button();
+            this.btn_AracSil = new System.Windows.Forms.Button();
+            this.btn_AracEkle = new System.Windows.Forms.Button();
+            this.cmb_sigorta = new System.Windows.Forms.ComboBox();
+            this.cmb_kasko = new System.Windows.Forms.ComboBox();
+            this.cmb_bakim = new System.Windows.Forms.ComboBox();
             this.btn_profilFotoSec = new System.Windows.Forms.Button();
             this.cmb_yakitTur = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -40,13 +47,10 @@
             this.cmb_marka = new System.Windows.Forms.ComboBox();
             this.dtp_eklenmeTarihi = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_mevcutKM = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,8 +63,56 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tbpg_aracDetay = new System.Windows.Forms.TabPage();
+            this.tbpg_AracDetay = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.dtp_sigortaBitisTarihi = new System.Windows.Forms.DateTimePicker();
+            this.label28 = new System.Windows.Forms.Label();
+            this.btn_sigortaTemizle = new System.Windows.Forms.Button();
+            this.btn_sigortaGuncelle = new System.Windows.Forms.Button();
+            this.btn_sigortaSil = new System.Windows.Forms.Button();
+            this.btn_sigortaEkle = new System.Windows.Forms.Button();
+            this.dtp_sigortaBaslangicTarihi = new System.Windows.Forms.DateTimePicker();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txt_sigortaSirketi = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txt_sigortaPoliceNo = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.dgv_sigortaIslemleri = new System.Windows.Forms.DataGridView();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.dtp_bitisTarihiEkleme = new System.Windows.Forms.DateTimePicker();
+            this.label27 = new System.Windows.Forms.Label();
+            this.btn_kaskoTemizle = new System.Windows.Forms.Button();
+            this.btn_kaskoGuncelle = new System.Windows.Forms.Button();
+            this.btn_kaskoSil = new System.Windows.Forms.Button();
+            this.btn_KaskoEkle = new System.Windows.Forms.Button();
+            this.dtp_baslangicTarihiEkleme = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txt_kaskoSirketiEkleme = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txt_policeNoEkleme = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dgv_kaskoIslmeleri = new System.Windows.Forms.DataGridView();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btn_aracBakimTemizle = new System.Windows.Forms.Button();
+            this.btn_aracBakimGuncelle = new System.Windows.Forms.Button();
+            this.btn_aracBakimSil = new System.Windows.Forms.Button();
+            this.btn_aracbakimEkle = new System.Windows.Forms.Button();
+            this.dtp_BakimTarihiekle = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_maliyetEkle = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txt_aciklamaEkle = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dgv_aracBakimIslemleri = new System.Windows.Forms.DataGridView();
             this.tbpg_markaModelRenk = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btn_aracTDtemizle = new System.Windows.Forms.Button();
+            this.btn_aracTDGuncelle = new System.Windows.Forms.Button();
+            this.btn_aracTDsil = new System.Windows.Forms.Button();
+            this.btn_aracTDekle = new System.Windows.Forms.Button();
+            this.txt_aracTDekleme = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dgv_aracTDIslemleri = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btn_durumTemizle = new System.Windows.Forms.Button();
             this.btn_durumGuncelle = new System.Windows.Forms.Button();
@@ -111,19 +163,20 @@
             this.txt_markaEkle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dgv_MarkaIslemleri = new System.Windows.Forms.DataGridView();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btn_aracTDtemizle = new System.Windows.Forms.Button();
-            this.btn_aracTDGuncelle = new System.Windows.Forms.Button();
-            this.btn_aracTDsil = new System.Windows.Forms.Button();
-            this.btn_aracTDekle = new System.Windows.Forms.Button();
-            this.txt_aracTDekleme = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dgv_aracTDIslemleri = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tbpg_AracIslemleri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tbpg_AracDetay.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sigortaIslemleri)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_kaskoIslmeleri)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_aracBakimIslemleri)).BeginInit();
             this.tbpg_markaModelRenk.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_aracTDIslemleri)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_durumIslemleri)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -136,24 +189,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ModelIslemleri)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MarkaIslemleri)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_aracTDIslemleri)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tbpg_AracIslemleri);
-            this.tabControl1.Controls.Add(this.tbpg_aracDetay);
+            this.tabControl1.Controls.Add(this.tbpg_AracDetay);
             this.tabControl1.Controls.Add(this.tbpg_markaModelRenk);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1924, 669);
+            this.tabControl1.Size = new System.Drawing.Size(1924, 904);
             this.tabControl1.TabIndex = 0;
             // 
             // tbpg_AracIslemleri
             // 
+            this.tbpg_AracIslemleri.Controls.Add(this.btn_aracTemizle);
+            this.tbpg_AracIslemleri.Controls.Add(this.btn_AracGuncelle);
+            this.tbpg_AracIslemleri.Controls.Add(this.btn_AracSil);
+            this.tbpg_AracIslemleri.Controls.Add(this.btn_AracEkle);
+            this.tbpg_AracIslemleri.Controls.Add(this.cmb_sigorta);
+            this.tbpg_AracIslemleri.Controls.Add(this.cmb_kasko);
+            this.tbpg_AracIslemleri.Controls.Add(this.cmb_bakim);
             this.tbpg_AracIslemleri.Controls.Add(this.btn_profilFotoSec);
             this.tbpg_AracIslemleri.Controls.Add(this.cmb_yakitTur);
             this.tbpg_AracIslemleri.Controls.Add(this.label13);
@@ -164,13 +222,10 @@
             this.tbpg_AracIslemleri.Controls.Add(this.cmb_marka);
             this.tbpg_AracIslemleri.Controls.Add(this.dtp_eklenmeTarihi);
             this.tbpg_AracIslemleri.Controls.Add(this.label12);
-            this.tbpg_AracIslemleri.Controls.Add(this.textBox10);
             this.tbpg_AracIslemleri.Controls.Add(this.label10);
             this.tbpg_AracIslemleri.Controls.Add(this.txt_mevcutKM);
             this.tbpg_AracIslemleri.Controls.Add(this.label11);
-            this.tbpg_AracIslemleri.Controls.Add(this.textBox7);
             this.tbpg_AracIslemleri.Controls.Add(this.label7);
-            this.tbpg_AracIslemleri.Controls.Add(this.textBox8);
             this.tbpg_AracIslemleri.Controls.Add(this.label8);
             this.tbpg_AracIslemleri.Controls.Add(this.label9);
             this.tbpg_AracIslemleri.Controls.Add(this.label4);
@@ -187,11 +242,81 @@
             this.tbpg_AracIslemleri.Location = new System.Drawing.Point(4, 25);
             this.tbpg_AracIslemleri.Name = "tbpg_AracIslemleri";
             this.tbpg_AracIslemleri.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_AracIslemleri.Size = new System.Drawing.Size(1916, 640);
+            this.tbpg_AracIslemleri.Size = new System.Drawing.Size(1916, 875);
             this.tbpg_AracIslemleri.TabIndex = 0;
             this.tbpg_AracIslemleri.Text = "Araç İşlemleri";
             this.tbpg_AracIslemleri.UseVisualStyleBackColor = true;
             this.tbpg_AracIslemleri.Enter += new System.EventHandler(this.tbpg_AracIslemleri_Enter);
+            // 
+            // btn_aracTemizle
+            // 
+            this.btn_aracTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracTemizle.Location = new System.Drawing.Point(684, 662);
+            this.btn_aracTemizle.Name = "btn_aracTemizle";
+            this.btn_aracTemizle.Size = new System.Drawing.Size(216, 69);
+            this.btn_aracTemizle.TabIndex = 41;
+            this.btn_aracTemizle.Text = "Temizle";
+            this.btn_aracTemizle.UseVisualStyleBackColor = true;
+            this.btn_aracTemizle.Click += new System.EventHandler(this.btn_aracTemizle_Click);
+            // 
+            // btn_AracGuncelle
+            // 
+            this.btn_AracGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_AracGuncelle.Location = new System.Drawing.Point(457, 662);
+            this.btn_AracGuncelle.Name = "btn_AracGuncelle";
+            this.btn_AracGuncelle.Size = new System.Drawing.Size(216, 69);
+            this.btn_AracGuncelle.TabIndex = 40;
+            this.btn_AracGuncelle.Text = "Güncelle";
+            this.btn_AracGuncelle.UseVisualStyleBackColor = true;
+            this.btn_AracGuncelle.Click += new System.EventHandler(this.btn_AracGuncelle_Click);
+            this.btn_AracGuncelle.MouseEnter += new System.EventHandler(this.btn_AracGuncelle_MouseEnter);
+            this.btn_AracGuncelle.MouseLeave += new System.EventHandler(this.btn_AracGuncelle_MouseLeave);
+            // 
+            // btn_AracSil
+            // 
+            this.btn_AracSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_AracSil.Location = new System.Drawing.Point(230, 662);
+            this.btn_AracSil.Name = "btn_AracSil";
+            this.btn_AracSil.Size = new System.Drawing.Size(221, 69);
+            this.btn_AracSil.TabIndex = 39;
+            this.btn_AracSil.Text = "Sil";
+            this.btn_AracSil.UseVisualStyleBackColor = true;
+            this.btn_AracSil.Click += new System.EventHandler(this.btn_AracSil_Click);
+            // 
+            // btn_AracEkle
+            // 
+            this.btn_AracEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_AracEkle.Location = new System.Drawing.Point(8, 662);
+            this.btn_AracEkle.Name = "btn_AracEkle";
+            this.btn_AracEkle.Size = new System.Drawing.Size(216, 69);
+            this.btn_AracEkle.TabIndex = 38;
+            this.btn_AracEkle.Text = "Ekle";
+            this.btn_AracEkle.UseVisualStyleBackColor = true;
+            this.btn_AracEkle.Click += new System.EventHandler(this.btn_AracEkle_Click);
+            // 
+            // cmb_sigorta
+            // 
+            this.cmb_sigorta.FormattingEnabled = true;
+            this.cmb_sigorta.Location = new System.Drawing.Point(454, 403);
+            this.cmb_sigorta.Name = "cmb_sigorta";
+            this.cmb_sigorta.Size = new System.Drawing.Size(212, 28);
+            this.cmb_sigorta.TabIndex = 37;
+            // 
+            // cmb_kasko
+            // 
+            this.cmb_kasko.FormattingEnabled = true;
+            this.cmb_kasko.Location = new System.Drawing.Point(452, 437);
+            this.cmb_kasko.Name = "cmb_kasko";
+            this.cmb_kasko.Size = new System.Drawing.Size(212, 28);
+            this.cmb_kasko.TabIndex = 36;
+            // 
+            // cmb_bakim
+            // 
+            this.cmb_bakim.FormattingEnabled = true;
+            this.cmb_bakim.Location = new System.Drawing.Point(454, 369);
+            this.cmb_bakim.Name = "cmb_bakim";
+            this.cmb_bakim.Size = new System.Drawing.Size(212, 28);
+            this.cmb_bakim.TabIndex = 35;
             // 
             // btn_profilFotoSec
             // 
@@ -276,13 +401,6 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Marka:";
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(452, 369);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(212, 27);
-            this.textBox10.TabIndex = 23;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -308,13 +426,6 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Mevcut Km:";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(452, 435);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(212, 27);
-            this.textBox7.TabIndex = 19;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -323,13 +434,6 @@
             this.label7.Size = new System.Drawing.Size(60, 20);
             this.label7.TabIndex = 18;
             this.label7.Text = "Kasko:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(452, 402);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(212, 27);
-            this.textBox8.TabIndex = 17;
             // 
             // label8
             // 
@@ -436,15 +540,451 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // tbpg_aracDetay
+            // tbpg_AracDetay
             // 
-            this.tbpg_aracDetay.Location = new System.Drawing.Point(4, 25);
-            this.tbpg_aracDetay.Name = "tbpg_aracDetay";
-            this.tbpg_aracDetay.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_aracDetay.Size = new System.Drawing.Size(1916, 640);
-            this.tbpg_aracDetay.TabIndex = 1;
-            this.tbpg_aracDetay.Text = "Araç Detayı";
-            this.tbpg_aracDetay.UseVisualStyleBackColor = true;
+            this.tbpg_AracDetay.Controls.Add(this.groupBox10);
+            this.tbpg_AracDetay.Controls.Add(this.groupBox9);
+            this.tbpg_AracDetay.Controls.Add(this.groupBox8);
+            this.tbpg_AracDetay.Location = new System.Drawing.Point(4, 25);
+            this.tbpg_AracDetay.Name = "tbpg_AracDetay";
+            this.tbpg_AracDetay.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpg_AracDetay.Size = new System.Drawing.Size(1916, 875);
+            this.tbpg_AracDetay.TabIndex = 1;
+            this.tbpg_AracDetay.Text = "Araç Detayı";
+            this.tbpg_AracDetay.UseVisualStyleBackColor = true;
+            this.tbpg_AracDetay.Enter += new System.EventHandler(this.tbpg_AracDetay_Enter);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.dtp_sigortaBitisTarihi);
+            this.groupBox10.Controls.Add(this.label28);
+            this.groupBox10.Controls.Add(this.btn_sigortaTemizle);
+            this.groupBox10.Controls.Add(this.btn_sigortaGuncelle);
+            this.groupBox10.Controls.Add(this.btn_sigortaSil);
+            this.groupBox10.Controls.Add(this.btn_sigortaEkle);
+            this.groupBox10.Controls.Add(this.dtp_sigortaBaslangicTarihi);
+            this.groupBox10.Controls.Add(this.label29);
+            this.groupBox10.Controls.Add(this.txt_sigortaSirketi);
+            this.groupBox10.Controls.Add(this.label30);
+            this.groupBox10.Controls.Add(this.txt_sigortaPoliceNo);
+            this.groupBox10.Controls.Add(this.label31);
+            this.groupBox10.Controls.Add(this.dgv_sigortaIslemleri);
+            this.groupBox10.Location = new System.Drawing.Point(427, 446);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(939, 421);
+            this.groupBox10.TabIndex = 15;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Sigorta İşlemleri";
+            // 
+            // dtp_sigortaBitisTarihi
+            // 
+            this.dtp_sigortaBitisTarihi.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtp_sigortaBitisTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_sigortaBitisTarihi.Location = new System.Drawing.Point(12, 246);
+            this.dtp_sigortaBitisTarihi.Name = "dtp_sigortaBitisTarihi";
+            this.dtp_sigortaBitisTarihi.Size = new System.Drawing.Size(343, 22);
+            this.dtp_sigortaBitisTarihi.TabIndex = 14;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label28.Location = new System.Drawing.Point(8, 223);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(90, 20);
+            this.label28.TabIndex = 13;
+            this.label28.Text = "Bitiş Tarihi";
+            // 
+            // btn_sigortaTemizle
+            // 
+            this.btn_sigortaTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_sigortaTemizle.Location = new System.Drawing.Point(167, 353);
+            this.btn_sigortaTemizle.Name = "btn_sigortaTemizle";
+            this.btn_sigortaTemizle.Size = new System.Drawing.Size(104, 40);
+            this.btn_sigortaTemizle.TabIndex = 12;
+            this.btn_sigortaTemizle.Text = "Temizle";
+            this.btn_sigortaTemizle.UseVisualStyleBackColor = true;
+            this.btn_sigortaTemizle.Click += new System.EventHandler(this.btn_sigortaTemizle_Click);
+            // 
+            // btn_sigortaGuncelle
+            // 
+            this.btn_sigortaGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_sigortaGuncelle.Location = new System.Drawing.Point(57, 353);
+            this.btn_sigortaGuncelle.Name = "btn_sigortaGuncelle";
+            this.btn_sigortaGuncelle.Size = new System.Drawing.Size(104, 40);
+            this.btn_sigortaGuncelle.TabIndex = 11;
+            this.btn_sigortaGuncelle.Text = "Güncelle";
+            this.btn_sigortaGuncelle.UseVisualStyleBackColor = true;
+            this.btn_sigortaGuncelle.Click += new System.EventHandler(this.btn_sigortaGuncelle_Click);
+            // 
+            // btn_sigortaSil
+            // 
+            this.btn_sigortaSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_sigortaSil.Location = new System.Drawing.Point(167, 307);
+            this.btn_sigortaSil.Name = "btn_sigortaSil";
+            this.btn_sigortaSil.Size = new System.Drawing.Size(104, 40);
+            this.btn_sigortaSil.TabIndex = 10;
+            this.btn_sigortaSil.Text = "Sil";
+            this.btn_sigortaSil.UseVisualStyleBackColor = true;
+            this.btn_sigortaSil.Click += new System.EventHandler(this.btn_sigortaSil_Click);
+            // 
+            // btn_sigortaEkle
+            // 
+            this.btn_sigortaEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_sigortaEkle.Location = new System.Drawing.Point(57, 307);
+            this.btn_sigortaEkle.Name = "btn_sigortaEkle";
+            this.btn_sigortaEkle.Size = new System.Drawing.Size(104, 40);
+            this.btn_sigortaEkle.TabIndex = 9;
+            this.btn_sigortaEkle.Text = "Ekle";
+            this.btn_sigortaEkle.UseVisualStyleBackColor = true;
+            this.btn_sigortaEkle.Click += new System.EventHandler(this.btn_sigortaEkle_Click);
+            // 
+            // dtp_sigortaBaslangicTarihi
+            // 
+            this.dtp_sigortaBaslangicTarihi.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtp_sigortaBaslangicTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_sigortaBaslangicTarihi.Location = new System.Drawing.Point(10, 184);
+            this.dtp_sigortaBaslangicTarihi.Name = "dtp_sigortaBaslangicTarihi";
+            this.dtp_sigortaBaslangicTarihi.Size = new System.Drawing.Size(343, 22);
+            this.dtp_sigortaBaslangicTarihi.TabIndex = 6;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.Location = new System.Drawing.Point(6, 161);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(130, 20);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "Başlangıç Tarihi";
+            // 
+            // txt_sigortaSirketi
+            // 
+            this.txt_sigortaSirketi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_sigortaSirketi.Location = new System.Drawing.Point(10, 119);
+            this.txt_sigortaSirketi.Name = "txt_sigortaSirketi";
+            this.txt_sigortaSirketi.Size = new System.Drawing.Size(343, 27);
+            this.txt_sigortaSirketi.TabIndex = 4;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label30.Location = new System.Drawing.Point(6, 96);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(114, 20);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "Sigorta Şirketi";
+            // 
+            // txt_sigortaPoliceNo
+            // 
+            this.txt_sigortaPoliceNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_sigortaPoliceNo.Location = new System.Drawing.Point(10, 57);
+            this.txt_sigortaPoliceNo.Name = "txt_sigortaPoliceNo";
+            this.txt_sigortaPoliceNo.Size = new System.Drawing.Size(343, 27);
+            this.txt_sigortaPoliceNo.TabIndex = 2;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label31.Location = new System.Drawing.Point(6, 34);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(132, 20);
+            this.label31.TabIndex = 1;
+            this.label31.Text = "Poliçe Numarası";
+            // 
+            // dgv_sigortaIslemleri
+            // 
+            this.dgv_sigortaIslemleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sigortaIslemleri.Location = new System.Drawing.Point(359, 21);
+            this.dgv_sigortaIslemleri.Name = "dgv_sigortaIslemleri";
+            this.dgv_sigortaIslemleri.RowHeadersWidth = 51;
+            this.dgv_sigortaIslemleri.RowTemplate.Height = 24;
+            this.dgv_sigortaIslemleri.Size = new System.Drawing.Size(574, 394);
+            this.dgv_sigortaIslemleri.TabIndex = 0;
+            this.dgv_sigortaIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sigortaIslemleri_CellClick);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.dtp_bitisTarihiEkleme);
+            this.groupBox9.Controls.Add(this.label27);
+            this.groupBox9.Controls.Add(this.btn_kaskoTemizle);
+            this.groupBox9.Controls.Add(this.btn_kaskoGuncelle);
+            this.groupBox9.Controls.Add(this.btn_kaskoSil);
+            this.groupBox9.Controls.Add(this.btn_KaskoEkle);
+            this.groupBox9.Controls.Add(this.dtp_baslangicTarihiEkleme);
+            this.groupBox9.Controls.Add(this.label24);
+            this.groupBox9.Controls.Add(this.txt_kaskoSirketiEkleme);
+            this.groupBox9.Controls.Add(this.label25);
+            this.groupBox9.Controls.Add(this.txt_policeNoEkleme);
+            this.groupBox9.Controls.Add(this.label26);
+            this.groupBox9.Controls.Add(this.dgv_kaskoIslmeleri);
+            this.groupBox9.Location = new System.Drawing.Point(949, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(939, 421);
+            this.groupBox9.TabIndex = 13;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Kasko İşlemleri";
+            // 
+            // dtp_bitisTarihiEkleme
+            // 
+            this.dtp_bitisTarihiEkleme.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtp_bitisTarihiEkleme.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_bitisTarihiEkleme.Location = new System.Drawing.Point(12, 246);
+            this.dtp_bitisTarihiEkleme.Name = "dtp_bitisTarihiEkleme";
+            this.dtp_bitisTarihiEkleme.Size = new System.Drawing.Size(343, 22);
+            this.dtp_bitisTarihiEkleme.TabIndex = 14;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.Location = new System.Drawing.Point(8, 223);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(90, 20);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "Bitiş Tarihi";
+            // 
+            // btn_kaskoTemizle
+            // 
+            this.btn_kaskoTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_kaskoTemizle.Location = new System.Drawing.Point(167, 353);
+            this.btn_kaskoTemizle.Name = "btn_kaskoTemizle";
+            this.btn_kaskoTemizle.Size = new System.Drawing.Size(104, 40);
+            this.btn_kaskoTemizle.TabIndex = 12;
+            this.btn_kaskoTemizle.Text = "Temizle";
+            this.btn_kaskoTemizle.UseVisualStyleBackColor = true;
+            this.btn_kaskoTemizle.Click += new System.EventHandler(this.btn_kaskoTemizle_Click);
+            // 
+            // btn_kaskoGuncelle
+            // 
+            this.btn_kaskoGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_kaskoGuncelle.Location = new System.Drawing.Point(57, 353);
+            this.btn_kaskoGuncelle.Name = "btn_kaskoGuncelle";
+            this.btn_kaskoGuncelle.Size = new System.Drawing.Size(104, 40);
+            this.btn_kaskoGuncelle.TabIndex = 11;
+            this.btn_kaskoGuncelle.Text = "Güncelle";
+            this.btn_kaskoGuncelle.UseVisualStyleBackColor = true;
+            this.btn_kaskoGuncelle.Click += new System.EventHandler(this.btn_kaskoGuncelle_Click);
+            // 
+            // btn_kaskoSil
+            // 
+            this.btn_kaskoSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_kaskoSil.Location = new System.Drawing.Point(167, 307);
+            this.btn_kaskoSil.Name = "btn_kaskoSil";
+            this.btn_kaskoSil.Size = new System.Drawing.Size(104, 40);
+            this.btn_kaskoSil.TabIndex = 10;
+            this.btn_kaskoSil.Text = "Sil";
+            this.btn_kaskoSil.UseVisualStyleBackColor = true;
+            this.btn_kaskoSil.Click += new System.EventHandler(this.btn_kaskoSil_Click);
+            // 
+            // btn_KaskoEkle
+            // 
+            this.btn_KaskoEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_KaskoEkle.Location = new System.Drawing.Point(57, 307);
+            this.btn_KaskoEkle.Name = "btn_KaskoEkle";
+            this.btn_KaskoEkle.Size = new System.Drawing.Size(104, 40);
+            this.btn_KaskoEkle.TabIndex = 9;
+            this.btn_KaskoEkle.Text = "Ekle";
+            this.btn_KaskoEkle.UseVisualStyleBackColor = true;
+            this.btn_KaskoEkle.Click += new System.EventHandler(this.btn_KaskoEkle_Click);
+            // 
+            // dtp_baslangicTarihiEkleme
+            // 
+            this.dtp_baslangicTarihiEkleme.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtp_baslangicTarihiEkleme.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_baslangicTarihiEkleme.Location = new System.Drawing.Point(10, 184);
+            this.dtp_baslangicTarihiEkleme.Name = "dtp_baslangicTarihiEkleme";
+            this.dtp_baslangicTarihiEkleme.Size = new System.Drawing.Size(343, 22);
+            this.dtp_baslangicTarihiEkleme.TabIndex = 6;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.Location = new System.Drawing.Point(6, 161);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(130, 20);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "Başlangıç Tarihi";
+            // 
+            // txt_kaskoSirketiEkleme
+            // 
+            this.txt_kaskoSirketiEkleme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_kaskoSirketiEkleme.Location = new System.Drawing.Point(10, 119);
+            this.txt_kaskoSirketiEkleme.Name = "txt_kaskoSirketiEkleme";
+            this.txt_kaskoSirketiEkleme.Size = new System.Drawing.Size(343, 27);
+            this.txt_kaskoSirketiEkleme.TabIndex = 4;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.Location = new System.Drawing.Point(6, 96);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(107, 20);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Kasko Şirketi";
+            // 
+            // txt_policeNoEkleme
+            // 
+            this.txt_policeNoEkleme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_policeNoEkleme.Location = new System.Drawing.Point(10, 57);
+            this.txt_policeNoEkleme.Name = "txt_policeNoEkleme";
+            this.txt_policeNoEkleme.Size = new System.Drawing.Size(343, 27);
+            this.txt_policeNoEkleme.TabIndex = 2;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label26.Location = new System.Drawing.Point(6, 34);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(132, 20);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Poliçe Numarası";
+            // 
+            // dgv_kaskoIslmeleri
+            // 
+            this.dgv_kaskoIslmeleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_kaskoIslmeleri.Location = new System.Drawing.Point(359, 21);
+            this.dgv_kaskoIslmeleri.Name = "dgv_kaskoIslmeleri";
+            this.dgv_kaskoIslmeleri.RowHeadersWidth = 51;
+            this.dgv_kaskoIslmeleri.RowTemplate.Height = 24;
+            this.dgv_kaskoIslmeleri.Size = new System.Drawing.Size(574, 394);
+            this.dgv_kaskoIslmeleri.TabIndex = 0;
+            this.dgv_kaskoIslmeleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_kaskoIslmeleri_CellClick);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btn_aracBakimTemizle);
+            this.groupBox8.Controls.Add(this.btn_aracBakimGuncelle);
+            this.groupBox8.Controls.Add(this.btn_aracBakimSil);
+            this.groupBox8.Controls.Add(this.btn_aracbakimEkle);
+            this.groupBox8.Controls.Add(this.dtp_BakimTarihiekle);
+            this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.txt_maliyetEkle);
+            this.groupBox8.Controls.Add(this.label22);
+            this.groupBox8.Controls.Add(this.txt_aciklamaEkle);
+            this.groupBox8.Controls.Add(this.label21);
+            this.groupBox8.Controls.Add(this.dgv_aracBakimIslemleri);
+            this.groupBox8.Location = new System.Drawing.Point(55, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(818, 421);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = " Araç Bakım İşlemleri";
+            // 
+            // btn_aracBakimTemizle
+            // 
+            this.btn_aracBakimTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracBakimTemizle.Location = new System.Drawing.Point(168, 307);
+            this.btn_aracBakimTemizle.Name = "btn_aracBakimTemizle";
+            this.btn_aracBakimTemizle.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracBakimTemizle.TabIndex = 12;
+            this.btn_aracBakimTemizle.Text = "Temizle";
+            this.btn_aracBakimTemizle.UseVisualStyleBackColor = true;
+            this.btn_aracBakimTemizle.Click += new System.EventHandler(this.btn_aracBakimTemizle_Click);
+            // 
+            // btn_aracBakimGuncelle
+            // 
+            this.btn_aracBakimGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracBakimGuncelle.Location = new System.Drawing.Point(58, 307);
+            this.btn_aracBakimGuncelle.Name = "btn_aracBakimGuncelle";
+            this.btn_aracBakimGuncelle.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracBakimGuncelle.TabIndex = 11;
+            this.btn_aracBakimGuncelle.Text = "Güncelle";
+            this.btn_aracBakimGuncelle.UseVisualStyleBackColor = true;
+            this.btn_aracBakimGuncelle.Click += new System.EventHandler(this.btn_aracBakimGuncelle_Click);
+            // 
+            // btn_aracBakimSil
+            // 
+            this.btn_aracBakimSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracBakimSil.Location = new System.Drawing.Point(168, 261);
+            this.btn_aracBakimSil.Name = "btn_aracBakimSil";
+            this.btn_aracBakimSil.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracBakimSil.TabIndex = 10;
+            this.btn_aracBakimSil.Text = "Sil";
+            this.btn_aracBakimSil.UseVisualStyleBackColor = true;
+            this.btn_aracBakimSil.Click += new System.EventHandler(this.btn_aracBakimSil_Click);
+            // 
+            // btn_aracbakimEkle
+            // 
+            this.btn_aracbakimEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracbakimEkle.Location = new System.Drawing.Point(58, 261);
+            this.btn_aracbakimEkle.Name = "btn_aracbakimEkle";
+            this.btn_aracbakimEkle.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracbakimEkle.TabIndex = 9;
+            this.btn_aracbakimEkle.Text = "Ekle";
+            this.btn_aracbakimEkle.UseVisualStyleBackColor = true;
+            this.btn_aracbakimEkle.Click += new System.EventHandler(this.btn_aracbakimEkle_Click);
+            // 
+            // dtp_BakimTarihiekle
+            // 
+            this.dtp_BakimTarihiekle.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtp_BakimTarihiekle.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_BakimTarihiekle.Location = new System.Drawing.Point(10, 184);
+            this.dtp_BakimTarihiekle.Name = "dtp_BakimTarihiekle";
+            this.dtp_BakimTarihiekle.Size = new System.Drawing.Size(343, 22);
+            this.dtp_BakimTarihiekle.TabIndex = 6;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.Location = new System.Drawing.Point(6, 161);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 20);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "Bakım Tarihi";
+            // 
+            // txt_maliyetEkle
+            // 
+            this.txt_maliyetEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_maliyetEkle.Location = new System.Drawing.Point(10, 119);
+            this.txt_maliyetEkle.Name = "txt_maliyetEkle";
+            this.txt_maliyetEkle.Size = new System.Drawing.Size(343, 27);
+            this.txt_maliyetEkle.TabIndex = 4;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Location = new System.Drawing.Point(6, 96);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(62, 20);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Maliyet";
+            // 
+            // txt_aciklamaEkle
+            // 
+            this.txt_aciklamaEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_aciklamaEkle.Location = new System.Drawing.Point(10, 57);
+            this.txt_aciklamaEkle.Name = "txt_aciklamaEkle";
+            this.txt_aciklamaEkle.Size = new System.Drawing.Size(343, 27);
+            this.txt_aciklamaEkle.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label21.Location = new System.Drawing.Point(6, 34);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(77, 20);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Açıklama";
+            // 
+            // dgv_aracBakimIslemleri
+            // 
+            this.dgv_aracBakimIslemleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_aracBakimIslemleri.Location = new System.Drawing.Point(359, 21);
+            this.dgv_aracBakimIslemleri.Name = "dgv_aracBakimIslemleri";
+            this.dgv_aracBakimIslemleri.RowHeadersWidth = 51;
+            this.dgv_aracBakimIslemleri.RowTemplate.Height = 24;
+            this.dgv_aracBakimIslemleri.Size = new System.Drawing.Size(453, 394);
+            this.dgv_aracBakimIslemleri.TabIndex = 0;
+            this.dgv_aracBakimIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_aracBakimIslemleri_CellClick);
             // 
             // tbpg_markaModelRenk
             // 
@@ -457,11 +997,100 @@
             this.tbpg_markaModelRenk.Controls.Add(this.groupBox1);
             this.tbpg_markaModelRenk.Location = new System.Drawing.Point(4, 25);
             this.tbpg_markaModelRenk.Name = "tbpg_markaModelRenk";
-            this.tbpg_markaModelRenk.Size = new System.Drawing.Size(1916, 640);
+            this.tbpg_markaModelRenk.Size = new System.Drawing.Size(1916, 875);
             this.tbpg_markaModelRenk.TabIndex = 2;
             this.tbpg_markaModelRenk.Text = "Marka, Model ve Renk İşlemleri";
             this.tbpg_markaModelRenk.UseVisualStyleBackColor = true;
             this.tbpg_markaModelRenk.Enter += new System.EventHandler(this.tbpg_markaModelRenk_Enter);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.btn_aracTDtemizle);
+            this.groupBox7.Controls.Add(this.btn_aracTDGuncelle);
+            this.groupBox7.Controls.Add(this.btn_aracTDsil);
+            this.groupBox7.Controls.Add(this.btn_aracTDekle);
+            this.groupBox7.Controls.Add(this.txt_aracTDekleme);
+            this.groupBox7.Controls.Add(this.label20);
+            this.groupBox7.Controls.Add(this.dgv_aracTDIslemleri);
+            this.groupBox7.Location = new System.Drawing.Point(1284, 319);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(471, 264);
+            this.groupBox7.TabIndex = 13;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Araç Tamir Durum İşlemleri";
+            // 
+            // btn_aracTDtemizle
+            // 
+            this.btn_aracTDtemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracTDtemizle.Location = new System.Drawing.Point(123, 207);
+            this.btn_aracTDtemizle.Name = "btn_aracTDtemizle";
+            this.btn_aracTDtemizle.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracTDtemizle.TabIndex = 8;
+            this.btn_aracTDtemizle.Text = "Temizle";
+            this.btn_aracTDtemizle.UseVisualStyleBackColor = true;
+            this.btn_aracTDtemizle.Click += new System.EventHandler(this.btn_aracTDtemizle_Click);
+            // 
+            // btn_aracTDGuncelle
+            // 
+            this.btn_aracTDGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracTDGuncelle.Location = new System.Drawing.Point(13, 207);
+            this.btn_aracTDGuncelle.Name = "btn_aracTDGuncelle";
+            this.btn_aracTDGuncelle.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracTDGuncelle.TabIndex = 7;
+            this.btn_aracTDGuncelle.Text = "Güncelle";
+            this.btn_aracTDGuncelle.UseVisualStyleBackColor = true;
+            this.btn_aracTDGuncelle.Click += new System.EventHandler(this.btn_aracTDGuncelle_Click);
+            // 
+            // btn_aracTDsil
+            // 
+            this.btn_aracTDsil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracTDsil.Location = new System.Drawing.Point(123, 161);
+            this.btn_aracTDsil.Name = "btn_aracTDsil";
+            this.btn_aracTDsil.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracTDsil.TabIndex = 6;
+            this.btn_aracTDsil.Text = "Sil";
+            this.btn_aracTDsil.UseVisualStyleBackColor = true;
+            this.btn_aracTDsil.Click += new System.EventHandler(this.btn_aracTDsil_Click);
+            // 
+            // btn_aracTDekle
+            // 
+            this.btn_aracTDekle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_aracTDekle.Location = new System.Drawing.Point(13, 161);
+            this.btn_aracTDekle.Name = "btn_aracTDekle";
+            this.btn_aracTDekle.Size = new System.Drawing.Size(104, 40);
+            this.btn_aracTDekle.TabIndex = 5;
+            this.btn_aracTDekle.Text = "Ekle";
+            this.btn_aracTDekle.UseVisualStyleBackColor = true;
+            this.btn_aracTDekle.Click += new System.EventHandler(this.btn_aracTDekle_Click);
+            // 
+            // txt_aracTDekleme
+            // 
+            this.txt_aracTDekleme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_aracTDekleme.Location = new System.Drawing.Point(6, 51);
+            this.txt_aracTDekleme.Name = "txt_aracTDekleme";
+            this.txt_aracTDekleme.Size = new System.Drawing.Size(239, 27);
+            this.txt_aracTDekleme.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.Location = new System.Drawing.Point(6, 28);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(148, 20);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Araç Tamir Durum";
+            // 
+            // dgv_aracTDIslemleri
+            // 
+            this.dgv_aracTDIslemleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_aracTDIslemleri.Location = new System.Drawing.Point(251, 10);
+            this.dgv_aracTDIslemleri.Name = "dgv_aracTDIslemleri";
+            this.dgv_aracTDIslemleri.RowHeadersWidth = 51;
+            this.dgv_aracTDIslemleri.RowTemplate.Height = 24;
+            this.dgv_aracTDIslemleri.Size = new System.Drawing.Size(214, 248);
+            this.dgv_aracTDIslemleri.TabIndex = 0;
+            this.dgv_aracTDIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_aracTDIslemleri_CellClick);
             // 
             // groupBox6
             // 
@@ -472,7 +1101,7 @@
             this.groupBox6.Controls.Add(this.txt_durumEkleme);
             this.groupBox6.Controls.Add(this.Durum);
             this.groupBox6.Controls.Add(this.dgv_durumIslemleri);
-            this.groupBox6.Location = new System.Drawing.Point(485, 282);
+            this.groupBox6.Location = new System.Drawing.Point(807, 319);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(471, 264);
             this.groupBox6.TabIndex = 12;
@@ -561,7 +1190,7 @@
             this.groupBox5.Controls.Add(this.txt_yakitEkleme);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.dgv_yakitIslemleri);
-            this.groupBox5.Location = new System.Drawing.Point(8, 282);
+            this.groupBox5.Location = new System.Drawing.Point(330, 319);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(471, 264);
             this.groupBox5.TabIndex = 11;
@@ -1018,100 +1647,11 @@
             this.dgv_MarkaIslemleri.TabIndex = 0;
             this.dgv_MarkaIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_MarkaIslemleri_CellClick);
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.btn_aracTDtemizle);
-            this.groupBox7.Controls.Add(this.btn_aracTDGuncelle);
-            this.groupBox7.Controls.Add(this.btn_aracTDsil);
-            this.groupBox7.Controls.Add(this.btn_aracTDekle);
-            this.groupBox7.Controls.Add(this.txt_aracTDekleme);
-            this.groupBox7.Controls.Add(this.label20);
-            this.groupBox7.Controls.Add(this.dgv_aracTDIslemleri);
-            this.groupBox7.Location = new System.Drawing.Point(962, 282);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(471, 264);
-            this.groupBox7.TabIndex = 13;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Araç Tamir Durum İşlemleri";
-            // 
-            // btn_aracTDtemizle
-            // 
-            this.btn_aracTDtemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_aracTDtemizle.Location = new System.Drawing.Point(123, 207);
-            this.btn_aracTDtemizle.Name = "btn_aracTDtemizle";
-            this.btn_aracTDtemizle.Size = new System.Drawing.Size(104, 40);
-            this.btn_aracTDtemizle.TabIndex = 8;
-            this.btn_aracTDtemizle.Text = "Temizle";
-            this.btn_aracTDtemizle.UseVisualStyleBackColor = true;
-            this.btn_aracTDtemizle.Click += new System.EventHandler(this.btn_aracTDtemizle_Click);
-            // 
-            // btn_aracTDGuncelle
-            // 
-            this.btn_aracTDGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_aracTDGuncelle.Location = new System.Drawing.Point(13, 207);
-            this.btn_aracTDGuncelle.Name = "btn_aracTDGuncelle";
-            this.btn_aracTDGuncelle.Size = new System.Drawing.Size(104, 40);
-            this.btn_aracTDGuncelle.TabIndex = 7;
-            this.btn_aracTDGuncelle.Text = "Güncelle";
-            this.btn_aracTDGuncelle.UseVisualStyleBackColor = true;
-            this.btn_aracTDGuncelle.Click += new System.EventHandler(this.btn_aracTDGuncelle_Click);
-            // 
-            // btn_aracTDsil
-            // 
-            this.btn_aracTDsil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_aracTDsil.Location = new System.Drawing.Point(123, 161);
-            this.btn_aracTDsil.Name = "btn_aracTDsil";
-            this.btn_aracTDsil.Size = new System.Drawing.Size(104, 40);
-            this.btn_aracTDsil.TabIndex = 6;
-            this.btn_aracTDsil.Text = "Sil";
-            this.btn_aracTDsil.UseVisualStyleBackColor = true;
-            this.btn_aracTDsil.Click += new System.EventHandler(this.btn_aracTDsil_Click);
-            // 
-            // btn_aracTDekle
-            // 
-            this.btn_aracTDekle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_aracTDekle.Location = new System.Drawing.Point(13, 161);
-            this.btn_aracTDekle.Name = "btn_aracTDekle";
-            this.btn_aracTDekle.Size = new System.Drawing.Size(104, 40);
-            this.btn_aracTDekle.TabIndex = 5;
-            this.btn_aracTDekle.Text = "Ekle";
-            this.btn_aracTDekle.UseVisualStyleBackColor = true;
-            this.btn_aracTDekle.Click += new System.EventHandler(this.btn_aracTDekle_Click);
-            // 
-            // txt_aracTDekleme
-            // 
-            this.txt_aracTDekleme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_aracTDekleme.Location = new System.Drawing.Point(6, 51);
-            this.txt_aracTDekleme.Name = "txt_aracTDekleme";
-            this.txt_aracTDekleme.Size = new System.Drawing.Size(239, 27);
-            this.txt_aracTDekleme.TabIndex = 1;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label20.Location = new System.Drawing.Point(6, 28);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(148, 20);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "Araç Tamir Durum";
-            // 
-            // dgv_aracTDIslemleri
-            // 
-            this.dgv_aracTDIslemleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_aracTDIslemleri.Location = new System.Drawing.Point(251, 10);
-            this.dgv_aracTDIslemleri.Name = "dgv_aracTDIslemleri";
-            this.dgv_aracTDIslemleri.RowHeadersWidth = 51;
-            this.dgv_aracTDIslemleri.RowTemplate.Height = 24;
-            this.dgv_aracTDIslemleri.Size = new System.Drawing.Size(214, 248);
-            this.dgv_aracTDIslemleri.TabIndex = 0;
-            this.dgv_aracTDIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_aracTDIslemleri_CellClick);
-            // 
             // FrmAracIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 669);
+            this.ClientSize = new System.Drawing.Size(1924, 904);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmAracIslemleri";
             this.Text = "FrmAracIslemleri";
@@ -1122,7 +1662,20 @@
             this.tbpg_AracIslemleri.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tbpg_AracDetay.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sigortaIslemleri)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_kaskoIslmeleri)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_aracBakimIslemleri)).EndInit();
             this.tbpg_markaModelRenk.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_aracTDIslemleri)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_durumIslemleri)).EndInit();
@@ -1141,9 +1694,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MarkaIslemleri)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_aracTDIslemleri)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1152,17 +1702,14 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbpg_AracIslemleri;
-        private System.Windows.Forms.TabPage tbpg_aracDetay;
+        private System.Windows.Forms.TabPage tbpg_AracDetay;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_mevcutKM;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
@@ -1241,5 +1788,52 @@
         private System.Windows.Forms.TextBox txt_aracTDekleme;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dgv_aracTDIslemleri;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.DataGridView dgv_aracBakimIslemleri;
+        private System.Windows.Forms.DateTimePicker dtp_BakimTarihiekle;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txt_maliyetEkle;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txt_aciklamaEkle;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btn_aracBakimTemizle;
+        private System.Windows.Forms.Button btn_aracBakimGuncelle;
+        private System.Windows.Forms.Button btn_aracBakimSil;
+        private System.Windows.Forms.Button btn_aracbakimEkle;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.DateTimePicker dtp_bitisTarihiEkleme;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button btn_kaskoTemizle;
+        private System.Windows.Forms.Button btn_kaskoGuncelle;
+        private System.Windows.Forms.Button btn_kaskoSil;
+        private System.Windows.Forms.Button btn_KaskoEkle;
+        private System.Windows.Forms.DateTimePicker dtp_baslangicTarihiEkleme;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txt_kaskoSirketiEkleme;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txt_policeNoEkleme;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.DataGridView dgv_kaskoIslmeleri;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.DateTimePicker dtp_sigortaBitisTarihi;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button btn_sigortaTemizle;
+        private System.Windows.Forms.Button btn_sigortaGuncelle;
+        private System.Windows.Forms.Button btn_sigortaSil;
+        private System.Windows.Forms.Button btn_sigortaEkle;
+        private System.Windows.Forms.DateTimePicker dtp_sigortaBaslangicTarihi;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txt_sigortaSirketi;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txt_sigortaPoliceNo;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.DataGridView dgv_sigortaIslemleri;
+        private System.Windows.Forms.ComboBox cmb_sigorta;
+        private System.Windows.Forms.ComboBox cmb_kasko;
+        private System.Windows.Forms.ComboBox cmb_bakim;
+        private System.Windows.Forms.Button btn_aracTemizle;
+        private System.Windows.Forms.Button btn_AracGuncelle;
+        private System.Windows.Forms.Button btn_AracSil;
+        private System.Windows.Forms.Button btn_AracEkle;
     }
 }

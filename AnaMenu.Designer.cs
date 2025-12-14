@@ -112,11 +112,11 @@
             this.label30 = new System.Windows.Forms.Label();
             this.txt_mKullaniciAdi = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsb_profil_Islemleri = new System.Windows.Forms.ToolStripButton();
             this.tsb_aracIslemleri = new System.Windows.Forms.ToolStripButton();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.tsb_odemeIslemleri = new System.Windows.Forms.ToolStripButton();
             this.TabControl.SuspendLayout();
             this.tbpg_profil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,7 +133,6 @@
             this.TabControl.Controls.Add(this.tbpg_profil);
             this.TabControl.Controls.Add(this.tbpg_personelEkle);
             this.TabControl.Controls.Add(this.tbpg_MusteriEkle);
-            this.TabControl.Controls.Add(this.tabPage3);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
@@ -168,7 +167,7 @@
             this.tbpg_profil.Location = new System.Drawing.Point(4, 25);
             this.tbpg_profil.Name = "tbpg_profil";
             this.tbpg_profil.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_profil.Size = new System.Drawing.Size(1916, 631);
+            this.tbpg_profil.Size = new System.Drawing.Size(1916, 627);
             this.tbpg_profil.TabIndex = 0;
             this.tbpg_profil.Text = "Profil";
             this.tbpg_profil.UseVisualStyleBackColor = true;
@@ -412,7 +411,7 @@
             this.tbpg_personelEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_personelEkle.Name = "tbpg_personelEkle";
             this.tbpg_personelEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_personelEkle.Size = new System.Drawing.Size(1913, 612);
+            this.tbpg_personelEkle.Size = new System.Drawing.Size(1916, 631);
             this.tbpg_personelEkle.TabIndex = 1;
             this.tbpg_personelEkle.Text = "Personel Ekle";
             this.tbpg_personelEkle.UseVisualStyleBackColor = true;
@@ -729,7 +728,7 @@
             this.tbpg_MusteriEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_MusteriEkle.Name = "tbpg_MusteriEkle";
             this.tbpg_MusteriEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1916, 627);
+            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1916, 631);
             this.tbpg_MusteriEkle.TabIndex = 2;
             this.tbpg_MusteriEkle.Text = "Müşteri Ekle";
             this.tbpg_MusteriEkle.UseVisualStyleBackColor = true;
@@ -1012,22 +1011,13 @@
             this.label31.TabIndex = 88;
             this.label31.Text = "Kullanıcı Adı:";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1913, 612);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsb_profil_Islemleri,
-            this.tsb_aracIslemleri});
+            this.tsb_aracIslemleri,
+            this.tsb_odemeIslemleri});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1924, 31);
@@ -1039,7 +1029,7 @@
             this.tsb_profil_Islemleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_profil_Islemleri.Image")));
             this.tsb_profil_Islemleri.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_profil_Islemleri.Name = "tsb_profil_Islemleri";
-            this.tsb_profil_Islemleri.Size = new System.Drawing.Size(128, 24);
+            this.tsb_profil_Islemleri.Size = new System.Drawing.Size(128, 28);
             this.tsb_profil_Islemleri.Text = "Profil İşlemleri";
             this.tsb_profil_Islemleri.Click += new System.EventHandler(this.tsb_profil_Islemleri_Click);
             // 
@@ -1048,7 +1038,7 @@
             this.tsb_aracIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_aracIslemleri.Image")));
             this.tsb_aracIslemleri.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_aracIslemleri.Name = "tsb_aracIslemleri";
-            this.tsb_aracIslemleri.Size = new System.Drawing.Size(123, 24);
+            this.tsb_aracIslemleri.Size = new System.Drawing.Size(123, 28);
             this.tsb_aracIslemleri.Text = "Araç İşlemleri";
             this.tsb_aracIslemleri.Click += new System.EventHandler(this.tsb_aracIslemleri_Click);
             // 
@@ -1060,6 +1050,15 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1924, 656);
             this.panelContainer.TabIndex = 2;
+            // 
+            // tsb_odemeIslemleri
+            // 
+            this.tsb_odemeIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_odemeIslemleri.Image")));
+            this.tsb_odemeIslemleri.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_odemeIslemleri.Name = "tsb_odemeIslemleri";
+            this.tsb_odemeIslemleri.Size = new System.Drawing.Size(142, 28);
+            this.tsb_odemeIslemleri.Text = "Ödeme İşlemleri";
+            this.tsb_odemeIslemleri.Click += new System.EventHandler(this.tsb_odemeIslemleri_Click);
             // 
             // AnaMenu
             // 
@@ -1116,7 +1115,6 @@
         private System.Windows.Forms.Button btn_kullaniciSifreDegistir;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tbpg_MusteriEkle;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ComboBox cbx_pozisyon;
         private System.Windows.Forms.Label lbl_Uyarilar;
         private System.Windows.Forms.MaskedTextBox mtb_pTelefon;
@@ -1180,5 +1178,6 @@
         private System.Windows.Forms.ToolStripButton tsb_profil_Islemleri;
         private System.Windows.Forms.ToolStripButton tsb_aracIslemleri;
         private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.ToolStripButton tsb_odemeIslemleri;
     }
 }
