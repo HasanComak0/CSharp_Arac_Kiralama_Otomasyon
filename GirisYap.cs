@@ -33,6 +33,12 @@ namespace Arac_Kiralama
             //MessageBox.Show("ŞİFRE GÜNCELLENDİ");
             //Mert.3131
             // Yusuf.34
+            if(ayarlar.Default.beniHatirla==true)
+            {
+                cbx_beniHatirla.Checked = true;
+                txt_kullaniciAdi.Text = ayarlar.Default.KullaniciAdi;
+                txt_sifre.Text = ayarlar.Default.Sifre;
+            }
         }
         //Kullanıcının göreve göre  müşteri olup olmadığını falan kontrol etmem lazım yarın devam et.
         public string gelenKullaniciAdi;
@@ -65,6 +71,13 @@ namespace Arac_Kiralama
                 }
                 else
                 {
+                    if(cbx_beniHatirla.Checked)
+                    {
+                        ayarlar.Default.beniHatirla = true;
+                        ayarlar.Default.KullaniciAdi = txt_kullaniciAdi.Text;
+                        ayarlar.Default.Sifre = txt_sifre.Text;
+                        ayarlar.Default.Save();
+                    }
                     AnaMenu anamenu = new AnaMenu(gelenKullaniciAdi);
                     anamenu.Show();
                     this.Hide();
@@ -134,6 +147,17 @@ namespace Arac_Kiralama
             sifreGizliMi = !sifreGizliMi;
         }
 
-        
+        private void cbx_beniHatirla_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbx_beniHatirla.Checked == false)
+            {
+                ayarlar.Default.KullaniciAdi="";
+                ayarlar.Default.Sifre = "";
+                ayarlar.Default.beniHatirla = false;
+                ayarlar.Default.Save();
+                txt_kullaniciAdi.Text = "";
+                txt_sifre.Text = "";
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpg_AracIslemleri = new System.Windows.Forms.TabPage();
             this.btn_aracTemizle = new System.Windows.Forms.Button();
@@ -163,6 +164,61 @@
             this.txt_markaEkle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dgv_MarkaIslemleri = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.araçEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçBakımİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçBakımSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçBakımGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçBakımTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaskoİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaskoEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaskoSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaskoGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaskoTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sigortaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sigortaEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sigortaSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sigortaGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sigortaTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.markaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.markaEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.markaSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.markaGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.markaTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renkİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renkEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renkSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renkGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renkTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vitesİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vitesEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vitesSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vitesGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vitesTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yakıtİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yakıtEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yakıtSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yakıtGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yakıtTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.durumİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.durumEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.durumSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.durumGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.durumTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçTamirDurumuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ekleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.temizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tbpg_AracIslemleri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -189,10 +245,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ModelIslemleri)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MarkaIslemleri)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.ContextMenuStrip = this.contextMenuStrip1;
             this.tabControl1.Controls.Add(this.tbpg_AracIslemleri);
             this.tabControl1.Controls.Add(this.tbpg_AracDetay);
             this.tabControl1.Controls.Add(this.tbpg_markaModelRenk);
@@ -1647,6 +1705,445 @@
             this.dgv_MarkaIslemleri.TabIndex = 0;
             this.dgv_MarkaIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_MarkaIslemleri_CellClick);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.araçEkleToolStripMenuItem,
+            this.araçSilToolStripMenuItem,
+            this.araçGüncelleToolStripMenuItem,
+            this.araçTemizleToolStripMenuItem,
+            this.araçBakımİşlemleriToolStripMenuItem,
+            this.kaskoİşlemleriToolStripMenuItem,
+            this.sigortaİşlemleriToolStripMenuItem,
+            this.markaİşlemleriToolStripMenuItem,
+            this.modelİşlemleriToolStripMenuItem,
+            this.renkİşlemleriToolStripMenuItem,
+            this.vitesİşlemleriToolStripMenuItem,
+            this.yakıtİşlemleriToolStripMenuItem,
+            this.durumİşlemleriToolStripMenuItem,
+            this.araçTamirDurumuToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 340);
+            // 
+            // araçEkleToolStripMenuItem
+            // 
+            this.araçEkleToolStripMenuItem.Name = "araçEkleToolStripMenuItem";
+            this.araçEkleToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.araçEkleToolStripMenuItem.Text = "Araç Ekle";
+            this.araçEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_AracEkle_Click);
+            // 
+            // araçSilToolStripMenuItem
+            // 
+            this.araçSilToolStripMenuItem.Name = "araçSilToolStripMenuItem";
+            this.araçSilToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.araçSilToolStripMenuItem.Text = "Araç Sil";
+            this.araçSilToolStripMenuItem.Click += new System.EventHandler(this.btn_AracSil_Click);
+            // 
+            // araçGüncelleToolStripMenuItem
+            // 
+            this.araçGüncelleToolStripMenuItem.Name = "araçGüncelleToolStripMenuItem";
+            this.araçGüncelleToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.araçGüncelleToolStripMenuItem.Text = "Araç Güncelle";
+            this.araçGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_AracGuncelle_Click);
+            // 
+            // araçTemizleToolStripMenuItem
+            // 
+            this.araçTemizleToolStripMenuItem.Name = "araçTemizleToolStripMenuItem";
+            this.araçTemizleToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.araçTemizleToolStripMenuItem.Text = "Araç Temizle";
+            this.araçTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracTemizle_Click);
+            // 
+            // araçBakımİşlemleriToolStripMenuItem
+            // 
+            this.araçBakımİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.araToolStripMenuItem,
+            this.araçBakımSilToolStripMenuItem,
+            this.araçBakımGüncelleToolStripMenuItem,
+            this.araçBakımTemizleToolStripMenuItem});
+            this.araçBakımİşlemleriToolStripMenuItem.Name = "araçBakımİşlemleriToolStripMenuItem";
+            this.araçBakımİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.araçBakımİşlemleriToolStripMenuItem.Text = "Araç Bakım İşlemleri";
+            // 
+            // araToolStripMenuItem
+            // 
+            this.araToolStripMenuItem.Name = "araToolStripMenuItem";
+            this.araToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.araToolStripMenuItem.Text = "Araç Bakım Ekle";
+            this.araToolStripMenuItem.Click += new System.EventHandler(this.btn_aracbakimEkle_Click);
+            // 
+            // araçBakımSilToolStripMenuItem
+            // 
+            this.araçBakımSilToolStripMenuItem.Name = "araçBakımSilToolStripMenuItem";
+            this.araçBakımSilToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.araçBakımSilToolStripMenuItem.Text = "Araç Bakım Sil";
+            this.araçBakımSilToolStripMenuItem.Click += new System.EventHandler(this.btn_aracBakimSil_Click);
+            // 
+            // araçBakımGüncelleToolStripMenuItem
+            // 
+            this.araçBakımGüncelleToolStripMenuItem.Name = "araçBakımGüncelleToolStripMenuItem";
+            this.araçBakımGüncelleToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.araçBakımGüncelleToolStripMenuItem.Text = "Araç Bakım Güncelle";
+            this.araçBakımGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracBakimGuncelle_Click);
+            // 
+            // araçBakımTemizleToolStripMenuItem
+            // 
+            this.araçBakımTemizleToolStripMenuItem.Name = "araçBakımTemizleToolStripMenuItem";
+            this.araçBakımTemizleToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.araçBakımTemizleToolStripMenuItem.Text = "Araç Bakım Temizle";
+            this.araçBakımTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracBakimTemizle_Click);
+            // 
+            // kaskoİşlemleriToolStripMenuItem
+            // 
+            this.kaskoİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kaskoEkleToolStripMenuItem,
+            this.kaskoSilToolStripMenuItem,
+            this.kaskoGüncelleToolStripMenuItem,
+            this.kaskoTemizleToolStripMenuItem});
+            this.kaskoİşlemleriToolStripMenuItem.Name = "kaskoİşlemleriToolStripMenuItem";
+            this.kaskoİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.kaskoİşlemleriToolStripMenuItem.Text = "Kasko İşlemleri";
+            // 
+            // kaskoEkleToolStripMenuItem
+            // 
+            this.kaskoEkleToolStripMenuItem.Name = "kaskoEkleToolStripMenuItem";
+            this.kaskoEkleToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.kaskoEkleToolStripMenuItem.Text = "Kasko Ekle";
+            this.kaskoEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_KaskoEkle_Click);
+            // 
+            // kaskoSilToolStripMenuItem
+            // 
+            this.kaskoSilToolStripMenuItem.Name = "kaskoSilToolStripMenuItem";
+            this.kaskoSilToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.kaskoSilToolStripMenuItem.Text = "Kasko Sil";
+            this.kaskoSilToolStripMenuItem.Click += new System.EventHandler(this.btn_kaskoSil_Click);
+            // 
+            // kaskoGüncelleToolStripMenuItem
+            // 
+            this.kaskoGüncelleToolStripMenuItem.Name = "kaskoGüncelleToolStripMenuItem";
+            this.kaskoGüncelleToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.kaskoGüncelleToolStripMenuItem.Text = "Kasko Güncelle";
+            this.kaskoGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_kaskoGuncelle_Click);
+            // 
+            // kaskoTemizleToolStripMenuItem
+            // 
+            this.kaskoTemizleToolStripMenuItem.Name = "kaskoTemizleToolStripMenuItem";
+            this.kaskoTemizleToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.kaskoTemizleToolStripMenuItem.Text = "Kasko Temizle";
+            this.kaskoTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_kaskoTemizle_Click);
+            // 
+            // sigortaİşlemleriToolStripMenuItem
+            // 
+            this.sigortaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sigortaEkleToolStripMenuItem,
+            this.sigortaSilToolStripMenuItem,
+            this.sigortaGüncelleToolStripMenuItem,
+            this.sigortaTemizleToolStripMenuItem});
+            this.sigortaİşlemleriToolStripMenuItem.Name = "sigortaİşlemleriToolStripMenuItem";
+            this.sigortaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.sigortaİşlemleriToolStripMenuItem.Text = "Sigorta İşlemleri";
+            // 
+            // sigortaEkleToolStripMenuItem
+            // 
+            this.sigortaEkleToolStripMenuItem.Name = "sigortaEkleToolStripMenuItem";
+            this.sigortaEkleToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.sigortaEkleToolStripMenuItem.Text = "Sigorta Ekle";
+            this.sigortaEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_sigortaEkle_Click);
+            // 
+            // sigortaSilToolStripMenuItem
+            // 
+            this.sigortaSilToolStripMenuItem.Name = "sigortaSilToolStripMenuItem";
+            this.sigortaSilToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.sigortaSilToolStripMenuItem.Text = "Sigorta Sil";
+            this.sigortaSilToolStripMenuItem.Click += new System.EventHandler(this.btn_sigortaSil_Click);
+            // 
+            // sigortaGüncelleToolStripMenuItem
+            // 
+            this.sigortaGüncelleToolStripMenuItem.Name = "sigortaGüncelleToolStripMenuItem";
+            this.sigortaGüncelleToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.sigortaGüncelleToolStripMenuItem.Text = "Sigorta Güncelle";
+            this.sigortaGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_sigortaGuncelle_Click);
+            // 
+            // sigortaTemizleToolStripMenuItem
+            // 
+            this.sigortaTemizleToolStripMenuItem.Name = "sigortaTemizleToolStripMenuItem";
+            this.sigortaTemizleToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.sigortaTemizleToolStripMenuItem.Text = "Sigorta Temizle";
+            this.sigortaTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_sigortaTemizle_Click);
+            // 
+            // markaİşlemleriToolStripMenuItem
+            // 
+            this.markaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.markaEkleToolStripMenuItem,
+            this.markaSilToolStripMenuItem,
+            this.markaGüncelleToolStripMenuItem,
+            this.markaTemizleToolStripMenuItem});
+            this.markaİşlemleriToolStripMenuItem.Name = "markaİşlemleriToolStripMenuItem";
+            this.markaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.markaİşlemleriToolStripMenuItem.Text = "Marka İşlemleri";
+            // 
+            // markaEkleToolStripMenuItem
+            // 
+            this.markaEkleToolStripMenuItem.Name = "markaEkleToolStripMenuItem";
+            this.markaEkleToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.markaEkleToolStripMenuItem.Text = " Marka Ekle";
+            this.markaEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_markaEkle_Click);
+            // 
+            // markaSilToolStripMenuItem
+            // 
+            this.markaSilToolStripMenuItem.Name = "markaSilToolStripMenuItem";
+            this.markaSilToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.markaSilToolStripMenuItem.Text = "Marka Sil";
+            this.markaSilToolStripMenuItem.Click += new System.EventHandler(this.btn_markaSil_Click);
+            // 
+            // markaGüncelleToolStripMenuItem
+            // 
+            this.markaGüncelleToolStripMenuItem.Name = "markaGüncelleToolStripMenuItem";
+            this.markaGüncelleToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.markaGüncelleToolStripMenuItem.Text = "Marka Güncelle";
+            this.markaGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_markaGuncelle_Click);
+            // 
+            // markaTemizleToolStripMenuItem
+            // 
+            this.markaTemizleToolStripMenuItem.Name = "markaTemizleToolStripMenuItem";
+            this.markaTemizleToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.markaTemizleToolStripMenuItem.Text = "Marka Temizle";
+            this.markaTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_markaTemizle_Click);
+            // 
+            // modelİşlemleriToolStripMenuItem
+            // 
+            this.modelİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modelEkleToolStripMenuItem,
+            this.modelSilToolStripMenuItem,
+            this.modelGüncelleToolStripMenuItem,
+            this.modelTemizleToolStripMenuItem});
+            this.modelİşlemleriToolStripMenuItem.Name = "modelİşlemleriToolStripMenuItem";
+            this.modelİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.modelİşlemleriToolStripMenuItem.Text = "Model İşlemleri";
+            // 
+            // modelEkleToolStripMenuItem
+            // 
+            this.modelEkleToolStripMenuItem.Name = "modelEkleToolStripMenuItem";
+            this.modelEkleToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.modelEkleToolStripMenuItem.Text = "Model Ekle";
+            this.modelEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_modelEkle_Click);
+            // 
+            // modelSilToolStripMenuItem
+            // 
+            this.modelSilToolStripMenuItem.Name = "modelSilToolStripMenuItem";
+            this.modelSilToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.modelSilToolStripMenuItem.Text = "Model Sil";
+            this.modelSilToolStripMenuItem.Click += new System.EventHandler(this.btn_modelSil_Click);
+            // 
+            // modelGüncelleToolStripMenuItem
+            // 
+            this.modelGüncelleToolStripMenuItem.Name = "modelGüncelleToolStripMenuItem";
+            this.modelGüncelleToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.modelGüncelleToolStripMenuItem.Text = "Model Güncelle";
+            this.modelGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_modelGuncelle_Click);
+            // 
+            // modelTemizleToolStripMenuItem
+            // 
+            this.modelTemizleToolStripMenuItem.Name = "modelTemizleToolStripMenuItem";
+            this.modelTemizleToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.modelTemizleToolStripMenuItem.Text = "Model Temizle";
+            this.modelTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_modelTemizle_Click);
+            // 
+            // renkİşlemleriToolStripMenuItem
+            // 
+            this.renkİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.renkEkleToolStripMenuItem,
+            this.renkSilToolStripMenuItem,
+            this.renkGüncelleToolStripMenuItem,
+            this.renkTemizleToolStripMenuItem});
+            this.renkİşlemleriToolStripMenuItem.Name = "renkİşlemleriToolStripMenuItem";
+            this.renkİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.renkİşlemleriToolStripMenuItem.Text = "Renk İşlemleri";
+            // 
+            // renkEkleToolStripMenuItem
+            // 
+            this.renkEkleToolStripMenuItem.Name = "renkEkleToolStripMenuItem";
+            this.renkEkleToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.renkEkleToolStripMenuItem.Text = "Renk Ekle";
+            this.renkEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_renkEkle_Click);
+            // 
+            // renkSilToolStripMenuItem
+            // 
+            this.renkSilToolStripMenuItem.Name = "renkSilToolStripMenuItem";
+            this.renkSilToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.renkSilToolStripMenuItem.Text = "Renk Sil";
+            this.renkSilToolStripMenuItem.Click += new System.EventHandler(this.btn_renkSil_Click);
+            // 
+            // renkGüncelleToolStripMenuItem
+            // 
+            this.renkGüncelleToolStripMenuItem.Name = "renkGüncelleToolStripMenuItem";
+            this.renkGüncelleToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.renkGüncelleToolStripMenuItem.Text = "Renk Güncelle";
+            this.renkGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_renkGuncelle_Click);
+            // 
+            // renkTemizleToolStripMenuItem
+            // 
+            this.renkTemizleToolStripMenuItem.Name = "renkTemizleToolStripMenuItem";
+            this.renkTemizleToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.renkTemizleToolStripMenuItem.Text = "Renk Temizle";
+            this.renkTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_renkTemizle_Click);
+            // 
+            // vitesİşlemleriToolStripMenuItem
+            // 
+            this.vitesİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vitesEkleToolStripMenuItem,
+            this.vitesSilToolStripMenuItem,
+            this.vitesGüncelleToolStripMenuItem,
+            this.vitesTemizleToolStripMenuItem});
+            this.vitesİşlemleriToolStripMenuItem.Name = "vitesİşlemleriToolStripMenuItem";
+            this.vitesİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.vitesİşlemleriToolStripMenuItem.Text = "Vites İşlemleri";
+            // 
+            // vitesEkleToolStripMenuItem
+            // 
+            this.vitesEkleToolStripMenuItem.Name = "vitesEkleToolStripMenuItem";
+            this.vitesEkleToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.vitesEkleToolStripMenuItem.Text = "Vites Ekle";
+            this.vitesEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_vitesEkle_Click);
+            // 
+            // vitesSilToolStripMenuItem
+            // 
+            this.vitesSilToolStripMenuItem.Name = "vitesSilToolStripMenuItem";
+            this.vitesSilToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.vitesSilToolStripMenuItem.Text = "Vites Sil";
+            this.vitesSilToolStripMenuItem.Click += new System.EventHandler(this.btn_vitesSil_Click);
+            // 
+            // vitesGüncelleToolStripMenuItem
+            // 
+            this.vitesGüncelleToolStripMenuItem.Name = "vitesGüncelleToolStripMenuItem";
+            this.vitesGüncelleToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.vitesGüncelleToolStripMenuItem.Text = "Vites Güncelle";
+            this.vitesGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_vitesGuncelle_Click);
+            // 
+            // vitesTemizleToolStripMenuItem
+            // 
+            this.vitesTemizleToolStripMenuItem.Name = "vitesTemizleToolStripMenuItem";
+            this.vitesTemizleToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.vitesTemizleToolStripMenuItem.Text = "Vites Temizle";
+            this.vitesTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_vitesTemizle_Click);
+            // 
+            // yakıtİşlemleriToolStripMenuItem
+            // 
+            this.yakıtİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yakıtEkleToolStripMenuItem,
+            this.yakıtSilToolStripMenuItem,
+            this.yakıtGüncelleToolStripMenuItem,
+            this.yakıtTemizleToolStripMenuItem});
+            this.yakıtİşlemleriToolStripMenuItem.Name = "yakıtİşlemleriToolStripMenuItem";
+            this.yakıtİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.yakıtİşlemleriToolStripMenuItem.Text = "Yakıt İşlemleri";
+            // 
+            // yakıtEkleToolStripMenuItem
+            // 
+            this.yakıtEkleToolStripMenuItem.Name = "yakıtEkleToolStripMenuItem";
+            this.yakıtEkleToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.yakıtEkleToolStripMenuItem.Text = "Yakıt Ekle";
+            this.yakıtEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_yakitEkle_Click);
+            // 
+            // yakıtSilToolStripMenuItem
+            // 
+            this.yakıtSilToolStripMenuItem.Name = "yakıtSilToolStripMenuItem";
+            this.yakıtSilToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.yakıtSilToolStripMenuItem.Text = "Yakıt Sil";
+            this.yakıtSilToolStripMenuItem.Click += new System.EventHandler(this.btn_yakitSil_Click);
+            // 
+            // yakıtGüncelleToolStripMenuItem
+            // 
+            this.yakıtGüncelleToolStripMenuItem.Name = "yakıtGüncelleToolStripMenuItem";
+            this.yakıtGüncelleToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.yakıtGüncelleToolStripMenuItem.Text = "Yakıt Güncelle";
+            this.yakıtGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_yakitGuncelle_Click);
+            // 
+            // yakıtTemizleToolStripMenuItem
+            // 
+            this.yakıtTemizleToolStripMenuItem.Name = "yakıtTemizleToolStripMenuItem";
+            this.yakıtTemizleToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.yakıtTemizleToolStripMenuItem.Text = "Yakıt Temizle";
+            this.yakıtTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_yakitTemizle_Click);
+            // 
+            // durumİşlemleriToolStripMenuItem
+            // 
+            this.durumİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.durumEkleToolStripMenuItem,
+            this.durumSilToolStripMenuItem,
+            this.durumGüncelleToolStripMenuItem,
+            this.durumTemizleToolStripMenuItem});
+            this.durumİşlemleriToolStripMenuItem.Name = "durumİşlemleriToolStripMenuItem";
+            this.durumİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.durumİşlemleriToolStripMenuItem.Text = "Durum İşlemleri";
+            // 
+            // durumEkleToolStripMenuItem
+            // 
+            this.durumEkleToolStripMenuItem.Name = "durumEkleToolStripMenuItem";
+            this.durumEkleToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.durumEkleToolStripMenuItem.Text = "Durum Ekle";
+            this.durumEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_durumEkle_Click);
+            // 
+            // durumSilToolStripMenuItem
+            // 
+            this.durumSilToolStripMenuItem.Name = "durumSilToolStripMenuItem";
+            this.durumSilToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.durumSilToolStripMenuItem.Text = "Durum Sil";
+            this.durumSilToolStripMenuItem.Click += new System.EventHandler(this.btn_durumSil_Click);
+            // 
+            // durumGüncelleToolStripMenuItem
+            // 
+            this.durumGüncelleToolStripMenuItem.Name = "durumGüncelleToolStripMenuItem";
+            this.durumGüncelleToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.durumGüncelleToolStripMenuItem.Text = "Durum Güncelle";
+            this.durumGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_durumGuncelle_Click);
+            // 
+            // durumTemizleToolStripMenuItem
+            // 
+            this.durumTemizleToolStripMenuItem.Name = "durumTemizleToolStripMenuItem";
+            this.durumTemizleToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.durumTemizleToolStripMenuItem.Text = "Durum Temizle";
+            this.durumTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_durumTemizle_Click);
+            // 
+            // araçTamirDurumuToolStripMenuItem
+            // 
+            this.araçTamirDurumuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ekleToolStripMenuItem,
+            this.silToolStripMenuItem,
+            this.güncelleToolStripMenuItem,
+            this.temizleToolStripMenuItem});
+            this.araçTamirDurumuToolStripMenuItem.Name = "araçTamirDurumuToolStripMenuItem";
+            this.araçTamirDurumuToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.araçTamirDurumuToolStripMenuItem.Text = "Araç Tamir Durumu";
+            // 
+            // ekleToolStripMenuItem
+            // 
+            this.ekleToolStripMenuItem.Name = "ekleToolStripMenuItem";
+            this.ekleToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.ekleToolStripMenuItem.Text = "Ekle";
+            this.ekleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracTDekle_Click);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.btn_aracTDsil_Click);
+            // 
+            // güncelleToolStripMenuItem
+            // 
+            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.güncelleToolStripMenuItem.Text = "Güncelle";
+            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracTDGuncelle_Click);
+            // 
+            // temizleToolStripMenuItem
+            // 
+            this.temizleToolStripMenuItem.Name = "temizleToolStripMenuItem";
+            this.temizleToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.temizleToolStripMenuItem.Text = "Temizle";
+            this.temizleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracTDtemizle_Click);
+            // 
             // FrmAracIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1694,6 +2191,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MarkaIslemleri)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1835,5 +2333,60 @@
         private System.Windows.Forms.Button btn_AracGuncelle;
         private System.Windows.Forms.Button btn_AracSil;
         private System.Windows.Forms.Button btn_AracEkle;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem araçEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçBakımİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçBakımSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçBakımGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçBakımTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kaskoİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kaskoEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kaskoSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kaskoGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kaskoTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sigortaİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sigortaEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sigortaSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sigortaGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sigortaTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem markaİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem markaEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem markaSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem markaGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem markaTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renkİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renkEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renkSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renkGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renkTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vitesİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vitesEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vitesSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vitesGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vitesTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yakıtİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yakıtEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yakıtSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yakıtGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yakıtTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem durumİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem durumEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem durumSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem durumGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem durumTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem araçTamirDurumuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ekleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem temizleToolStripMenuItem;
     }
 }

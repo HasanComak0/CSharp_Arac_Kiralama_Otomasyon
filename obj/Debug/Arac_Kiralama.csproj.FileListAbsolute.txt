@@ -27,3 +27,6 @@ C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kir.49601
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\.env
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.FrmAracIslemleri.resources
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.frm_odemeIslemleri.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.frm_aracKazaIslemleri.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.frm_kiraEvraklari.resources
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.frm_KiraIslemleri.resources

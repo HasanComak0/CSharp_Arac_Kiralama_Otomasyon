@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,48 +31,121 @@ namespace Arac_Kiralama
 
         private void tbpg_profil_Enter(object sender, EventArgs e)
         {
-            DataTable dt = vt.Select($@"select k.kullaniciAdi,k.gorev_id,k.profil_resim_yolu,p.personelAd,p.personelSoyad,p.tc_No,dogum_Tarihi,p.ehliyet_no,p.telefon,p.email
-                                        from tbl_personel p
-                                        join tbl_kullanici k on k.kullanici_id = p.kullanici_id
-                                        where kullaniciAdi = '{anamenuKullaniciAdi}'");
+            //DataTable dt = vt.Select($@"select k.kullaniciAdi,k.gorev_id,k.profil_resim_yolu,p.personelAd,p.personelSoyad,p.tc_No,dogum_Tarihi,p.ehliyet_no,p.telefon,p.email
+            //                            from tbl_personel p
+            //                            join tbl_kullanici k on k.kullanici_id = p.kullanici_id
+            //                            where kullaniciAdi = '{anamenuKullaniciAdi}'");
 
-            cbx_pozisyon.DataSource = vt.Select($@"Select gorev_id,gorev_adi from tbl_gorev");
+            //cbx_pozisyon.DataSource = vt.Select($@"Select gorev_id,gorev_adi from tbl_gorev");
+            //cbx_pozisyon.DisplayMember = "gorev_adi";
+            //cbx_pozisyon.ValueMember = "gorev_id";
+
+
+            //txt_kullaniciAdi.Text = dt.Rows[0]["kullaniciAdi"].ToString();
+            //var gorevId = Convert.ToInt32(dt.Rows[0]["gorev_id"]);
+            //var profilResimyolu = dt.Rows[0]["profil_resim_yolu"].ToString();
+            //txt_ad.Text = dt.Rows[0]["personelAd"].ToString();
+            //txt_soyad.Text = dt.Rows[0]["personelSoyad"].ToString();
+            //txt_tcNo.Text = dt.Rows[0]["tc_No"].ToString();
+            //dtp_dogumTarihi.Text = dt.Rows[0]["dogum_Tarihi"].ToString();
+            //txt_EhliyetNo.Text = dt.Rows[0]["ehliyet_no"].ToString();
+            //mtb_telefon.Text = dt.Rows[0]["telefon"].ToString();
+            //txt_ePosta.Text = dt.Rows[0]["email"].ToString();
+
+            ////cmb_personelTur.DataSource = vt.Select("select personelTur_id, personelTur from tbl_personelTur");
+            ////cmb_personelTur.DisplayMember = "personelTur";
+            ////cmb_personelTur.ValueMember = "personelTur_id";
+            ////cmb_personelTur.SelectedIndex = -1;
+
+
+
+
+
+            //if (gorevId == 1)
+            //{
+            //    cbx_pozisyon.SelectedIndex = 2;
+            //}
+            //else if (gorevId == 2)
+            //{
+            //    cbx_pozisyon.SelectedIndex = 1;
+            //}
+            //else if (gorevId == 4)
+            //{
+            //    cbx_pozisyon.SelectedIndex = 0;
+            //}
+
+
+            // 1️⃣ Önce kullanıcı bilgisi
+            DataTable dtKullanici = vt.Select($@"
+        SELECT kullanici_id, kullaniciAdi, gorev_id, profil_resim_yolu
+        FROM tbl_kullanici
+        WHERE kullaniciAdi = '{anamenuKullaniciAdi.Replace("'", "''")}'
+    ");
+
+            if (dtKullanici.Rows.Count == 0)
+            {
+                MessageBox.Show("Kullanıcı bulunamadı");
+                return;
+            }
+
+            int kullaniciId = Convert.ToInt32(dtKullanici.Rows[0]["kullanici_id"]);
+            int gorevId = Convert.ToInt32(dtKullanici.Rows[0]["gorev_id"]);
+
+            txt_kullaniciAdi.Text = dtKullanici.Rows[0]["kullaniciAdi"].ToString();
+
+            // 2️⃣ Pozisyon combobox
+            cbx_pozisyon.DataSource = vt.Select("SELECT gorev_id, gorev_adi FROM tbl_gorev");
             cbx_pozisyon.DisplayMember = "gorev_adi";
             cbx_pozisyon.ValueMember = "gorev_id";
+            cbx_pozisyon.SelectedValue = gorevId;
 
+            // PERSONEL Mİ?
+            DataTable dtPersonel = vt.Select($@"
+                    SELECT personelAd, personelSoyad, tc_No, dogum_Tarihi, ehliyet_no, telefon, email
+                    FROM tbl_personel
+                    WHERE kullanici_id = {kullaniciId}
+                ");
 
-            txt_kullaniciAdi.Text = dt.Rows[0]["kullaniciAdi"].ToString();
-            var gorevId = Convert.ToInt32(dt.Rows[0]["gorev_id"]);
-            var profilResimyolu = dt.Rows[0]["profil_resim_yolu"].ToString();
-            txt_ad.Text = dt.Rows[0]["personelAd"].ToString();
-            txt_soyad.Text = dt.Rows[0]["personelSoyad"].ToString();
-            txt_tcNo.Text = dt.Rows[0]["tc_No"].ToString();
-            dtp_dogumTarihi.Text = dt.Rows[0]["dogum_Tarihi"].ToString();
-            txt_EhliyetNo.Text = dt.Rows[0]["ehliyet_no"].ToString();
-            mtb_telefon.Text = dt.Rows[0]["telefon"].ToString();
-            txt_ePosta.Text = dt.Rows[0]["email"].ToString();
-
-            //cmb_personelTur.DataSource = vt.Select("select personelTur_id, personelTur from tbl_personelTur");
-            //cmb_personelTur.DisplayMember = "personelTur";
-            //cmb_personelTur.ValueMember = "personelTur_id";
-            //cmb_personelTur.SelectedIndex = -1;
-
-
-
-
-
-            if (gorevId == 1)
+            if (dtPersonel.Rows.Count > 0)
             {
-                cbx_pozisyon.SelectedIndex = 2;
+                // ✅ PERSONEL PROFİLİ
+                txt_ad.Text = dtPersonel.Rows[0]["personelAd"].ToString();
+                txt_soyad.Text = dtPersonel.Rows[0]["personelSoyad"].ToString();
+                txt_tcNo.Text = dtPersonel.Rows[0]["tc_No"].ToString();
+                dtp_dogumTarihi.Value = Convert.ToDateTime(dtPersonel.Rows[0]["dogum_Tarihi"]);
+                txt_EhliyetNo.Text = dtPersonel.Rows[0]["ehliyet_no"].ToString();
+                mtb_telefon.Text = dtPersonel.Rows[0]["telefon"].ToString();
+                txt_ePosta.Text = dtPersonel.Rows[0]["email"].ToString();
             }
-            else if (gorevId == 2)
+            else
             {
-                cbx_pozisyon.SelectedIndex = 1;
+                // 🟡 MÜŞTERİ PROFİLİ
+                DataTable dtMusteri = vt.Select($@"
+                        SELECT musteriAd, musteriSoyad, telefon, email
+                        FROM tbl_musteri
+                        WHERE kullanici_id = {kullaniciId}
+                    ");
+
+                if (dtMusteri.Rows.Count > 0)
+                {
+                    txt_ad.Text = dtMusteri.Rows[0]["musteriAd"].ToString();
+                    txt_soyad.Text = dtMusteri.Rows[0]["musteriSoyad"].ToString();
+                    mtb_telefon.Text = dtMusteri.Rows[0]["telefon"].ToString();
+                    txt_ePosta.Text = dtMusteri.Rows[0]["email"].ToString();
+                }
             }
-            else if (gorevId == 4)
+
+            // 4️⃣ YETKİYE GÖRE MENÜ GİZLEME
+            if (gorevId == 2) // müşteri
             {
-                cbx_pozisyon.SelectedIndex = 0;
+                tbpg_personelEkle.Visible = false;
+                tbpg_MusteriEkle.Visible = false;
+                
+                tsb_odemeIslemleri.Enabled = false;
+                tsb_aracIslemleri.Enabled=false;
+                tsb_kiraEvraklari.Enabled = false;
             }
+
         }
         public int kullaniciGorevID;
         private void AnaMenu_Load(object sender, EventArgs e)
@@ -119,111 +193,111 @@ namespace Arac_Kiralama
         private void btn_kaydet_Click(object sender, EventArgs e)
         {
 
-                if (txt_pKullaniciAdi.Text == "")
-                {
+            if (txt_pKullaniciAdi.Text == "")
+            {
 
-                    MessageBox.Show("Kullanıcı Adı Boş Kalamaz.");
-                    return;
-                }
+                MessageBox.Show("Kullanıcı Adı Boş Kalamaz.");
+                return;
+            }
             DataTable dt2 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
                                         join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pKullaniciAdi.Text}'");
 
             if (dt2.Rows.Count > 0)
-                {
-                    lbl_Uyarilar.Text = "Bu Kullanıcı Adı Zaten Alınmış";
-                    return;
-                }
-                DataTable dt3 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+            {
+                lbl_Uyarilar.Text = "Bu Kullanıcı Adı Zaten Alınmış";
+                return;
+            }
+            DataTable dt3 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
                                         join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pTcNo.Text}'");
 
             if (dt3.Rows.Count > 0)
-                {
-                    lbl_Uyarilar.Text = "Bu TC'ye Sahip Biri Zaten Var";
-                    return;
-                }
-                if (txt_pAd.Text == "")
-                {
-                    lbl_Uyarilar.Text = "Ad Boş Bırakılamaz";
-                    return;
-                }
-                if ((txt_pAd.Text.Length < 2 || txt_pAd.Text.Length > 30))
-                {
-                    lbl_Uyarilar.Text = "Ad en az 2 en fazla 30 karakter olabilir.";
-                    return;
-                }
-                if (txt_pSoyad.Text == "")
-                {
-                    lbl_Uyarilar.Text = "Soyad Boş Bırakılamaz";
-                    return;
-                }
-                if (txt_pSoyad.Text.Length < 2 || txt_pSoyad.Text.Length > 30)
-                {
-                    lbl_Uyarilar.Text = "Soyad en az 2 en fazla 30 karakter olabilir.";
-                    return;
-                }
-                if (dtp_pDogumTarihi.Text == "")
-                {
-                    lbl_Uyarilar.Text = "Doğum Tarihi Boş Bırakılamaz.";
-                    return;
-                }
-                if (txt_pEhliyetNo.Text == "")
-                {
-                    lbl_Uyarilar.Text = "EhliyetNo Boş Bırakılamaz";
-                    return;
-                }
-                if (mtb_pTelefon.Text == "")
-                {
-                    lbl_Uyarilar.Text = "Telefon Numarası Boş Bırakılamaz.";
-                    return;
-                }
-                DataTable dt4 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+            {
+                lbl_Uyarilar.Text = "Bu TC'ye Sahip Biri Zaten Var";
+                return;
+            }
+            if (txt_pAd.Text == "")
+            {
+                lbl_Uyarilar.Text = "Ad Boş Bırakılamaz";
+                return;
+            }
+            if ((txt_pAd.Text.Length < 2 || txt_pAd.Text.Length > 30))
+            {
+                lbl_Uyarilar.Text = "Ad en az 2 en fazla 30 karakter olabilir.";
+                return;
+            }
+            if (txt_pSoyad.Text == "")
+            {
+                lbl_Uyarilar.Text = "Soyad Boş Bırakılamaz";
+                return;
+            }
+            if (txt_pSoyad.Text.Length < 2 || txt_pSoyad.Text.Length > 30)
+            {
+                lbl_Uyarilar.Text = "Soyad en az 2 en fazla 30 karakter olabilir.";
+                return;
+            }
+            if (dtp_pDogumTarihi.Text == "")
+            {
+                lbl_Uyarilar.Text = "Doğum Tarihi Boş Bırakılamaz.";
+                return;
+            }
+            if (txt_pEhliyetNo.Text == "")
+            {
+                lbl_Uyarilar.Text = "EhliyetNo Boş Bırakılamaz";
+                return;
+            }
+            if (mtb_pTelefon.Text == "")
+            {
+                lbl_Uyarilar.Text = "Telefon Numarası Boş Bırakılamaz.";
+                return;
+            }
+            DataTable dt4 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
                                         join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{mtb_pTelefon.Text}'");
             if (dt4.Rows.Count > 0)
-                {
-                    lbl_Uyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
-                    return;
-                }
-                DataTable dt5 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
+            {
+                lbl_Uyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
+                return;
+            }
+            DataTable dt5 = vt.Select($@"select k.kullaniciAdi,p.telefon,p.email,p.tc_no from tbl_kullanici as k
                                         join tbl_personel as p on p.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_pEposta.Text}'");
             if (dt5.Rows.Count > 0)
-                {
-                    lbl_Uyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
-                    return;
-                }
-                if (sifreDegistirme.buyukHarfVarmi(txtpSifre.Text) == false)
-                {
-                    lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Büyük Harf Olmalıdır.";
-                    return;
-                }
-                if (sifreDegistirme.kucukHarfVarmi(txtpSifre.Text) == false)
-                {
-                    lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Küçük Harf Olmalıdır.";
-                    return;
-                }
-                if (sifreDegistirme.sayiVarmi(txtpSifre.Text) == false)
-                {
-                    lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Sayı Bulunmalıdır.";
-                    return;
-                }
-                if (sifreDegistirme.sembolVarMi(txtpSifre.Text) == false)
-                {
-                    lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Sembol Bulunmalıdır.";
-                    return;
-                }
-                if (txtpSifre.Text != txt_pSifreTekrar.Text)
-                {
-                    MessageBox.Show("Şifreler Uyuşmuyor.");
-                    return;
-                }
-                else if (txt_pOnayKodu.Text.ToUpper() != dogrulamaKodu)
-                {
-                    MessageBox.Show("Doğrulama Kodu Hatalı");
-                    return;
-                }
-                else
-                {
-                    /// ORTAK: KULLANICI EKLE
-                    vt.Insert($@"
+            {
+                lbl_Uyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
+                return;
+            }
+            if (sifreDegistirme.buyukHarfVarmi(txtpSifre.Text) == false)
+            {
+                lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Büyük Harf Olmalıdır.";
+                return;
+            }
+            if (sifreDegistirme.kucukHarfVarmi(txtpSifre.Text) == false)
+            {
+                lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Küçük Harf Olmalıdır.";
+                return;
+            }
+            if (sifreDegistirme.sayiVarmi(txtpSifre.Text) == false)
+            {
+                lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Sayı Bulunmalıdır.";
+                return;
+            }
+            if (sifreDegistirme.sembolVarMi(txtpSifre.Text) == false)
+            {
+                lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Sembol Bulunmalıdır.";
+                return;
+            }
+            if (txtpSifre.Text != txt_pSifreTekrar.Text)
+            {
+                MessageBox.Show("Şifreler Uyuşmuyor.");
+                return;
+            }
+            else if (txt_pOnayKodu.Text.ToUpper() != dogrulamaKodu)
+            {
+                MessageBox.Show("Doğrulama Kodu Hatalı");
+                return;
+            }
+            else
+            {
+                /// ORTAK: KULLANICI EKLE
+                vt.Insert($@"
                                     INSERT INTO tbl_kullanici (kullaniciAdi, sifre, gorev_id, olusturulma_tarihi, profil_resim_yolu)
                                     VALUES(
                                         '{txt_pKullaniciAdi.Text.Replace("'", "''")}',
@@ -234,23 +308,23 @@ namespace Arac_Kiralama
                                     )
                                 ");
 
-                    // YENİ KULLANICI ID'sini al
-                    DataTable dataT = vt.Select($@"
+                // YENİ KULLANICI ID'sini al
+                DataTable dataT = vt.Select($@"
                                                     SELECT TOP 1 kullanici_id
                                                     FROM tbl_kullanici
                                                     WHERE kullaniciAdi = '{txt_pKullaniciAdi.Text.Replace("'", "''")}'
                                                     ORDER BY kullanici_id DESC
                                                 ");
 
-                    int yeniKullaniciID = Convert.ToInt32(dataT.Rows[0]["kullanici_id"]);
+                int yeniKullaniciID = Convert.ToInt32(dataT.Rows[0]["kullanici_id"]);
 
-                   
 
-                    // ------------------------------------------------------------
-                    // PERSONEL SEÇİLİYSE PERSONEL TABLOSUNA EKLE
-                    // ------------------------------------------------------------
 
-                    vt.Insert($@"
+                // ------------------------------------------------------------
+                // PERSONEL SEÇİLİYSE PERSONEL TABLOSUNA EKLE
+                // ------------------------------------------------------------
+
+                vt.Insert($@"
                                     INSERT INTO tbl_personel
                                     (kullanici_id, personelAd, personelSoyad, tc_no, dogum_tarihi, ehliyet_no, telefon, email)
                                     VALUES(
@@ -264,19 +338,19 @@ namespace Arac_Kiralama
                                         '{txt_pEposta.Text.Replace("'", "''")}'
                                     )
                                 ");
-                    MessageBox.Show("Personel Kaydı Başarıyla Oluşturuldu.");
+                MessageBox.Show("Personel Kaydı Başarıyla Oluşturuldu.");
 
-                }
+            }
 
-            
+
         }
         string dogrulamaKodu;
         private void btn_kodGonder_Click(object sender, EventArgs e)
         {
             dogrulamaKodu = "";
             dogrulamaKodu = mail.KodOlustur();
-            mail.EmailGonder(txt_pEposta.Text,dogrulamaKodu);
-            
+            mail.EmailGonder(txt_pEposta.Text, dogrulamaKodu);
+
         }
         private void tbpg_personelEkle_Enter(object sender, EventArgs e)
         {
@@ -327,12 +401,12 @@ namespace Arac_Kiralama
                 {
                     MessageBox.Show("Kullanıcı Silinirken Bir Hata Oluştu...\nHata: " + ex.Message);
                 }
-                
+
 
             }
             else
                 MessageBox.Show("Silinecek Kullanıcıyı Tablodan Seçiniz.");
-            
+
         }
 
         private void btn_personelGuncelle_Click(object sender, EventArgs e)
@@ -472,12 +546,12 @@ namespace Arac_Kiralama
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Beklenmedik Bir Hata Oluştu...\nHata: "+ex.Message);       
+                    MessageBox.Show("Beklenmedik Bir Hata Oluştu...\nHata: " + ex.Message);
                 }
-                
+
 
             }
-                
+
 
 
         }
@@ -629,8 +703,8 @@ namespace Arac_Kiralama
                 // ------------------------------------------------------------
                 // MÜŞTERİ SEÇİLİYSE MÜŞTERİ TABLOSUNA EKLE
                 // ------------------------------------------------------------
-               
-                    vt.Insert($@"
+
+                vt.Insert($@"
                                     INSERT INTO tbl_musteri
                                     (kullanici_id, tc_no, dogum_tarihi, ehliyet_no, email, telefon, musteriAd, musteriSoyad)
                                     VALUES(
@@ -644,8 +718,8 @@ namespace Arac_Kiralama
                                         '{txt_mSoyad.Text.Replace("'", "''")}'
                                     )
                                 ");
-                    MessageBox.Show("Müşteri Kaydı Başarıyla Oluşturuldu.");
-                
+                MessageBox.Show("Müşteri Kaydı Başarıyla Oluşturuldu.");
+
             }
         }
 
@@ -653,7 +727,7 @@ namespace Arac_Kiralama
         {
             dogrulamaKodu = "";
             dogrulamaKodu = mail.KodOlustur();
-            mail.EmailGonder(txt_mEposta.Text,dogrulamaKodu);
+            mail.EmailGonder(txt_mEposta.Text, dogrulamaKodu);
         }
 
         private void dgv_Musteriler_SelectionChanged(object sender, EventArgs e)
@@ -675,7 +749,7 @@ namespace Arac_Kiralama
             txt_mEposta.Text = dgv_Musteriler.SelectedRows[0].Cells["email"].Value.ToString();
         }
 
-        
+
 
         private void tbpg_MusteriEkle_Enter(object sender, EventArgs e)
         {
@@ -829,7 +903,7 @@ namespace Arac_Kiralama
             {
                 try
                 {
-                   
+
 
                     vt.UpdateDelete($@"
                                         update tbl_musteri
@@ -892,7 +966,7 @@ namespace Arac_Kiralama
 
         private void tsb_aracIslemleri_Click(object sender, EventArgs e)
         {
-            TabControl.Visible=false;
+            TabControl.Visible = false;
             FormAc(new FrmAracIslemleri());
 
         }
@@ -900,7 +974,7 @@ namespace Arac_Kiralama
         private void tsb_odemeIslemleri_Click(object sender, EventArgs e)
         {
             TabControl.Visible = false;
-            FormAc( new frm_odemeIslemleri());
+            FormAc(new frm_odemeIslemleri());
         }
 
         Form aktifForm = null;
@@ -923,6 +997,76 @@ namespace Arac_Kiralama
             frm.Show();
         }
 
-        
+        private void tsb_HasarIslemleri_Click(object sender, EventArgs e)
+        {
+            TabControl.Visible = false;
+            FormAc(new frm_aracKazaIslemleri());
+        }
+
+        private void tsb_kiraEvraklari_Click(object sender, EventArgs e)
+        {
+            TabControl.Visible = false;
+            FormAc(new frm_kiraEvraklari());
+        }
+
+        private void tsb_kiraIslmeleri_Click(object sender, EventArgs e)
+        {
+            TabControl.Visible = false;
+            FormAc(new frm_KiraIslemleri());
+        }
+
+        private void tstcmb_manuleBaslatma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tstcmb_manuleBaslatma.SelectedIndex == 0)
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                key.SetValue("Araç Kiralama", "\"" + Application.ExecutablePath + "\"");
+                MessageBox.Show("Başlangıca Kaydedildi");
+            }
+
+            else
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                key.DeleteValue("Araç Kiralama");
+            }
+        }
+
+        private void notifyIconMenu_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.Visible == false)
+                this.Show();
+            else
+                this.Hide();
+        }
+
+        private void gosterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void gizleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void simgeDurumunaAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cikisYapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void kapatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void AnaMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

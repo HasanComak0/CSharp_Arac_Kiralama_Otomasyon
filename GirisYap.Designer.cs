@@ -40,6 +40,7 @@
             this.txt_sifre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_kullaniciAdi = new System.Windows.Forms.TextBox();
+            this.cbx_beniHatirla = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbx_beniHatirla);
             this.groupBox1.Controls.Add(this.btn_sifreGizleGoster);
             this.groupBox1.Controls.Add(this.btn_SifremiUnuttum);
             this.groupBox1.Controls.Add(this.btn_Yenile);
@@ -157,6 +159,17 @@
             this.txt_kullaniciAdi.Size = new System.Drawing.Size(190, 22);
             this.txt_kullaniciAdi.TabIndex = 1;
             // 
+            // cbx_beniHatirla
+            // 
+            this.cbx_beniHatirla.AutoSize = true;
+            this.cbx_beniHatirla.Location = new System.Drawing.Point(335, 190);
+            this.cbx_beniHatirla.Name = "cbx_beniHatirla";
+            this.cbx_beniHatirla.Size = new System.Drawing.Size(98, 20);
+            this.cbx_beniHatirla.TabIndex = 13;
+            this.cbx_beniHatirla.Text = "Beni Hatırla";
+            this.cbx_beniHatirla.UseVisualStyleBackColor = true;
+            this.cbx_beniHatirla.CheckedChanged += new System.EventHandler(this.cbx_beniHatirla_CheckedChanged);
+            // 
             // GirisYap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,5 +201,6 @@
         private System.Windows.Forms.Button btn_GirisYap;
         private System.Windows.Forms.Button btn_SifremiUnuttum;
         private System.Windows.Forms.Button btn_sifreGizleGoster;
+        private System.Windows.Forms.CheckBox cbx_beniHatirla;
     }
 }

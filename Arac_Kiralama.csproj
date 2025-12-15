@@ -83,6 +83,11 @@
     <Compile Include="AnaMenu.Designer.cs">
       <DependentUpon>AnaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ayarlar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ayarlar.settings</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +99,24 @@
     </Compile>
     <Compile Include="FrmAracIslemleri.Designer.cs">
       <DependentUpon>FrmAracIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_aracKazaIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_aracKazaIslemleri.Designer.cs">
+      <DependentUpon>frm_aracKazaIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_kiraEvraklari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_kiraEvraklari.Designer.cs">
+      <DependentUpon>frm_kiraEvraklari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_KiraIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_KiraIslemleri.Designer.cs">
+      <DependentUpon>frm_KiraIslemleri.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_odemeIslemleri.cs">
       <SubType>Form</SubType>
@@ -138,6 +161,15 @@
     <EmbeddedResource Include="FrmAracIslemleri.resx">
       <DependentUpon>FrmAracIslemleri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_aracKazaIslemleri.resx">
+      <DependentUpon>frm_aracKazaIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_kiraEvraklari.resx">
+      <DependentUpon>frm_kiraEvraklari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_KiraIslemleri.resx">
+      <DependentUpon>frm_KiraIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_odemeIslemleri.resx">
       <DependentUpon>frm_odemeIslemleri.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +196,10 @@
     </EmbeddedResource>
     <None Include=".env">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ayarlar.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ayarlar.Designer.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

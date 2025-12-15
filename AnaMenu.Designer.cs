@@ -28,8 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaMenu));
             this.TabControl = new System.Windows.Forms.TabControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.şifreDeğiştirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personelEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personelSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personelGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personelTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.müşteriEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.müşteriSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.müşteriGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.müşteriTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbpg_profil = new System.Windows.Forms.TabPage();
             this.cbx_pozisyon = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -115,9 +126,22 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsb_profil_Islemleri = new System.Windows.Forms.ToolStripButton();
             this.tsb_aracIslemleri = new System.Windows.Forms.ToolStripButton();
-            this.panelContainer = new System.Windows.Forms.Panel();
             this.tsb_odemeIslemleri = new System.Windows.Forms.ToolStripButton();
+            this.tsb_HasarIslemleri = new System.Windows.Forms.ToolStripButton();
+            this.tsb_kiraEvraklari = new System.Windows.Forms.ToolStripButton();
+            this.tsb_kiraIslmeleri = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tstcmb_manuleBaslatma = new System.Windows.Forms.ToolStripComboBox();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.notifyIconMenu = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gosterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simgeDurumunaAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cikisYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kapatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabControl.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.tbpg_profil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbpg_personelEkle.SuspendLayout();
@@ -126,10 +150,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Musteriler)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panelContainer.SuspendLayout();
+            this.contextMenuNotify.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
             // 
+            this.TabControl.ContextMenuStrip = this.contextMenuStrip1;
             this.TabControl.Controls.Add(this.tbpg_profil);
             this.TabControl.Controls.Add(this.tbpg_personelEkle);
             this.TabControl.Controls.Add(this.tbpg_MusteriEkle);
@@ -137,12 +163,92 @@
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1924, 656);
+            this.TabControl.Size = new System.Drawing.Size(1924, 659);
             this.TabControl.TabIndex = 0;
             this.TabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControl_Selecting);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.şifreDeğiştirToolStripMenuItem,
+            this.personelEkleToolStripMenuItem,
+            this.personelSilToolStripMenuItem,
+            this.personelGüncelleToolStripMenuItem,
+            this.personelTemizleToolStripMenuItem,
+            this.müşteriEkleToolStripMenuItem,
+            this.müşteriSilToolStripMenuItem,
+            this.müşteriGüncelleToolStripMenuItem,
+            this.müşteriTemizleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 220);
+            // 
+            // şifreDeğiştirToolStripMenuItem
+            // 
+            this.şifreDeğiştirToolStripMenuItem.Name = "şifreDeğiştirToolStripMenuItem";
+            this.şifreDeğiştirToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.şifreDeğiştirToolStripMenuItem.Text = "Şifre Değiştir";
+            this.şifreDeğiştirToolStripMenuItem.Click += new System.EventHandler(this.btn_kullaniciSifreDegistir_Click);
+            // 
+            // personelEkleToolStripMenuItem
+            // 
+            this.personelEkleToolStripMenuItem.Name = "personelEkleToolStripMenuItem";
+            this.personelEkleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.personelEkleToolStripMenuItem.Text = "Personel Ekle";
+            this.personelEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
+            // personelSilToolStripMenuItem
+            // 
+            this.personelSilToolStripMenuItem.Name = "personelSilToolStripMenuItem";
+            this.personelSilToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.personelSilToolStripMenuItem.Text = "Personel Sil";
+            this.personelSilToolStripMenuItem.Click += new System.EventHandler(this.btn_sil_Click);
+            // 
+            // personelGüncelleToolStripMenuItem
+            // 
+            this.personelGüncelleToolStripMenuItem.Name = "personelGüncelleToolStripMenuItem";
+            this.personelGüncelleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.personelGüncelleToolStripMenuItem.Text = "Personel Güncelle";
+            this.personelGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_personelGuncelle_Click);
+            // 
+            // personelTemizleToolStripMenuItem
+            // 
+            this.personelTemizleToolStripMenuItem.Name = "personelTemizleToolStripMenuItem";
+            this.personelTemizleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.personelTemizleToolStripMenuItem.Text = "Personel Temizle";
+            this.personelTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_pTemizle_Click);
+            // 
+            // müşteriEkleToolStripMenuItem
+            // 
+            this.müşteriEkleToolStripMenuItem.Name = "müşteriEkleToolStripMenuItem";
+            this.müşteriEkleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.müşteriEkleToolStripMenuItem.Text = "Müşteri Ekle";
+            this.müşteriEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_musteriKaydet_Click);
+            // 
+            // müşteriSilToolStripMenuItem
+            // 
+            this.müşteriSilToolStripMenuItem.Name = "müşteriSilToolStripMenuItem";
+            this.müşteriSilToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.müşteriSilToolStripMenuItem.Text = "Müşteri Sil";
+            this.müşteriSilToolStripMenuItem.Click += new System.EventHandler(this.btn_musteriSil_Click);
+            // 
+            // müşteriGüncelleToolStripMenuItem
+            // 
+            this.müşteriGüncelleToolStripMenuItem.Name = "müşteriGüncelleToolStripMenuItem";
+            this.müşteriGüncelleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.müşteriGüncelleToolStripMenuItem.Text = "Müşteri Güncelle";
+            this.müşteriGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_musteriGuncelle_Click);
+            // 
+            // müşteriTemizleToolStripMenuItem
+            // 
+            this.müşteriTemizleToolStripMenuItem.Name = "müşteriTemizleToolStripMenuItem";
+            this.müşteriTemizleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.müşteriTemizleToolStripMenuItem.Text = "Müşteri Temizle";
+            this.müşteriTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_mTemizle_Click);
+            // 
             // tbpg_profil
             // 
+            this.tbpg_profil.ContextMenuStrip = this.contextMenuStrip1;
             this.tbpg_profil.Controls.Add(this.cbx_pozisyon);
             this.tbpg_profil.Controls.Add(this.label8);
             this.tbpg_profil.Controls.Add(this.btn_kullaniciSifreDegistir);
@@ -167,7 +273,7 @@
             this.tbpg_profil.Location = new System.Drawing.Point(4, 25);
             this.tbpg_profil.Name = "tbpg_profil";
             this.tbpg_profil.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_profil.Size = new System.Drawing.Size(1916, 627);
+            this.tbpg_profil.Size = new System.Drawing.Size(1916, 630);
             this.tbpg_profil.TabIndex = 0;
             this.tbpg_profil.Text = "Profil";
             this.tbpg_profil.UseVisualStyleBackColor = true;
@@ -411,7 +517,7 @@
             this.tbpg_personelEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_personelEkle.Name = "tbpg_personelEkle";
             this.tbpg_personelEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_personelEkle.Size = new System.Drawing.Size(1916, 631);
+            this.tbpg_personelEkle.Size = new System.Drawing.Size(1916, 630);
             this.tbpg_personelEkle.TabIndex = 1;
             this.tbpg_personelEkle.Text = "Personel Ekle";
             this.tbpg_personelEkle.UseVisualStyleBackColor = true;
@@ -728,7 +834,7 @@
             this.tbpg_MusteriEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_MusteriEkle.Name = "tbpg_MusteriEkle";
             this.tbpg_MusteriEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1916, 631);
+            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1916, 630);
             this.tbpg_MusteriEkle.TabIndex = 2;
             this.tbpg_MusteriEkle.Text = "Müşteri Ekle";
             this.tbpg_MusteriEkle.UseVisualStyleBackColor = true;
@@ -1017,10 +1123,15 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsb_profil_Islemleri,
             this.tsb_aracIslemleri,
-            this.tsb_odemeIslemleri});
+            this.tsb_odemeIslemleri,
+            this.tsb_HasarIslemleri,
+            this.tsb_kiraEvraklari,
+            this.tsb_kiraIslmeleri,
+            this.toolStripLabel1,
+            this.tstcmb_manuleBaslatma});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1924, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 28);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1029,7 +1140,7 @@
             this.tsb_profil_Islemleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_profil_Islemleri.Image")));
             this.tsb_profil_Islemleri.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_profil_Islemleri.Name = "tsb_profil_Islemleri";
-            this.tsb_profil_Islemleri.Size = new System.Drawing.Size(128, 28);
+            this.tsb_profil_Islemleri.Size = new System.Drawing.Size(128, 25);
             this.tsb_profil_Islemleri.Text = "Profil İşlemleri";
             this.tsb_profil_Islemleri.Click += new System.EventHandler(this.tsb_profil_Islemleri_Click);
             // 
@@ -1038,27 +1149,127 @@
             this.tsb_aracIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_aracIslemleri.Image")));
             this.tsb_aracIslemleri.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_aracIslemleri.Name = "tsb_aracIslemleri";
-            this.tsb_aracIslemleri.Size = new System.Drawing.Size(123, 28);
+            this.tsb_aracIslemleri.Size = new System.Drawing.Size(123, 25);
             this.tsb_aracIslemleri.Text = "Araç İşlemleri";
             this.tsb_aracIslemleri.Click += new System.EventHandler(this.tsb_aracIslemleri_Click);
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Controls.Add(this.TabControl);
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 31);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1924, 656);
-            this.panelContainer.TabIndex = 2;
             // 
             // tsb_odemeIslemleri
             // 
             this.tsb_odemeIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_odemeIslemleri.Image")));
             this.tsb_odemeIslemleri.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_odemeIslemleri.Name = "tsb_odemeIslemleri";
-            this.tsb_odemeIslemleri.Size = new System.Drawing.Size(142, 28);
+            this.tsb_odemeIslemleri.Size = new System.Drawing.Size(142, 25);
             this.tsb_odemeIslemleri.Text = "Ödeme İşlemleri";
             this.tsb_odemeIslemleri.Click += new System.EventHandler(this.tsb_odemeIslemleri_Click);
+            // 
+            // tsb_HasarIslemleri
+            // 
+            this.tsb_HasarIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_HasarIslemleri.Image")));
+            this.tsb_HasarIslemleri.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_HasarIslemleri.Name = "tsb_HasarIslemleri";
+            this.tsb_HasarIslemleri.Size = new System.Drawing.Size(131, 25);
+            this.tsb_HasarIslemleri.Text = "Hasar İşlemleri";
+            this.tsb_HasarIslemleri.Click += new System.EventHandler(this.tsb_HasarIslemleri_Click);
+            // 
+            // tsb_kiraEvraklari
+            // 
+            this.tsb_kiraEvraklari.Image = ((System.Drawing.Image)(resources.GetObject("tsb_kiraEvraklari.Image")));
+            this.tsb_kiraEvraklari.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_kiraEvraklari.Name = "tsb_kiraEvraklari";
+            this.tsb_kiraEvraklari.Size = new System.Drawing.Size(119, 25);
+            this.tsb_kiraEvraklari.Text = "Kira Evrakları";
+            this.tsb_kiraEvraklari.Click += new System.EventHandler(this.tsb_kiraEvraklari_Click);
+            // 
+            // tsb_kiraIslmeleri
+            // 
+            this.tsb_kiraIslmeleri.Image = ((System.Drawing.Image)(resources.GetObject("tsb_kiraIslmeleri.Image")));
+            this.tsb_kiraIslmeleri.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_kiraIslmeleri.Name = "tsb_kiraIslmeleri";
+            this.tsb_kiraIslmeleri.Size = new System.Drawing.Size(152, 25);
+            this.tsb_kiraIslmeleri.Text = "Kiralama İşlemleri";
+            this.tsb_kiraIslmeleri.Click += new System.EventHandler(this.tsb_kiraIslmeleri_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(149, 25);
+            this.toolStripLabel1.Text = "Başlatma Seçenekleri";
+            // 
+            // tstcmb_manuleBaslatma
+            // 
+            this.tstcmb_manuleBaslatma.AutoCompleteCustomSource.AddRange(new string[] {
+            "Windowsla Başlatma",
+            "Manuel Başlatma"});
+            this.tstcmb_manuleBaslatma.Items.AddRange(new object[] {
+            "Windowsla Başlat",
+            "Manuel Başlat"});
+            this.tstcmb_manuleBaslatma.Name = "tstcmb_manuleBaslatma";
+            this.tstcmb_manuleBaslatma.Size = new System.Drawing.Size(121, 28);
+            this.tstcmb_manuleBaslatma.SelectedIndexChanged += new System.EventHandler(this.tstcmb_manuleBaslatma_SelectedIndexChanged);
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.TabControl);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 28);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1924, 659);
+            this.panelContainer.TabIndex = 2;
+            // 
+            // notifyIconMenu
+            // 
+            this.notifyIconMenu.ContextMenuStrip = this.contextMenuNotify;
+            this.notifyIconMenu.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconMenu.Icon")));
+            this.notifyIconMenu.Text = "Araç Kiralama";
+            this.notifyIconMenu.Visible = true;
+            this.notifyIconMenu.DoubleClick += new System.EventHandler(this.notifyIconMenu_DoubleClick);
+            // 
+            // contextMenuNotify
+            // 
+            this.contextMenuNotify.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gosterToolStripMenuItem,
+            this.gizleToolStripMenuItem,
+            this.simgeDurumunaAlToolStripMenuItem,
+            this.cikisYapToolStripMenuItem,
+            this.kapatToolStripMenuItem});
+            this.contextMenuNotify.Name = "contextMenuNotify";
+            this.contextMenuNotify.Size = new System.Drawing.Size(212, 124);
+            // 
+            // gosterToolStripMenuItem
+            // 
+            this.gosterToolStripMenuItem.Name = "gosterToolStripMenuItem";
+            this.gosterToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.gosterToolStripMenuItem.Text = "Göster";
+            this.gosterToolStripMenuItem.Click += new System.EventHandler(this.gosterToolStripMenuItem_Click);
+            // 
+            // gizleToolStripMenuItem
+            // 
+            this.gizleToolStripMenuItem.Name = "gizleToolStripMenuItem";
+            this.gizleToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.gizleToolStripMenuItem.Text = "Gizle";
+            this.gizleToolStripMenuItem.Click += new System.EventHandler(this.gizleToolStripMenuItem_Click);
+            // 
+            // simgeDurumunaAlToolStripMenuItem
+            // 
+            this.simgeDurumunaAlToolStripMenuItem.Name = "simgeDurumunaAlToolStripMenuItem";
+            this.simgeDurumunaAlToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.simgeDurumunaAlToolStripMenuItem.Text = "Simge Durumuna Al";
+            this.simgeDurumunaAlToolStripMenuItem.Click += new System.EventHandler(this.simgeDurumunaAlToolStripMenuItem_Click);
+            // 
+            // cikisYapToolStripMenuItem
+            // 
+            this.cikisYapToolStripMenuItem.Name = "cikisYapToolStripMenuItem";
+            this.cikisYapToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.cikisYapToolStripMenuItem.Text = "Çıkış Yap";
+            this.cikisYapToolStripMenuItem.Click += new System.EventHandler(this.cikisYapToolStripMenuItem_Click);
+            // 
+            // kapatToolStripMenuItem
+            // 
+            this.kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
+            this.kapatToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.kapatToolStripMenuItem.Text = "Kapat";
+            this.kapatToolStripMenuItem.Click += new System.EventHandler(this.kapatToolStripMenuItem_Click);
             // 
             // AnaMenu
             // 
@@ -1067,11 +1278,14 @@
             this.ClientSize = new System.Drawing.Size(1924, 687);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AnaMenu";
             this.Text = "AnaMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaMenu_FormClosing);
             this.Load += new System.EventHandler(this.AnaMenu_Load);
             this.TabControl.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tbpg_profil.ResumeLayout(false);
             this.tbpg_profil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1084,6 +1298,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panelContainer.ResumeLayout(false);
+            this.contextMenuNotify.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1178,6 +1393,28 @@
         private System.Windows.Forms.ToolStripButton tsb_profil_Islemleri;
         private System.Windows.Forms.ToolStripButton tsb_aracIslemleri;
         private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.ToolStripButton tsb_odemeIslemleri;
+        private System.Windows.Forms.ToolStripButton tsb_HasarIslemleri;
+        private System.Windows.Forms.ToolStripButton tsb_kiraEvraklari;
+        private System.Windows.Forms.ToolStripButton tsb_kiraIslmeleri;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox tstcmb_manuleBaslatma;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem şifreDeğiştirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personelEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personelSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personelGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personelTemizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem müşteriEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem müşteriSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem müşteriGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem müşteriTemizleToolStripMenuItem;
+        private System.Windows.Forms.NotifyIcon notifyIconMenu;
+        public System.Windows.Forms.ToolStripButton tsb_odemeIslemleri;
+        private System.Windows.Forms.ContextMenuStrip contextMenuNotify;
+        private System.Windows.Forms.ToolStripMenuItem gosterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gizleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simgeDurumunaAlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cikisYapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kapatToolStripMenuItem;
     }
 }
