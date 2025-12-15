@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_kullaniciAdi = new System.Windows.Forms.TextBox();
@@ -38,6 +39,10 @@
             this.btn_geriDon = new System.Windows.Forms.Button();
             this.txt_eskiSifre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.şifreDeğiştirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.geriDönToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -134,11 +139,35 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Eski Şifre:";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.şifreDeğiştirToolStripMenuItem,
+            this.geriDönToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 52);
+            // 
+            // şifreDeğiştirToolStripMenuItem
+            // 
+            this.şifreDeğiştirToolStripMenuItem.Name = "şifreDeğiştirToolStripMenuItem";
+            this.şifreDeğiştirToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.şifreDeğiştirToolStripMenuItem.Text = "Şifre Değiştir";
+            this.şifreDeğiştirToolStripMenuItem.Click += new System.EventHandler(this.btn_kullaniciSifreDegistirOnayla_Click);
+            // 
+            // geriDönToolStripMenuItem
+            // 
+            this.geriDönToolStripMenuItem.Name = "geriDönToolStripMenuItem";
+            this.geriDönToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.geriDönToolStripMenuItem.Text = "Geri Dön";
+            this.geriDönToolStripMenuItem.Click += new System.EventHandler(this.btn_geriDon_Click);
+            // 
             // KullaniciSifreDegistirme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 349);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.txt_eskiSifre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_geriDon);
@@ -156,6 +185,7 @@
             this.Text = "KullaniciSifreDegistirme";
             this.Load += new System.EventHandler(this.KullaniciSifreDegistirme_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KullaniciSifreDegistirme_KeyDown);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +203,8 @@
         private System.Windows.Forms.Button btn_geriDon;
         private System.Windows.Forms.TextBox txt_eskiSifre;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem şifreDeğiştirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem geriDönToolStripMenuItem;
     }
 }

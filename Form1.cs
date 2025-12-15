@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
 
 namespace Arac_Kiralama
 {
@@ -39,5 +40,6 @@ namespace Arac_Kiralama
                 pnl_KullaniciOlustur_Click(sender, e);
 
         }
+       
     }
 }

@@ -58,5 +58,29 @@ namespace Arac_Kiralama {
                 this["beniHatirla"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"\"")]
+        public string LisansAnahtari {
+            get {
+                return ((string)(this["LisansAnahtari"]));
+            }
+            set {
+                this["LisansAnahtari"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LisansliMi {
+            get {
+                return ((bool)(this["LisansliMi"]));
+            }
+            set {
+                this["LisansliMi"] = value;
+            }
+        }
     }
 }

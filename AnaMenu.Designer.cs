@@ -158,6 +158,10 @@
             this.btn_GE_ekle = new System.Windows.Forms.Button();
             this.txt_GE_gorevAd = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
+            this.görevEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.görevSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.görevGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.görevTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabControl.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.tbpg_profil.SuspendLayout();
@@ -189,7 +193,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1924, 656);
+            this.TabControl.Size = new System.Drawing.Size(1924, 659);
             this.TabControl.TabIndex = 0;
             this.TabControl.SelectedIndexChanged += new System.EventHandler(this.n);
             this.TabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControl_Selecting);
@@ -206,9 +210,13 @@
             this.müşteriEkleToolStripMenuItem,
             this.müşteriSilToolStripMenuItem,
             this.müşteriGüncelleToolStripMenuItem,
-            this.müşteriTemizleToolStripMenuItem});
+            this.müşteriTemizleToolStripMenuItem,
+            this.görevEkleToolStripMenuItem,
+            this.görevSilToolStripMenuItem,
+            this.görevGüncelleToolStripMenuItem,
+            this.görevTemizleToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 220);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 316);
             // 
             // şifreDeğiştirToolStripMenuItem
             // 
@@ -861,7 +869,7 @@
             this.tbpg_MusteriEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_MusteriEkle.Name = "tbpg_MusteriEkle";
             this.tbpg_MusteriEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1916, 630);
+            this.tbpg_MusteriEkle.Size = new System.Drawing.Size(1916, 627);
             this.tbpg_MusteriEkle.TabIndex = 2;
             this.tbpg_MusteriEkle.Text = "Müşteri Ekle";
             this.tbpg_MusteriEkle.UseVisualStyleBackColor = true;
@@ -1158,7 +1166,7 @@
             this.tstcmb_manuleBaslatma});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1924, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 28);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1238,9 +1246,9 @@
             // 
             this.panelContainer.Controls.Add(this.TabControl);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 31);
+            this.panelContainer.Location = new System.Drawing.Point(0, 28);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1924, 656);
+            this.panelContainer.Size = new System.Drawing.Size(1924, 659);
             this.panelContainer.TabIndex = 2;
             // 
             // notifyIconMenu
@@ -1494,11 +1502,40 @@
             this.label37.TabIndex = 120;
             this.label37.Text = "Görev Adı";
             // 
+            // görevEkleToolStripMenuItem
+            // 
+            this.görevEkleToolStripMenuItem.Name = "görevEkleToolStripMenuItem";
+            this.görevEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.görevEkleToolStripMenuItem.Text = "Görev Ekle";
+            this.görevEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_GE_ekle_Click);
+            // 
+            // görevSilToolStripMenuItem
+            // 
+            this.görevSilToolStripMenuItem.Name = "görevSilToolStripMenuItem";
+            this.görevSilToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.görevSilToolStripMenuItem.Text = "Görev Sil";
+            this.görevSilToolStripMenuItem.Click += new System.EventHandler(this.btn_GE_sil_Click);
+            // 
+            // görevGüncelleToolStripMenuItem
+            // 
+            this.görevGüncelleToolStripMenuItem.Name = "görevGüncelleToolStripMenuItem";
+            this.görevGüncelleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.görevGüncelleToolStripMenuItem.Text = "Görev Güncelle";
+            this.görevGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_GE_guncelle_Click);
+            // 
+            // görevTemizleToolStripMenuItem
+            // 
+            this.görevTemizleToolStripMenuItem.Name = "görevTemizleToolStripMenuItem";
+            this.görevTemizleToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.görevTemizleToolStripMenuItem.Text = "Görev Temizle";
+            this.görevTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_GE_temizle_Click);
+            // 
             // AnaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 687);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1667,5 +1704,9 @@
         private System.Windows.Forms.Button btn_GE_ekle;
         private System.Windows.Forms.TextBox txt_GE_gorevAd;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.ToolStripMenuItem görevEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem görevSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem görevGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem görevTemizleToolStripMenuItem;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_SifreDegistirOnay = new System.Windows.Forms.Button();
             this.txt_kullaniciAdi = new System.Windows.Forms.TextBox();
@@ -44,6 +45,10 @@
             this.rbtn_Personel = new System.Windows.Forms.RadioButton();
             this.txt_onayKodu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.şifreyiDeğiştirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kodGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -184,11 +189,35 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Onay Kodu:";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.şifreyiDeğiştirToolStripMenuItem,
+            this.kodGönderToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 52);
+            // 
+            // şifreyiDeğiştirToolStripMenuItem
+            // 
+            this.şifreyiDeğiştirToolStripMenuItem.Name = "şifreyiDeğiştirToolStripMenuItem";
+            this.şifreyiDeğiştirToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.şifreyiDeğiştirToolStripMenuItem.Text = "Şifreyi Değiştir";
+            this.şifreyiDeğiştirToolStripMenuItem.Click += new System.EventHandler(this.btn_SifreDegistirOnay_Click);
+            // 
+            // kodGönderToolStripMenuItem
+            // 
+            this.kodGönderToolStripMenuItem.Name = "kodGönderToolStripMenuItem";
+            this.kodGönderToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.kodGönderToolStripMenuItem.Text = "Kod Gönder";
+            this.kodGönderToolStripMenuItem.Click += new System.EventHandler(this.btn_KodGonder_Click);
+            // 
             // SifreDegistirme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 299);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.txt_onayKodu);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.rbtn_Personel);
@@ -209,6 +238,7 @@
             this.Name = "SifreDegistirme";
             this.Text = "SifreDegistirme";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SifreDegistirme_KeyDown);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +262,8 @@
         private System.Windows.Forms.RadioButton rbtn_Personel;
         private System.Windows.Forms.TextBox txt_onayKodu;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem şifreyiDeğiştirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kodGönderToolStripMenuItem;
     }
 }

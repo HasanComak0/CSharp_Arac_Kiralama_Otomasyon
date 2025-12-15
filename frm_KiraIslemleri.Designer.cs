@@ -229,28 +229,28 @@
             // kiraEkleToolStripMenuItem
             // 
             this.kiraEkleToolStripMenuItem.Name = "kiraEkleToolStripMenuItem";
-            this.kiraEkleToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.kiraEkleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.kiraEkleToolStripMenuItem.Text = "Kira Ekle";
             this.kiraEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracKiralamaEkle_Click);
             // 
             // kiraSilToolStripMenuItem
             // 
             this.kiraSilToolStripMenuItem.Name = "kiraSilToolStripMenuItem";
-            this.kiraSilToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.kiraSilToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.kiraSilToolStripMenuItem.Text = "Kira Sil";
             this.kiraSilToolStripMenuItem.Click += new System.EventHandler(this.btn_aracKiralamaSil_Click);
             // 
             // kiraGüncelleToolStripMenuItem
             // 
             this.kiraGüncelleToolStripMenuItem.Name = "kiraGüncelleToolStripMenuItem";
-            this.kiraGüncelleToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.kiraGüncelleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.kiraGüncelleToolStripMenuItem.Text = "Kira Güncelle";
             this.kiraGüncelleToolStripMenuItem.Click += new System.EventHandler(this.tbn_aracKiralamaGuncelle_Click);
             // 
             // kiraTemizleToolStripMenuItem
             // 
             this.kiraTemizleToolStripMenuItem.Name = "kiraTemizleToolStripMenuItem";
-            this.kiraTemizleToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.kiraTemizleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.kiraTemizleToolStripMenuItem.Text = "Kira Temizle";
             this.kiraTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracKiralamaTemizle_Click);
             // 
@@ -857,6 +857,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.KeyPreview = true;

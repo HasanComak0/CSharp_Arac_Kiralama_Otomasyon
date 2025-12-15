@@ -51,7 +51,7 @@ namespace Arac_Kiralama
         private void btn_kaydet_Click(object sender, EventArgs e)
         {
             DataTable dt = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= " + txt_kullaniciAdi.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_kullaniciAdi.Text.Replace("'", "''")}'");
 
             //kullanicilar.Clear();
             //emailler.Clear();
@@ -66,8 +66,7 @@ namespace Arac_Kiralama
             //    tcler.Add(row["tc_no"].ToString());
             //}
 
-            if (dt.Rows.Count > 0)
-            {
+            
 
 
 
@@ -78,7 +77,7 @@ namespace Arac_Kiralama
                     return;
                 }
                 DataTable dt2 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_kullaniciAdi.Text}'");
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= '{txt_kullaniciAdi.Text.Replace("'","''")}'");
 
                 if (dt2.Rows.Count > 0)
                 {
@@ -86,7 +85,7 @@ namespace Arac_Kiralama
                     return;
                 }
                 DataTable dt3 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= '{txt_tcNo.Text}'");
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.tc_no= '{txt_tcNo.Text.Replace("'", "''")}'");
 
                 if (dt3.Rows.Count > 0)
                 {
@@ -130,14 +129,14 @@ namespace Arac_Kiralama
                 }
 
                 DataTable dt4 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= '{mtb_telefon.Text}'");
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= '{mtb_telefon.Text.Replace("'", "''")}'");
                 if (dt4.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu Telefon Numarası Sistemde Kayıtlı... Başka Bir Telefon Numarası Giriniz.";
                     return;
                 }
                 DataTable dt5 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= '{txt_ePosta.Text}'");
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.email= '{txt_ePosta.Text.Replace("'", "''")}'");
                 if (dt5.Rows.Count > 0)
                 {
                     lbl_Uyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
@@ -222,7 +221,7 @@ namespace Arac_Kiralama
                     //this.Hide();
                 }
 
-            }
+            
 
         }
 

@@ -31,3 +31,5 @@ C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.frm_kiraEvraklari.resources
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.frm_KiraIslemleri.resources
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\AracKiralama_HC.dll
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.CodeDom.dll
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.CodeDom.xml

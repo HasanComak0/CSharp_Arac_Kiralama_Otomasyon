@@ -33,51 +33,7 @@ namespace Arac_Kiralama
 
         private void tbpg_profil_Enter(object sender, EventArgs e)
         {
-            //DataTable dt = vt.Select($@"select k.kullaniciAdi,k.gorev_id,k.profil_resim_yolu,p.personelAd,p.personelSoyad,p.tc_No,dogum_Tarihi,p.ehliyet_no,p.telefon,p.email
-            //                            from tbl_personel p
-            //                            join tbl_kullanici k on k.kullanici_id = p.kullanici_id
-            //                            where kullaniciAdi = '{anamenuKullaniciAdi}'");
-
-            //cbx_pozisyon.DataSource = vt.Select($@"Select gorev_id,gorev_adi from tbl_gorev");
-            //cbx_pozisyon.DisplayMember = "gorev_adi";
-            //cbx_pozisyon.ValueMember = "gorev_id";
-
-
-            //txt_kullaniciAdi.Text = dt.Rows[0]["kullaniciAdi"].ToString();
-            //var gorevId = Convert.ToInt32(dt.Rows[0]["gorev_id"]);
-            //var profilResimyolu = dt.Rows[0]["profil_resim_yolu"].ToString();
-            //txt_ad.Text = dt.Rows[0]["personelAd"].ToString();
-            //txt_soyad.Text = dt.Rows[0]["personelSoyad"].ToString();
-            //txt_tcNo.Text = dt.Rows[0]["tc_No"].ToString();
-            //dtp_dogumTarihi.Text = dt.Rows[0]["dogum_Tarihi"].ToString();
-            //txt_EhliyetNo.Text = dt.Rows[0]["ehliyet_no"].ToString();
-            //mtb_telefon.Text = dt.Rows[0]["telefon"].ToString();
-            //txt_ePosta.Text = dt.Rows[0]["email"].ToString();
-
-            ////cmb_personelTur.DataSource = vt.Select("select personelTur_id, personelTur from tbl_personelTur");
-            ////cmb_personelTur.DisplayMember = "personelTur";
-            ////cmb_personelTur.ValueMember = "personelTur_id";
-            ////cmb_personelTur.SelectedIndex = -1;
-
-
-
-
-
-            //if (gorevId == 1)
-            //{
-            //    cbx_pozisyon.SelectedIndex = 2;
-            //}
-            //else if (gorevId == 2)
-            //{
-            //    cbx_pozisyon.SelectedIndex = 1;
-            //}
-            //else if (gorevId == 4)
-            //{
-            //    cbx_pozisyon.SelectedIndex = 0;
-            //}
-
-
-            // 1️⃣ Önce kullanıcı bilgisi
+           
             DataTable dtKullanici = vt.Select($@"
         SELECT kullanici_id, kullaniciAdi, gorev_id, profil_resim_yolu
         FROM tbl_kullanici
@@ -101,7 +57,7 @@ namespace Arac_Kiralama
             cbx_pozisyon.ValueMember = "gorev_id";
             cbx_pozisyon.SelectedValue = gorevId;
 
-            // PERSONEL Mİ?
+            
             DataTable dtPersonel = vt.Select($@"
                     SELECT personelAd, personelSoyad, tc_No, dogum_Tarihi, ehliyet_no, telefon, email
                     FROM tbl_personel
@@ -110,7 +66,6 @@ namespace Arac_Kiralama
 
             if (dtPersonel.Rows.Count > 0)
             {
-                // ✅ PERSONEL PROFİLİ
                 txt_ad.Text = dtPersonel.Rows[0]["personelAd"].ToString();
                 txt_soyad.Text = dtPersonel.Rows[0]["personelSoyad"].ToString();
                 txt_tcNo.Text = dtPersonel.Rows[0]["tc_No"].ToString();
@@ -121,7 +76,7 @@ namespace Arac_Kiralama
             }
             else
             {
-                // 🟡 MÜŞTERİ PROFİLİ
+               
                 DataTable dtMusteri = vt.Select($@"
                         SELECT musteriAd, musteriSoyad, telefon, email
                         FROM tbl_musteri
@@ -137,11 +92,13 @@ namespace Arac_Kiralama
                 }
             }
 
-            // 4️⃣ YETKİYE GÖRE MENÜ GİZLEME
+            
             if (gorevId == 2) // müşteri
             {
                 tbpg_personelEkle.Visible = false;
                 tbpg_MusteriEkle.Visible = false;
+                tbpg_gorevIslemleri.Visible = false;
+                tbpg_kullaniciEkle.Visible = false;
 
                 tsb_odemeIslemleri.Enabled = false;
                 tsb_aracIslemleri.Enabled = false;
@@ -177,6 +134,16 @@ namespace Arac_Kiralama
             }
 
             if (e.TabPage == tbpg_MusteriEkle && kullaniciGorevID != 4)
+            {
+                MessageBox.Show("Bu Sayfaya Yalnızca Admin Erişebilir.");
+                e.Cancel = true;
+            }
+            if (e.TabPage == tbpg_kullaniciEkle && kullaniciGorevID != 4)
+            {
+                MessageBox.Show("Bu Sayfaya Yalnızca Admin Erişebilir.");
+                e.Cancel = true;
+            }
+            if (e.TabPage == tbpg_gorevIslemleri && kullaniciGorevID != 4)
             {
                 MessageBox.Show("Bu Sayfaya Yalnızca Admin Erişebilir.");
                 e.Cancel = true;

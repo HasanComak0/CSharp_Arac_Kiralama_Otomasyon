@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_sifreGizleGoster = new System.Windows.Forms.Button();
@@ -41,8 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_kullaniciAdi = new System.Windows.Forms.TextBox();
             this.cbx_beniHatirla = new System.Windows.Forms.CheckBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.girişYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.şifremiUnuttumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kodYenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -55,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.ContextMenuStrip = this.contextMenuStrip1;
             this.groupBox1.Controls.Add(this.cbx_beniHatirla);
             this.groupBox1.Controls.Add(this.btn_sifreGizleGoster);
             this.groupBox1.Controls.Add(this.btn_SifremiUnuttum);
@@ -170,6 +177,37 @@
             this.cbx_beniHatirla.UseVisualStyleBackColor = true;
             this.cbx_beniHatirla.CheckedChanged += new System.EventHandler(this.cbx_beniHatirla_CheckedChanged);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.girişYapToolStripMenuItem,
+            this.şifremiUnuttumToolStripMenuItem,
+            this.kodYenileToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 76);
+            // 
+            // girişYapToolStripMenuItem
+            // 
+            this.girişYapToolStripMenuItem.Name = "girişYapToolStripMenuItem";
+            this.girişYapToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.girişYapToolStripMenuItem.Text = "Giriş Yap";
+            this.girişYapToolStripMenuItem.Click += new System.EventHandler(this.btn_GirisYap_Click);
+            // 
+            // şifremiUnuttumToolStripMenuItem
+            // 
+            this.şifremiUnuttumToolStripMenuItem.Name = "şifremiUnuttumToolStripMenuItem";
+            this.şifremiUnuttumToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.şifremiUnuttumToolStripMenuItem.Text = "Şifremi Unuttum";
+            this.şifremiUnuttumToolStripMenuItem.Click += new System.EventHandler(this.btn_SifremiUnuttum_Click);
+            // 
+            // kodYenileToolStripMenuItem
+            // 
+            this.kodYenileToolStripMenuItem.Name = "kodYenileToolStripMenuItem";
+            this.kodYenileToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.kodYenileToolStripMenuItem.Text = "Kod Yenile";
+            this.kodYenileToolStripMenuItem.Click += new System.EventHandler(this.btn_sifreGizleGoster_Click);
+            // 
             // GirisYap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -204,5 +243,9 @@
         private System.Windows.Forms.Button btn_SifremiUnuttum;
         private System.Windows.Forms.Button btn_sifreGizleGoster;
         private System.Windows.Forms.CheckBox cbx_beniHatirla;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem girişYapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem şifremiUnuttumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kodYenileToolStripMenuItem;
     }
 }

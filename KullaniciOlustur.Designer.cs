@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciOlustur));
             this.txt_onayKodu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,7 +57,12 @@
             this.dtp_dogumTarihi = new System.Windows.Forms.DateTimePicker();
             this.mtb_telefon = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Uyarilar = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.kaydetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kodGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profilFotoğrafıSeçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_onayKodu
@@ -287,11 +293,43 @@
             this.lbl_Uyarilar.TabIndex = 51;
             this.lbl_Uyarilar.Text = "Kullanıcı Adı:";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kaydetToolStripMenuItem,
+            this.kodGönderToolStripMenuItem,
+            this.profilFotoğrafıSeçToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 76);
+            // 
+            // kaydetToolStripMenuItem
+            // 
+            this.kaydetToolStripMenuItem.Name = "kaydetToolStripMenuItem";
+            this.kaydetToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
+            this.kaydetToolStripMenuItem.Text = "Kaydet";
+            this.kaydetToolStripMenuItem.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
+            // kodGönderToolStripMenuItem
+            // 
+            this.kodGönderToolStripMenuItem.Name = "kodGönderToolStripMenuItem";
+            this.kodGönderToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
+            this.kodGönderToolStripMenuItem.Text = "Kod Gönder";
+            this.kodGönderToolStripMenuItem.Click += new System.EventHandler(this.btn_kodGonder_Click);
+            // 
+            // profilFotoğrafıSeçToolStripMenuItem
+            // 
+            this.profilFotoğrafıSeçToolStripMenuItem.Name = "profilFotoğrafıSeçToolStripMenuItem";
+            this.profilFotoğrafıSeçToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
+            this.profilFotoğrafıSeçToolStripMenuItem.Text = "Profil Fotoğrafı Seç";
+            this.profilFotoğrafıSeçToolStripMenuItem.Click += new System.EventHandler(this.btn_profilFotoSec_Click);
+            // 
             // KullaniciOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 522);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.lbl_Uyarilar);
             this.Controls.Add(this.mtb_telefon);
             this.Controls.Add(this.dtp_dogumTarihi);
@@ -325,6 +363,7 @@
             this.Load += new System.EventHandler(this.KullaniciOlustur_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KullaniciOlustur_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +398,9 @@
         private System.Windows.Forms.DateTimePicker dtp_dogumTarihi;
         private System.Windows.Forms.MaskedTextBox mtb_telefon;
         private System.Windows.Forms.Label lbl_Uyarilar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem kaydetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kodGönderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profilFotoğrafıSeçToolStripMenuItem;
     }
 }
