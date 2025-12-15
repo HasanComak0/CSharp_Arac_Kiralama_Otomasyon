@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AracKiralama_HC">
+      <HintPath>.\AracKiralama_HC.dll</HintPath>
+    </Reference>
     <Reference Include="dotenv.net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\dotenv.net.4.0.0\lib\netstandard2.0\dotenv.net.dll</HintPath>
     </Reference>
@@ -151,7 +154,6 @@
     <Compile Include="SifreDegistirme.Designer.cs">
       <DependentUpon>SifreDegistirme.cs</DependentUpon>
     </Compile>
-    <Compile Include="Veritabani.cs" />
     <EmbeddedResource Include="AnaMenu.resx">
       <DependentUpon>AnaMenu.cs</DependentUpon>
     </EmbeddedResource>
