@@ -1279,11 +1279,13 @@
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "AnaMenu";
             this.Text = "AnaMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaMenu_FormClosing);
             this.Load += new System.EventHandler(this.AnaMenu_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AnaMenu_KeyDown);
             this.TabControl.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.tbpg_profil.ResumeLayout(false);

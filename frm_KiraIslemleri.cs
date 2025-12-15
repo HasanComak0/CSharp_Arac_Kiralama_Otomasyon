@@ -598,5 +598,17 @@ namespace Arac_Kiralama
             // DATAGRIDVIEW SEÇİMİ KALDIR
             dgv_aracKiralamaIslemi.ClearSelection();
         }
+
+        private void frm_KiraIslemleri_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.E)
+                btn_aracKiralamaEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.S)
+                btn_aracKiralamaSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.G)
+                tbn_aracKiralamaGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.T)
+                btn_aracKiralamaTemizle_Click(sender, e);
+        }
     }
 }

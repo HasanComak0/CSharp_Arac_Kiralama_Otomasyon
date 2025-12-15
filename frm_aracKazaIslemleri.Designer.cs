@@ -372,7 +372,7 @@
             this.tamirDurumGüncelleToolStripMenuItem,
             this.tamirDurumTemizleToolStripMenuItem});
             this.araçTamirDurumuToolStripMenuItem.Name = "araçTamirDurumuToolStripMenuItem";
-            this.araçTamirDurumuToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.araçTamirDurumuToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
             this.araçTamirDurumuToolStripMenuItem.Text = "Araç Tamir Durumu";
             // 
             // tamirDurumEkleToolStripMenuItem
@@ -451,11 +451,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_aracKazaIslemleri";
             this.Text = "frm_aracKazaIslemleri";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_aracKazaIslemleri_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_aracKazaIslemleri_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_aracHasarIslemleri)).EndInit();

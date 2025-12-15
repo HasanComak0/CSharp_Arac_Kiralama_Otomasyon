@@ -1068,5 +1068,17 @@ namespace Arac_Kiralama
         {
             Application.Exit();
         }
+
+        private void AnaMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+                if(e.Alt && e.KeyCode == Keys.E)
+                      btn_kaydet_Click(sender, e);
+                  else if (e.Alt && e.KeyCode == Keys.S)
+                    btn_sil_Click(sender, e);
+                else if (e.Alt && e.KeyCode == Keys.G)
+                    btn_personelGuncelle_Click(sender, e);
+                else if (e.Alt && e.KeyCode == Keys.T)
+                    btn_pTemizle_Click(sender, e);
+        }
     }
 }

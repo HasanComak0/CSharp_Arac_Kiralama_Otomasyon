@@ -318,5 +318,17 @@ values({cmb_aracPlaka.SelectedValue},{cmb_kiraAciklama.SelectedValue},'{txt_hasa
             dtp_hasarTarihi.Text = "";
             dgv_aracHasarIslemleri.ClearSelection();        
         }
+
+        private void frm_aracKazaIslemleri_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.E)
+                btn_aracHasarEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.S)
+                btn_aracHasarSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.G)
+                btn_aracHasarGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.T)
+                btn_aracHasarTemizle_Click(sender, e);
+        }
     }
 }

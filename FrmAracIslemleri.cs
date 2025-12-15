@@ -1653,9 +1653,20 @@ namespace Arac_Kiralama
 
 
 
+
         #endregion
 
-        
+        private void FrmAracIslemleri_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.E)
+                btn_AracEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.S)
+                btn_AracSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.G)
+                btn_AracGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.T)
+                btn_aracTemizle_Click(sender, e);
+        }
     }
 
 

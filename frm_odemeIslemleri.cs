@@ -281,5 +281,17 @@ namespace Arac_Kiralama
             cmb_odemeTuru.SelectedIndex = -1;
             dgv_odemeBilgileriIslemleri.ClearSelection();
         }
+
+        private void frm_odemeIslemleri_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.E)
+                btn_odemebilgisiEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.S)
+                btn_odemeBilgisiSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.G)
+                btn_odemeBilgisiGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.T)
+                btn_odemebilgisiTemizle_Click(sender, e);
+        }
     }
 }

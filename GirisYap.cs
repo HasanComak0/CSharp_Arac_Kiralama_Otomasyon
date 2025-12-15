@@ -156,7 +156,7 @@ namespace Arac_Kiralama
                 ayarlar.Default.beniHatirla = false;
                 ayarlar.Default.Save();
                 txt_kullaniciAdi.Text = "";
-                txt_sifre.Text = "";
+                txt_sifre.Text="";
             }
         }
     }
