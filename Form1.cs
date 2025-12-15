@@ -30,5 +30,14 @@ namespace Arac_Kiralama
             this.Hide();
             girisYap.Show();
         }
+
+        private void KullaniciOlusturGirisYap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.G)
+                pnl_GirisYap_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.K)
+                pnl_KullaniciOlustur_Click(sender, e);
+
+        }
     }
 }

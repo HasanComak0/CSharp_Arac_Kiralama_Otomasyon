@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VTI;
+using AracKiralama_HC;
 
 
 namespace Arac_Kiralama
@@ -17,6 +17,7 @@ namespace Arac_Kiralama
     {
         VTI.Veritabani vt = new VTI.Veritabani();
         Mail_islemler mail = new Mail_islemler();
+        AracKiralama_HC.DigerIslemler dg = new AracKiralama_HC.DigerIslemler();
         public GirisYap()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace Arac_Kiralama
                     hak--;
                     txt_Kod.Text = mail.KodOlustur();
                 }
-                else if (MD5Sifrele(txt_sifre.Text) != gelenSifre)
+                else if (dg.MD5Sifrele(txt_sifre.Text) != gelenSifre)
                 {
                     MessageBox.Show("Şifre Hatalı Tekrar Deneyiniz. Kalan hak: " + hak);
                     hak--;
@@ -102,27 +103,7 @@ namespace Arac_Kiralama
         }
         
 
-        public string MD5Sifrele(string sifrelenecekMetin)
-        {
-
-            // MD5CryptoServiceProvider sınıfının bir örneğini oluşturduk.
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            //Parametre olarak gelen veriyi byte dizisine dönüştürdük.
-            byte[] dizi = Encoding.UTF8.GetBytes(sifrelenecekMetin);
-            //dizinin hash'ini hesaplattık.
-            dizi = md5.ComputeHash(dizi);
-            //Hashlenmiş verileri depolamak için StringBuilder nesnesi oluşturduk.
-            StringBuilder sb = new StringBuilder();
-            //Her byte'i dizi içerisinden alarak string türüne dönüştürdük.
-
-            foreach (byte ba in dizi)
-            {
-                sb.Append(ba.ToString("x2").ToLower());
-            }
-
-            //hexadecimal(onaltılık) stringi geri döndürdük.
-            return sb.ToString();
-        }
+        
 
         private void btn_SifremiUnuttum_Click(object sender, EventArgs e)
         {
@@ -158,6 +139,18 @@ namespace Arac_Kiralama
                 txt_kullaniciAdi.Text = "";
                 txt_sifre.Text="";
             }
+        }
+
+        private void GirisYap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.E)
+                btn_GirisYap_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.S)
+                btn_sifreGizleGoster_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.U)
+                btn_SifremiUnuttum_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.Y)
+                btn_Yenile_Click(sender, e);
         }
     }
 }

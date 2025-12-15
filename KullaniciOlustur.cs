@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AracKiralama_HC;
 
 namespace Arac_Kiralama
 {
@@ -26,7 +27,7 @@ namespace Arac_Kiralama
         string yazi = "";
         string dogrulamaKodu;
         GirisYap girisYap = new GirisYap();
-
+        AracKiralama_HC.DigerIslemler dg = new AracKiralama_HC.DigerIslemler();
 
         VTI.Veritabani vt = new VTI.Veritabani();
         Mail_islemler mail = new Mail_islemler();
@@ -34,7 +35,7 @@ namespace Arac_Kiralama
         {
             dogrulamaKodu = "";
             dogrulamaKodu = mail.KodOlustur();
-            mail.EmailGonder(txt_ePosta.Text,dogrulamaKodu);
+            mail.EmailGonder(txt_ePosta.Text, dogrulamaKodu);
         }
 
 
@@ -50,7 +51,7 @@ namespace Arac_Kiralama
         private void btn_kaydet_Click(object sender, EventArgs e)
         {
             DataTable dt = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
-                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= "+ txt_kullaniciAdi.Text);
+                                        join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where k.kullaniciAdi= " + txt_kullaniciAdi.Text);
 
             //kullanicilar.Clear();
             //emailler.Clear();
@@ -67,8 +68,8 @@ namespace Arac_Kiralama
 
             if (dt.Rows.Count > 0)
             {
-                
-                
+
+
 
                 if (txt_kullaniciAdi.Text == "")
                 {
@@ -127,7 +128,7 @@ namespace Arac_Kiralama
                     lbl_Uyarilar.Text = "Telefon Numarası Boş Bırakılamaz.";
                     return;
                 }
-              
+
                 DataTable dt4 = vt.Select($@"select k.kullaniciAdi,m.telefon,m.email,m.tc_no from tbl_kullanici as k
                                         join tbl_Musteri as m on m.kullanici_id= k.kullanici_id where m.telefon= '{mtb_telefon.Text}'");
                 if (dt4.Rows.Count > 0)
@@ -142,17 +143,17 @@ namespace Arac_Kiralama
                     lbl_Uyarilar.Text = "Bu E-Posta Sistemde Zaten Kayıtlı... Başka Bir E-Posta Deneyin.";
                     return;
                 }
-                if (sifreDegistirme.buyukHarfVarmi(txt_Sifre.Text)==false)
+                if (sifreDegistirme.buyukHarfVarmi(txt_Sifre.Text) == false)
                 {
                     lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Büyük Harf Olmalıdır.";
                     return;
                 }
-                if (sifreDegistirme.kucukHarfVarmi(txt_Sifre.Text)==false)
+                if (sifreDegistirme.kucukHarfVarmi(txt_Sifre.Text) == false)
                 {
                     lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Küçük Harf Olmalıdır.";
                     return;
                 }
-                if (sifreDegistirme.sayiVarmi(txt_Sifre.Text)==false)
+                if (sifreDegistirme.sayiVarmi(txt_Sifre.Text) == false)
                 {
                     lbl_Uyarilar.Text = "Şifrenizde En az 1 Adet Sayı Bulunmalıdır.";
                     return;
@@ -174,13 +175,13 @@ namespace Arac_Kiralama
                 }
                 else
                 {
-                    
+
                     // KULLANICI EKLE
                     vt.Insert($@"
                                 insert into tbl_kullanici(kullaniciAdi, sifre, gorev_id, olusturulma_tarihi, profil_resim_yolu)
                                 values(
                                     '{txt_kullaniciAdi.Text.Replace("'", "''")}',
-                                    '{girisYap.MD5Sifrele(txt_sifreTekrar.Text)}',
+                                    '{dg.MD5Sifrele(txt_sifreTekrar.Text)}',
                                     2,
                                     GETDATE(),
                                     'DenemeResimYolu'
@@ -213,21 +214,39 @@ namespace Arac_Kiralama
                                 )
                             ");
 
-                   DialogResult dr = MessageBox.Show("Kullanıcı Oluşturuldu... Uygulamayı Yeniden Başlatın.");
-                    if(dr == DialogResult.OK)
+                    DialogResult dr = MessageBox.Show("Kullanıcı Oluşturuldu... Uygulamayı Yeniden Başlatın.");
+                    if (dr == DialogResult.OK)
                         Application.Restart();
                     //AnaMenu ana = new AnaMenu();
                     //ana.Show();
                     //this.Hide();
                 }
-            
+
             }
-            
+
         }
 
         private void KullaniciOlustur_Load(object sender, EventArgs e)
         {
             lbl_Uyarilar.Text = "";
         }
+
+        private void KullaniciOlustur_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.E)
+                btn_kaydet_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.K)
+                btn_kodGonder_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.P)
+                btn_profilFotoSec_Click(sender, e);
+        }
+
+
+        private void btn_profilFotoSec_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+

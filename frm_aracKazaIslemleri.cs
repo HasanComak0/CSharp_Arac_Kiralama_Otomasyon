@@ -329,6 +329,15 @@ values({cmb_aracPlaka.SelectedValue},{cmb_kiraAciklama.SelectedValue},'{txt_hasa
                 btn_aracHasarGuncelle_Click(sender, e);
             else if (e.Alt && e.KeyCode == Keys.T)
                 btn_aracHasarTemizle_Click(sender, e);
+
+            if (e.Alt && e.KeyCode == Keys.Z)
+                btn_tamirDurumEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.X)
+                btn_tamirDurumSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.C)
+                btn_tamirDurumGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.V)
+                btn_tamirDurumTemizle_Click(sender, e);
         }
     }
 }

@@ -259,6 +259,7 @@
             this.btn_profilFotoSec.TabIndex = 47;
             this.btn_profilFotoSec.Text = "Profil Fotoğrafı Seç";
             this.btn_profilFotoSec.UseVisualStyleBackColor = true;
+            this.btn_profilFotoSec.Click += new System.EventHandler(this.btn_profilFotoSec_Click);
             // 
             // dtp_dogumTarihi
             // 
@@ -318,9 +319,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_kullaniciAdi);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "KullaniciOlustur";
             this.Text = "KullaniciOlustur";
             this.Load += new System.EventHandler(this.KullaniciOlustur_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KullaniciOlustur_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

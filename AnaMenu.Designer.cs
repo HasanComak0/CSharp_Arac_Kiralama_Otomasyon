@@ -140,6 +140,24 @@
             this.simgeDurumunaAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cikisYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kapatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbpg_kullaniciEkle = new System.Windows.Forms.TabPage();
+            this.tbpg_gorevIslemleri = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtp_KE_olusturulmaTarihi = new System.Windows.Forms.DateTimePicker();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txt_KEkullaniciAdi = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cmb_KEgorev = new System.Windows.Forms.ComboBox();
+            this.dgv_kullaniciEkleme = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgv_GE_goruntule = new System.Windows.Forms.DataGridView();
+            this.btn_GE_temizle = new System.Windows.Forms.Button();
+            this.btn_GE_guncelle = new System.Windows.Forms.Button();
+            this.btn_GE_sil = new System.Windows.Forms.Button();
+            this.btn_GE_ekle = new System.Windows.Forms.Button();
+            this.txt_GE_gorevAd = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.tbpg_profil.SuspendLayout();
@@ -151,6 +169,12 @@
             this.toolStrip1.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.contextMenuNotify.SuspendLayout();
+            this.tbpg_kullaniciEkle.SuspendLayout();
+            this.tbpg_gorevIslemleri.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_kullaniciEkleme)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_GE_goruntule)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl
@@ -159,12 +183,15 @@
             this.TabControl.Controls.Add(this.tbpg_profil);
             this.TabControl.Controls.Add(this.tbpg_personelEkle);
             this.TabControl.Controls.Add(this.tbpg_MusteriEkle);
+            this.TabControl.Controls.Add(this.tbpg_kullaniciEkle);
+            this.TabControl.Controls.Add(this.tbpg_gorevIslemleri);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1924, 659);
+            this.TabControl.Size = new System.Drawing.Size(1924, 656);
             this.TabControl.TabIndex = 0;
+            this.TabControl.SelectedIndexChanged += new System.EventHandler(this.n);
             this.TabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControl_Selecting);
             // 
             // contextMenuStrip1
@@ -517,7 +544,7 @@
             this.tbpg_personelEkle.Location = new System.Drawing.Point(4, 25);
             this.tbpg_personelEkle.Name = "tbpg_personelEkle";
             this.tbpg_personelEkle.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpg_personelEkle.Size = new System.Drawing.Size(1916, 630);
+            this.tbpg_personelEkle.Size = new System.Drawing.Size(1916, 627);
             this.tbpg_personelEkle.TabIndex = 1;
             this.tbpg_personelEkle.Text = "Personel Ekle";
             this.tbpg_personelEkle.UseVisualStyleBackColor = true;
@@ -1131,7 +1158,7 @@
             this.tstcmb_manuleBaslatma});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 31);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1211,9 +1238,9 @@
             // 
             this.panelContainer.Controls.Add(this.TabControl);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 28);
+            this.panelContainer.Location = new System.Drawing.Point(0, 31);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1924, 659);
+            this.panelContainer.Size = new System.Drawing.Size(1924, 656);
             this.panelContainer.TabIndex = 2;
             // 
             // notifyIconMenu
@@ -1271,6 +1298,202 @@
             this.kapatToolStripMenuItem.Text = "Kapat";
             this.kapatToolStripMenuItem.Click += new System.EventHandler(this.kapatToolStripMenuItem_Click);
             // 
+            // tbpg_kullaniciEkle
+            // 
+            this.tbpg_kullaniciEkle.Controls.Add(this.groupBox1);
+            this.tbpg_kullaniciEkle.Location = new System.Drawing.Point(4, 25);
+            this.tbpg_kullaniciEkle.Name = "tbpg_kullaniciEkle";
+            this.tbpg_kullaniciEkle.Size = new System.Drawing.Size(1916, 630);
+            this.tbpg_kullaniciEkle.TabIndex = 3;
+            this.tbpg_kullaniciEkle.Text = "Kullanıcı Görüntüle";
+            this.tbpg_kullaniciEkle.UseVisualStyleBackColor = true;
+            this.tbpg_kullaniciEkle.Enter += new System.EventHandler(this.tbpg_kullaniciEkle_Enter);
+            // 
+            // tbpg_gorevIslemleri
+            // 
+            this.tbpg_gorevIslemleri.Controls.Add(this.groupBox2);
+            this.tbpg_gorevIslemleri.Location = new System.Drawing.Point(4, 25);
+            this.tbpg_gorevIslemleri.Name = "tbpg_gorevIslemleri";
+            this.tbpg_gorevIslemleri.Size = new System.Drawing.Size(1916, 630);
+            this.tbpg_gorevIslemleri.TabIndex = 4;
+            this.tbpg_gorevIslemleri.Text = "Görev Ekle";
+            this.tbpg_gorevIslemleri.UseVisualStyleBackColor = true;
+            this.tbpg_gorevIslemleri.Enter += new System.EventHandler(this.tbpg_gorevIslemleri_Enter);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgv_kullaniciEkleme);
+            this.groupBox1.Controls.Add(this.cmb_KEgorev);
+            this.groupBox1.Controls.Add(this.dtp_KE_olusturulmaTarihi);
+            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.txt_KEkullaniciAdi);
+            this.groupBox1.Controls.Add(this.label36);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.Location = new System.Drawing.Point(377, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(909, 421);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Kullanıcı Görüntüleme";
+            // 
+            // dtp_KE_olusturulmaTarihi
+            // 
+            this.dtp_KE_olusturulmaTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtp_KE_olusturulmaTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_KE_olusturulmaTarihi.Location = new System.Drawing.Point(45, 218);
+            this.dtp_KE_olusturulmaTarihi.Name = "dtp_KE_olusturulmaTarihi";
+            this.dtp_KE_olusturulmaTarihi.Size = new System.Drawing.Size(258, 30);
+            this.dtp_KE_olusturulmaTarihi.TabIndex = 111;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label32.Location = new System.Drawing.Point(40, 190);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(171, 25);
+            this.label32.TabIndex = 110;
+            this.label32.Text = "Oluşturulma Tarihi";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label35.Location = new System.Drawing.Point(40, 114);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(71, 25);
+            this.label35.TabIndex = 107;
+            this.label35.Text = "Görev:";
+            // 
+            // txt_KEkullaniciAdi
+            // 
+            this.txt_KEkullaniciAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_KEkullaniciAdi.Location = new System.Drawing.Point(45, 67);
+            this.txt_KEkullaniciAdi.Name = "txt_KEkullaniciAdi";
+            this.txt_KEkullaniciAdi.Size = new System.Drawing.Size(258, 30);
+            this.txt_KEkullaniciAdi.TabIndex = 102;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label36.Location = new System.Drawing.Point(40, 39);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(125, 25);
+            this.label36.TabIndex = 106;
+            this.label36.Text = "Kullanıcı Adı:";
+            // 
+            // cmb_KEgorev
+            // 
+            this.cmb_KEgorev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmb_KEgorev.FormattingEnabled = true;
+            this.cmb_KEgorev.Location = new System.Drawing.Point(45, 142);
+            this.cmb_KEgorev.Name = "cmb_KEgorev";
+            this.cmb_KEgorev.Size = new System.Drawing.Size(258, 33);
+            this.cmb_KEgorev.TabIndex = 112;
+            // 
+            // dgv_kullaniciEkleme
+            // 
+            this.dgv_kullaniciEkleme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_kullaniciEkleme.Location = new System.Drawing.Point(321, 26);
+            this.dgv_kullaniciEkleme.Name = "dgv_kullaniciEkleme";
+            this.dgv_kullaniciEkleme.RowHeadersWidth = 51;
+            this.dgv_kullaniciEkleme.RowTemplate.Height = 24;
+            this.dgv_kullaniciEkleme.Size = new System.Drawing.Size(582, 371);
+            this.dgv_kullaniciEkleme.TabIndex = 118;
+            this.dgv_kullaniciEkleme.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_kullaniciEkleme_CellClick);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgv_GE_goruntule);
+            this.groupBox2.Controls.Add(this.btn_GE_temizle);
+            this.groupBox2.Controls.Add(this.btn_GE_guncelle);
+            this.groupBox2.Controls.Add(this.btn_GE_sil);
+            this.groupBox2.Controls.Add(this.btn_GE_ekle);
+            this.groupBox2.Controls.Add(this.txt_GE_gorevAd);
+            this.groupBox2.Controls.Add(this.label37);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.Location = new System.Drawing.Point(358, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(727, 413);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Görev Ekleme İşlemi";
+            // 
+            // dgv_GE_goruntule
+            // 
+            this.dgv_GE_goruntule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_GE_goruntule.Location = new System.Drawing.Point(342, 29);
+            this.dgv_GE_goruntule.Name = "dgv_GE_goruntule";
+            this.dgv_GE_goruntule.RowHeadersWidth = 51;
+            this.dgv_GE_goruntule.RowTemplate.Height = 24;
+            this.dgv_GE_goruntule.Size = new System.Drawing.Size(358, 371);
+            this.dgv_GE_goruntule.TabIndex = 129;
+            this.dgv_GE_goruntule.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_GE_goruntule_CellClick);
+            // 
+            // btn_GE_temizle
+            // 
+            this.btn_GE_temizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_GE_temizle.Location = new System.Drawing.Point(179, 341);
+            this.btn_GE_temizle.Name = "btn_GE_temizle";
+            this.btn_GE_temizle.Size = new System.Drawing.Size(126, 44);
+            this.btn_GE_temizle.TabIndex = 128;
+            this.btn_GE_temizle.Text = "Temizle";
+            this.btn_GE_temizle.UseVisualStyleBackColor = true;
+            this.btn_GE_temizle.Click += new System.EventHandler(this.btn_GE_temizle_Click);
+            // 
+            // btn_GE_guncelle
+            // 
+            this.btn_GE_guncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_GE_guncelle.Location = new System.Drawing.Point(30, 341);
+            this.btn_GE_guncelle.Name = "btn_GE_guncelle";
+            this.btn_GE_guncelle.Size = new System.Drawing.Size(126, 44);
+            this.btn_GE_guncelle.TabIndex = 127;
+            this.btn_GE_guncelle.Text = "Güncelle";
+            this.btn_GE_guncelle.UseVisualStyleBackColor = true;
+            this.btn_GE_guncelle.Click += new System.EventHandler(this.btn_GE_guncelle_Click);
+            // 
+            // btn_GE_sil
+            // 
+            this.btn_GE_sil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_GE_sil.Location = new System.Drawing.Point(179, 279);
+            this.btn_GE_sil.Name = "btn_GE_sil";
+            this.btn_GE_sil.Size = new System.Drawing.Size(126, 44);
+            this.btn_GE_sil.TabIndex = 126;
+            this.btn_GE_sil.Text = "Sil";
+            this.btn_GE_sil.UseVisualStyleBackColor = true;
+            this.btn_GE_sil.Click += new System.EventHandler(this.btn_GE_sil_Click);
+            // 
+            // btn_GE_ekle
+            // 
+            this.btn_GE_ekle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_GE_ekle.Location = new System.Drawing.Point(30, 279);
+            this.btn_GE_ekle.Name = "btn_GE_ekle";
+            this.btn_GE_ekle.Size = new System.Drawing.Size(126, 44);
+            this.btn_GE_ekle.TabIndex = 125;
+            this.btn_GE_ekle.Text = "Kaydet";
+            this.btn_GE_ekle.UseVisualStyleBackColor = true;
+            this.btn_GE_ekle.Click += new System.EventHandler(this.btn_GE_ekle_Click);
+            // 
+            // txt_GE_gorevAd
+            // 
+            this.txt_GE_gorevAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_GE_gorevAd.Location = new System.Drawing.Point(11, 125);
+            this.txt_GE_gorevAd.Name = "txt_GE_gorevAd";
+            this.txt_GE_gorevAd.Size = new System.Drawing.Size(283, 30);
+            this.txt_GE_gorevAd.TabIndex = 119;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label37.Location = new System.Drawing.Point(6, 97);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(99, 25);
+            this.label37.TabIndex = 120;
+            this.label37.Text = "Görev Adı";
+            // 
             // AnaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1301,6 +1524,14 @@
             this.toolStrip1.PerformLayout();
             this.panelContainer.ResumeLayout(false);
             this.contextMenuNotify.ResumeLayout(false);
+            this.tbpg_kullaniciEkle.ResumeLayout(false);
+            this.tbpg_gorevIslemleri.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_kullaniciEkleme)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_GE_goruntule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1418,5 +1649,23 @@
         private System.Windows.Forms.ToolStripMenuItem simgeDurumunaAlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cikisYapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kapatToolStripMenuItem;
+        private System.Windows.Forms.TabPage tbpg_kullaniciEkle;
+        private System.Windows.Forms.TabPage tbpg_gorevIslemleri;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgv_kullaniciEkleme;
+        private System.Windows.Forms.ComboBox cmb_KEgorev;
+        private System.Windows.Forms.DateTimePicker dtp_KE_olusturulmaTarihi;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txt_KEkullaniciAdi;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgv_GE_goruntule;
+        private System.Windows.Forms.Button btn_GE_temizle;
+        private System.Windows.Forms.Button btn_GE_guncelle;
+        private System.Windows.Forms.Button btn_GE_sil;
+        private System.Windows.Forms.Button btn_GE_ekle;
+        private System.Windows.Forms.TextBox txt_GE_gorevAd;
+        private System.Windows.Forms.Label label37;
     }
 }

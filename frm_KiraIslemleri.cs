@@ -20,18 +20,7 @@ namespace Arac_Kiralama
 
 
 
-        private void tbpg_Adres_ve_KiraDurumu_Enter(object sender, EventArgs e)
-        {
-            DataTable dt = vt.Select("select adres_id,teslimEdilenAdres,teslimAlınanAdres from tbl_adres");
-
-            dgv_AdresIslemleri.DataSource = dt;
-            dgv_AdresIslemleri.Columns["adres_id"].Visible = false;
-
-
-            DataTable dt2 = vt.Select("select kiralamaDurum_id,kiralamaDurum from tbl_kiralamaDurum");
-            dgv_kiralamaDurumIslemleri.DataSource = dt2;
-            dgv_kiralamaDurumIslemleri.Columns["kiralamaDurum_id"].Visible = false;
-        }
+        
 
         private void dgv_AdresIslemleri_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -76,7 +65,7 @@ namespace Arac_Kiralama
 
             MessageBox.Show("Kiralama Durumu Başarıyla Eklendi");
 
-            tbpg_Adres_ve_KiraDurumu_Enter(null, null);
+            frm_KiraIslemleri_Load(null, null);
         }
 
         private void btn_kiralamaDurumSil_Click(object sender, EventArgs e)
@@ -96,8 +85,7 @@ namespace Arac_Kiralama
                             where kiralamaDurum_id ={dgv_kiralamaDurumIslemleri.SelectedRows[0].Cells["kiralamaDurum_id"].Value.ToString()}");
 
             MessageBox.Show("Kayıt Başarıyla Silindi");
-            tbpg_Adres_ve_KiraDurumu_Enter(null, null);
-
+            frm_KiraIslemleri_Load(null, null);
         }
 
         private void btn_kiralamaDurumGuncelle_Click(object sender, EventArgs e)
@@ -129,7 +117,7 @@ namespace Arac_Kiralama
 
             MessageBox.Show("Kiralama Durumu Başarıyla Güncellendi");
 
-            tbpg_Adres_ve_KiraDurumu_Enter(null, null);
+            frm_KiraIslemleri_Load(null, null);
         }
 
         private void btn_kiralamaDurumTemizle_Click(object sender, EventArgs e)
@@ -154,8 +142,7 @@ namespace Arac_Kiralama
                         values('{txt_teslimAlınanAdres.Text.Replace("'", "''")}','{txt_teslimEdilenAdres.Text.Replace("'", "''")}')");
 
             MessageBox.Show("Adres Başarıyla Eklendi");
-            tbpg_Adres_ve_KiraDurumu_Enter(null, null);
-
+            frm_KiraIslemleri_Load(null, null);
         }
 
         private void btn_adresSil_Click(object sender, EventArgs e)
@@ -180,7 +167,7 @@ namespace Arac_Kiralama
                                 where adres_id={dgv_AdresIslemleri.SelectedRows[0].Cells["adres_id"].Value.ToString()}");
 
             MessageBox.Show("Adres Başarıyla Silindi.");
-            tbpg_Adres_ve_KiraDurumu_Enter(null, null);
+            frm_KiraIslemleri_Load(null, null);
         }
 
         private void btn_adresGuncelle_Click(object sender, EventArgs e)
@@ -205,7 +192,7 @@ namespace Arac_Kiralama
                                 teslimEdilenAdres='{txt_teslimEdilenAdres.Text.Replace("'", "''")}'
                                 where adres_id={dgv_AdresIslemleri.SelectedRows[0].Cells["adres_id"].Value.ToString()}");
             MessageBox.Show("Adres Başarıyla Güncellendi.");
-            tbpg_Adres_ve_KiraDurumu_Enter(null, null);
+            frm_KiraIslemleri_Load(null, null);
         }
 
         private void btn_adresTemizle_Click(object sender, EventArgs e)
@@ -217,85 +204,7 @@ namespace Arac_Kiralama
 
 
 
-        private void tbpg_aracKirala_Enter(object sender, EventArgs e)
-        {
-
-            DataTable dt = vt.Select($@"SELECT 
-                                        k.kiralama_id,
-                                        a.plaka,
-                                        mk.kullaniciAdi AS musteri_kullanici_adi,
-                                        pk.kullaniciAdi AS personel_kullanici_adi,
-                                        k.kiralama_tarihi,
-                                        k.beklenen_teslim,
-                                        k.teslim_tarihi,
-                                        k.toplam_fiyat,
-                                        kd.kiralamaDurum,
-                                        adr.teslimEdilenAdres,
-                                        k.alis_km,
-                                        k.teslim_km,
-                                        ah.hasar_aciklama,
-                                        k.kiralamaAciklama,
-	                                    evr.senet
-                                    FROM tbl_kiralama k
-                                    JOIN tbl_arac a ON a.arac_id = k.arac_id
-                                    JOIN tbl_musteri m ON m.musteri_id = k.musteri_id
-                                    JOIN tbl_kullanici mk ON mk.kullanici_id = m.kullanici_id
-                                    JOIN tbl_personel p ON p.personel_id = k.personel_id
-                                    JOIN tbl_kullanici pk ON pk.kullanici_id = p.kullanici_id
-                                    JOIN tbl_kiralamaDurum kd 
-                                        ON kd.kiralamaDurum_id = k.kiralamaDurum_id
-                                    JOIN tbl_adres adr 
-                                        ON adr.adres_id = k.adres_id
-                                    LEFT JOIN tbl_aracHasar ah 
-                                        ON ah.kiralama_id = k.kiralama_id
-                                    join tbl_evrak evr on evr.evrak_id= k.evrak_id");
-
-            dgv_aracKiralamaIslemi.DataSource = dt;
-            dgv_aracKiralamaIslemi.Columns["kiralama_id"].Visible = false;
-
-
-            DataTable dt2 = vt.Select("select arac_id,plaka from tbl_arac");
-
-            cmb_plaka.DataSource = dt2;
-            cmb_plaka.ValueMember = "arac_id";
-            cmb_plaka.DisplayMember = "plaka";
-
-            DataTable dt3 = vt.Select($@"select m.musteri_id,k.kullaniciAdi from tbl_musteri m
-                                        join tbl_kullanici k on k.kullanici_id = m.kullanici_id");
-            cmb_musteri.DataSource = dt3;
-            cmb_musteri.ValueMember = "musteri_id";
-            cmb_musteri.DisplayMember = "kullaniciAdi";
-
-            DataTable dt4 = vt.Select($@"select p.personel_id,k.kullaniciAdi from tbl_personel p
-                                        join tbl_kullanici k on k.kullanici_id = p.kullanici_id");
-
-            cmb_personel.DataSource = dt4;
-            cmb_personel.ValueMember = "personel_id";
-            cmb_personel.DisplayMember = "kullaniciAdi";
-
-            DataTable dt5 = vt.Select($@"select kiralamaDurum_id,kiralamaDurum from tbl_kiralamaDurum");
-
-            cmb_kiralamaDurum.DataSource = dt5;
-            cmb_kiralamaDurum.ValueMember = "kiralamaDurum_id";
-            cmb_kiralamaDurum.DisplayMember = "kiralamaDurum";
-
-            DataTable dt6 = vt.Select($@"select adres_id,teslimEdilenAdres from tbl_adres");
-            cmb_Adres.DataSource = dt6;
-            cmb_Adres.ValueMember = "adres_id";
-            cmb_Adres.DisplayMember = "teslimEdilenAdres";
-
-            DataTable dt7 = vt.Select($@"select hasar_id,hasar_aciklama from tbl_AracHasar");
-            cmb_HasarAciklama.DataSource = dt7;
-            cmb_HasarAciklama.ValueMember = "hasar_id";
-            cmb_HasarAciklama.DisplayMember = "hasar_aciklama";
-
-            DataTable dt8 = vt.Select($@"select evrak_id,senet from tbl_evrak");
-            cmb_senet.DataSource = dt8;
-            cmb_senet.ValueMember = "evrak_id";
-            cmb_senet.DisplayMember = "senet";
-
-
-        }
+        
         private void dgv_aracKiralamaIslemi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -430,7 +339,7 @@ namespace Arac_Kiralama
                             {cmb_HasarAciklama.SelectedValue})");
 
                 MessageBox.Show("Araç Kiralama Kaydı Başarıyla Tamamlandı");
-                tbpg_aracKirala_Enter(null, null);
+                frm_KiraIslemleri_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -470,7 +379,7 @@ namespace Arac_Kiralama
 
                 MessageBox.Show("Kiralama kaydı başarıyla silindi.");
 
-                tbpg_aracKirala_Enter(null, null);
+                frm_KiraIslemleri_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -563,7 +472,7 @@ namespace Arac_Kiralama
                 }
 
                 MessageBox.Show("Kiralama başarıyla güncellendi");
-                tbpg_aracKirala_Enter(null, null);
+                frm_KiraIslemleri_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -609,6 +518,114 @@ namespace Arac_Kiralama
                 tbn_aracKiralamaGuncelle_Click(sender, e);
             else if (e.Alt && e.KeyCode == Keys.T)
                 btn_aracKiralamaTemizle_Click(sender, e);
+
+            if (e.Alt && e.KeyCode == Keys. Z)
+                btn_adresEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.X)
+                btn_adresSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.C)
+                btn_adresGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.V)
+                btn_adresTemizle_Click(sender, e);
+
+            if (e.Alt && e.KeyCode == Keys.B)
+                btn_kiralamaDurumEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.N)
+                btn_kiralamaDurumSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.M)
+                btn_kiralamaDurumGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.J)
+                btn_kiralamaDurumTemizle_Click(sender, e);
+        }
+
+        private void frm_KiraIslemleri_Load(object sender, EventArgs e)
+        {
+            DataTable dt = vt.Select($@"SELECT 
+                                        k.kiralama_id,
+                                        a.plaka,
+                                        mk.kullaniciAdi AS musteri_kullanici_adi,
+                                        pk.kullaniciAdi AS personel_kullanici_adi,
+                                        k.kiralama_tarihi,
+                                        k.beklenen_teslim,
+                                        k.teslim_tarihi,
+                                        k.toplam_fiyat,
+                                        kd.kiralamaDurum,
+                                        adr.teslimEdilenAdres,
+                                        k.alis_km,
+                                        k.teslim_km,
+                                        ah.hasar_aciklama,
+                                        k.kiralamaAciklama,
+	                                    evr.senet
+                                    FROM tbl_kiralama k
+                                    JOIN tbl_arac a ON a.arac_id = k.arac_id
+                                    JOIN tbl_musteri m ON m.musteri_id = k.musteri_id
+                                    JOIN tbl_kullanici mk ON mk.kullanici_id = m.kullanici_id
+                                    JOIN tbl_personel p ON p.personel_id = k.personel_id
+                                    JOIN tbl_kullanici pk ON pk.kullanici_id = p.kullanici_id
+                                    JOIN tbl_kiralamaDurum kd 
+                                        ON kd.kiralamaDurum_id = k.kiralamaDurum_id
+                                    JOIN tbl_adres adr 
+                                        ON adr.adres_id = k.adres_id
+                                    LEFT JOIN tbl_aracHasar ah 
+                                        ON ah.kiralama_id = k.kiralama_id
+                                    join tbl_evrak evr on evr.evrak_id= k.evrak_id");
+
+            dgv_aracKiralamaIslemi.DataSource = dt;
+            dgv_aracKiralamaIslemi.Columns["kiralama_id"].Visible = false;
+
+
+            DataTable dt2 = vt.Select("select arac_id,plaka from tbl_arac");
+
+            cmb_plaka.DataSource = dt2;
+            cmb_plaka.ValueMember = "arac_id";
+            cmb_plaka.DisplayMember = "plaka";
+
+            DataTable dt3 = vt.Select($@"select m.musteri_id,k.kullaniciAdi from tbl_musteri m
+                                        join tbl_kullanici k on k.kullanici_id = m.kullanici_id");
+            cmb_musteri.DataSource = dt3;
+            cmb_musteri.ValueMember = "musteri_id";
+            cmb_musteri.DisplayMember = "kullaniciAdi";
+
+            DataTable dt4 = vt.Select($@"select p.personel_id,k.kullaniciAdi from tbl_personel p
+                                        join tbl_kullanici k on k.kullanici_id = p.kullanici_id");
+
+            cmb_personel.DataSource = dt4;
+            cmb_personel.ValueMember = "personel_id";
+            cmb_personel.DisplayMember = "kullaniciAdi";
+
+            DataTable dt5 = vt.Select($@"select kiralamaDurum_id,kiralamaDurum from tbl_kiralamaDurum");
+
+            cmb_kiralamaDurum.DataSource = dt5;
+            cmb_kiralamaDurum.ValueMember = "kiralamaDurum_id";
+            cmb_kiralamaDurum.DisplayMember = "kiralamaDurum";
+
+            DataTable dt6 = vt.Select($@"select adres_id,teslimEdilenAdres from tbl_adres");
+            cmb_Adres.DataSource = dt6;
+            cmb_Adres.ValueMember = "adres_id";
+            cmb_Adres.DisplayMember = "teslimEdilenAdres";
+
+            DataTable dt7 = vt.Select($@"select hasar_id,hasar_aciklama from tbl_AracHasar");
+            cmb_HasarAciklama.DataSource = dt7;
+            cmb_HasarAciklama.ValueMember = "hasar_id";
+            cmb_HasarAciklama.DisplayMember = "hasar_aciklama";
+
+            DataTable dt8 = vt.Select($@"select evrak_id,senet from tbl_evrak");
+            cmb_senet.DataSource = dt8;
+            cmb_senet.ValueMember = "evrak_id";
+            cmb_senet.DisplayMember = "senet";
+
+
+
+
+            DataTable dt9 = vt.Select("select adres_id,teslimEdilenAdres,teslimAlınanAdres from tbl_adres");
+
+            dgv_AdresIslemleri.DataSource = dt9;
+            dgv_AdresIslemleri.Columns["adres_id"].Visible = false;
+
+
+            DataTable dt0 = vt.Select("select kiralamaDurum_id,kiralamaDurum from tbl_kiralamaDurum");
+            dgv_kiralamaDurumIslemleri.DataSource = dt0;
+            dgv_kiralamaDurumIslemleri.Columns["kiralamaDurum_id"].Visible = false;
         }
     }
 }

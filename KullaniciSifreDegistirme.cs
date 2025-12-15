@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AracKiralama_HC;
 
 namespace Arac_Kiralama
 {
     public partial class KullaniciSifreDegistirme : Form
     {
-        
+        AracKiralama_HC.DigerIslemler dg = new AracKiralama_HC.DigerIslemler();
         public KullaniciSifreDegistirme(string kullanici)
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Arac_Kiralama
             
             var gelensifre = dt.Rows[0]["sifre"].ToString();
 
-            if (giris.MD5Sifrele(txt_eskiSifre.Text) != gelensifre)
+            if (dg.MD5Sifrele(txt_eskiSifre.Text) != gelensifre)
             {
                 MessageBox.Show("Eski Şifre Yanlış Girildi");
                 return;
@@ -69,7 +70,7 @@ namespace Arac_Kiralama
             else
             {
                 vt.Insert($@"update tbl_kullanici
-                            set sifre = '{giris.MD5Sifrele( txt_sifreTekrar.Text)}'
+                            set sifre = '{dg.MD5Sifrele( txt_sifreTekrar.Text)}'
                             where kullaniciAdi ='{txt_kullaniciAdi.Text}'");
                 
                DialogResult dr =  MessageBox.Show("Şifre Değiştirildi Ana Menüye Dönülüyor.");
@@ -138,6 +139,13 @@ namespace Arac_Kiralama
             this.Close();
         }
 
-        
+        private void KullaniciSifreDegistirme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.S)
+                btn_kullaniciSifreDegistirOnayla_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.G)
+                btn_geriDon_Click(sender, e);
+
+        }
     }
 }

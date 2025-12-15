@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
 using VTI;
+using AracKiralama_HC;
 
 namespace Arac_Kiralama
 {
@@ -19,7 +20,7 @@ namespace Arac_Kiralama
         {
             InitializeComponent();
         }
-
+        AracKiralama_HC.DigerIslemler dg = new AracKiralama_HC.DigerIslemler();
         VTI.Veritabani vt = new VTI.Veritabani();
 
         
@@ -114,7 +115,7 @@ namespace Arac_Kiralama
                     }
                     else
                     {
-                        vt.UpdateDelete($@"update tbl_kullanici set sifre = '{girisYap.MD5Sifrele(txt_sifreTekrar.Text)}' where kullanici_id = {int.Parse(gelenKullaniciID)}");
+                        vt.UpdateDelete($@"update tbl_kullanici set sifre = '{dg.MD5Sifrele(txt_sifreTekrar.Text)}' where kullanici_id = {int.Parse(gelenKullaniciID)}");
                         MessageBox.Show("Şifre Başarıyla Değiştirildi");
                         AnaMenu anaMenu = new AnaMenu(gelenKullaniciAdi);
                         anaMenu.Show();
@@ -196,7 +197,7 @@ namespace Arac_Kiralama
                     }
                     else
                     {
-                        vt.UpdateDelete($@"update tbl_kullanici set sifre = '{girisYap.MD5Sifrele(txt_sifreTekrar.Text)}' where kullanici_id = {int.Parse(gelenKullaniciID)}");
+                        vt.UpdateDelete($@"update tbl_kullanici set sifre = '{dg.MD5Sifrele(txt_sifreTekrar.Text)}' where kullanici_id = {int.Parse(gelenKullaniciID)}");
                         MessageBox.Show("Şifre Başarıyla Değiştirildi");
                         AnaMenu anaMenu = new AnaMenu(gelenKullaniciAdi);
                         anaMenu.Show();
@@ -255,6 +256,13 @@ namespace Arac_Kiralama
             return false;
         }
 
-        
+        private void SifreDegistirme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.S)
+                btn_SifreDegistirOnay_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.K)
+                btn_KodGonder_Click(sender, e);
+
+        }
     }
 }

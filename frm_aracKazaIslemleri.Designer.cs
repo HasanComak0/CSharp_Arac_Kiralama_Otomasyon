@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.araçTamirDurumuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tamirDurumEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tamirDurumSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tamirDurumGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tamirDurumTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.araçHasarDurumuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hasarDurumuEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hasarDurumuSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hasarDurumuGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hasarDurumuTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_hasarTarihi = new System.Windows.Forms.DateTimePicker();
             this.cmb_tamirDurumu = new System.Windows.Forms.ComboBox();
@@ -55,23 +69,135 @@
             this.txt_tamirDurum = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_tamirDurumIslemleri = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.araçTamirDurumuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tamirDurumEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tamirDurumSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tamirDurumGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tamirDurumTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.araçHasarDurumuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hasarDurumuEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hasarDurumuSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hasarDurumuGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hasarDurumuTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_aracHasarIslemleri)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tamirDurumIslemleri)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.araçTamirDurumuToolStripMenuItem,
+            this.araçHasarDurumuToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 52);
+            // 
+            // araçTamirDurumuToolStripMenuItem
+            // 
+            this.araçTamirDurumuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tamirDurumEkleToolStripMenuItem,
+            this.tamirDurumSilToolStripMenuItem,
+            this.tamirDurumGüncelleToolStripMenuItem,
+            this.tamirDurumTemizleToolStripMenuItem});
+            this.araçTamirDurumuToolStripMenuItem.Name = "araçTamirDurumuToolStripMenuItem";
+            this.araçTamirDurumuToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
+            this.araçTamirDurumuToolStripMenuItem.Text = "Araç Tamir Durumu";
+            // 
+            // tamirDurumEkleToolStripMenuItem
+            // 
+            this.tamirDurumEkleToolStripMenuItem.Name = "tamirDurumEkleToolStripMenuItem";
+            this.tamirDurumEkleToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.tamirDurumEkleToolStripMenuItem.Text = "Tamir Durum Ekle";
+            this.tamirDurumEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumEkle_Click);
+            // 
+            // tamirDurumSilToolStripMenuItem
+            // 
+            this.tamirDurumSilToolStripMenuItem.Name = "tamirDurumSilToolStripMenuItem";
+            this.tamirDurumSilToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.tamirDurumSilToolStripMenuItem.Text = "Tamir Durum Sil";
+            this.tamirDurumSilToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumSil_Click);
+            // 
+            // tamirDurumGüncelleToolStripMenuItem
+            // 
+            this.tamirDurumGüncelleToolStripMenuItem.Name = "tamirDurumGüncelleToolStripMenuItem";
+            this.tamirDurumGüncelleToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.tamirDurumGüncelleToolStripMenuItem.Text = "Tamir Durum Güncelle";
+            this.tamirDurumGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumGuncelle_Click);
+            // 
+            // tamirDurumTemizleToolStripMenuItem
+            // 
+            this.tamirDurumTemizleToolStripMenuItem.Name = "tamirDurumTemizleToolStripMenuItem";
+            this.tamirDurumTemizleToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.tamirDurumTemizleToolStripMenuItem.Text = "Tamir Durum Temizle";
+            this.tamirDurumTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumTemizle_Click);
+            // 
+            // araçHasarDurumuToolStripMenuItem
+            // 
+            this.araçHasarDurumuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hasarDurumuEkleToolStripMenuItem,
+            this.hasarDurumuSilToolStripMenuItem,
+            this.hasarDurumuGüncelleToolStripMenuItem,
+            this.hasarDurumuTemizleToolStripMenuItem});
+            this.araçHasarDurumuToolStripMenuItem.Name = "araçHasarDurumuToolStripMenuItem";
+            this.araçHasarDurumuToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
+            this.araçHasarDurumuToolStripMenuItem.Text = "Araç Hasar Durumu";
+            // 
+            // hasarDurumuEkleToolStripMenuItem
+            // 
+            this.hasarDurumuEkleToolStripMenuItem.Name = "hasarDurumuEkleToolStripMenuItem";
+            this.hasarDurumuEkleToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.hasarDurumuEkleToolStripMenuItem.Text = "Hasar Durumu Ekle";
+            this.hasarDurumuEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarEkle_Click);
+            // 
+            // hasarDurumuSilToolStripMenuItem
+            // 
+            this.hasarDurumuSilToolStripMenuItem.Name = "hasarDurumuSilToolStripMenuItem";
+            this.hasarDurumuSilToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.hasarDurumuSilToolStripMenuItem.Text = "Hasar Durumu Sil";
+            this.hasarDurumuSilToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarSil_Click);
+            // 
+            // hasarDurumuGüncelleToolStripMenuItem
+            // 
+            this.hasarDurumuGüncelleToolStripMenuItem.Name = "hasarDurumuGüncelleToolStripMenuItem";
+            this.hasarDurumuGüncelleToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.hasarDurumuGüncelleToolStripMenuItem.Text = "Hasar Durumu Güncelle";
+            this.hasarDurumuGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarGuncelle_Click);
+            // 
+            // hasarDurumuTemizleToolStripMenuItem
+            // 
+            this.hasarDurumuTemizleToolStripMenuItem.Name = "hasarDurumuTemizleToolStripMenuItem";
+            this.hasarDurumuTemizleToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.hasarDurumuTemizleToolStripMenuItem.Text = "Hasar Durumu Temizle";
+            this.hasarDurumuTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarTemizle_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1924, 1055);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1916, 1022);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Hasar İşlemleri";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1916, 1022);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Araç Tamir Durumu";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -92,10 +218,10 @@
             this.groupBox1.Controls.Add(this.btn_aracHasarEkle);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dgv_aracHasarIslemleri);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(326, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(908, 516);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(1094, 516);
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Araç Hasar İşlemleri";
             // 
@@ -258,7 +384,7 @@
             this.dgv_aracHasarIslemleri.Name = "dgv_aracHasarIslemleri";
             this.dgv_aracHasarIslemleri.RowHeadersWidth = 51;
             this.dgv_aracHasarIslemleri.RowTemplate.Height = 24;
-            this.dgv_aracHasarIslemleri.Size = new System.Drawing.Size(561, 495);
+            this.dgv_aracHasarIslemleri.Size = new System.Drawing.Size(745, 495);
             this.dgv_aracHasarIslemleri.TabIndex = 0;
             this.dgv_aracHasarIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_aracHasarIslemleri_CellClick);
             // 
@@ -272,12 +398,12 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dgv_tamirDurumIslemleri);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(953, 27);
+            this.groupBox2.Location = new System.Drawing.Point(459, 29);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(524, 209);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Araç Tamir Durumu";
             // 
@@ -355,101 +481,13 @@
             this.dgv_tamirDurumIslemleri.TabIndex = 0;
             this.dgv_tamirDurumIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tamirDurumIslemleri_CellClick);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.araçTamirDurumuToolStripMenuItem,
-            this.araçHasarDurumuToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 52);
-            // 
-            // araçTamirDurumuToolStripMenuItem
-            // 
-            this.araçTamirDurumuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tamirDurumEkleToolStripMenuItem,
-            this.tamirDurumSilToolStripMenuItem,
-            this.tamirDurumGüncelleToolStripMenuItem,
-            this.tamirDurumTemizleToolStripMenuItem});
-            this.araçTamirDurumuToolStripMenuItem.Name = "araçTamirDurumuToolStripMenuItem";
-            this.araçTamirDurumuToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.araçTamirDurumuToolStripMenuItem.Text = "Araç Tamir Durumu";
-            // 
-            // tamirDurumEkleToolStripMenuItem
-            // 
-            this.tamirDurumEkleToolStripMenuItem.Name = "tamirDurumEkleToolStripMenuItem";
-            this.tamirDurumEkleToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.tamirDurumEkleToolStripMenuItem.Text = "Tamir Durum Ekle";
-            this.tamirDurumEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumEkle_Click);
-            // 
-            // tamirDurumSilToolStripMenuItem
-            // 
-            this.tamirDurumSilToolStripMenuItem.Name = "tamirDurumSilToolStripMenuItem";
-            this.tamirDurumSilToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.tamirDurumSilToolStripMenuItem.Text = "Tamir Durum Sil";
-            this.tamirDurumSilToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumSil_Click);
-            // 
-            // tamirDurumGüncelleToolStripMenuItem
-            // 
-            this.tamirDurumGüncelleToolStripMenuItem.Name = "tamirDurumGüncelleToolStripMenuItem";
-            this.tamirDurumGüncelleToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.tamirDurumGüncelleToolStripMenuItem.Text = "Tamir Durum Güncelle";
-            this.tamirDurumGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumGuncelle_Click);
-            // 
-            // tamirDurumTemizleToolStripMenuItem
-            // 
-            this.tamirDurumTemizleToolStripMenuItem.Name = "tamirDurumTemizleToolStripMenuItem";
-            this.tamirDurumTemizleToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.tamirDurumTemizleToolStripMenuItem.Text = "Tamir Durum Temizle";
-            this.tamirDurumTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_tamirDurumTemizle_Click);
-            // 
-            // araçHasarDurumuToolStripMenuItem
-            // 
-            this.araçHasarDurumuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hasarDurumuEkleToolStripMenuItem,
-            this.hasarDurumuSilToolStripMenuItem,
-            this.hasarDurumuGüncelleToolStripMenuItem,
-            this.hasarDurumuTemizleToolStripMenuItem});
-            this.araçHasarDurumuToolStripMenuItem.Name = "araçHasarDurumuToolStripMenuItem";
-            this.araçHasarDurumuToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.araçHasarDurumuToolStripMenuItem.Text = "Araç Hasar Durumu";
-            // 
-            // hasarDurumuEkleToolStripMenuItem
-            // 
-            this.hasarDurumuEkleToolStripMenuItem.Name = "hasarDurumuEkleToolStripMenuItem";
-            this.hasarDurumuEkleToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.hasarDurumuEkleToolStripMenuItem.Text = "Hasar Durumu Ekle";
-            this.hasarDurumuEkleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarEkle_Click);
-            // 
-            // hasarDurumuSilToolStripMenuItem
-            // 
-            this.hasarDurumuSilToolStripMenuItem.Name = "hasarDurumuSilToolStripMenuItem";
-            this.hasarDurumuSilToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.hasarDurumuSilToolStripMenuItem.Text = "Hasar Durumu Sil";
-            this.hasarDurumuSilToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarSil_Click);
-            // 
-            // hasarDurumuGüncelleToolStripMenuItem
-            // 
-            this.hasarDurumuGüncelleToolStripMenuItem.Name = "hasarDurumuGüncelleToolStripMenuItem";
-            this.hasarDurumuGüncelleToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.hasarDurumuGüncelleToolStripMenuItem.Text = "Hasar Durumu Güncelle";
-            this.hasarDurumuGüncelleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarGuncelle_Click);
-            // 
-            // hasarDurumuTemizleToolStripMenuItem
-            // 
-            this.hasarDurumuTemizleToolStripMenuItem.Name = "hasarDurumuTemizleToolStripMenuItem";
-            this.hasarDurumuTemizleToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.hasarDurumuTemizleToolStripMenuItem.Text = "Hasar Durumu Temizle";
-            this.hasarDurumuTemizleToolStripMenuItem.Click += new System.EventHandler(this.btn_aracHasarTemizle_Click);
-            // 
             // frm_aracKazaIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -458,45 +496,21 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_aracKazaIslemleri_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_aracKazaIslemleri_KeyDown);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_aracHasarIslemleri)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tamirDurumIslemleri)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgv_aracHasarIslemleri;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_aracHasarTemizle;
-        private System.Windows.Forms.Button btn_aracHasarGuncelle;
-        private System.Windows.Forms.Button btn_aracHasarSil;
-        private System.Windows.Forms.Button btn_aracHasarEkle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn_tamirDurumTemizle;
-        private System.Windows.Forms.Button btn_tamirDurumGuncelle;
-        private System.Windows.Forms.Button btn_tamirDurumSil;
-        private System.Windows.Forms.Button btn_tamirDurumEkle;
-        private System.Windows.Forms.TextBox txt_tamirDurum;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgv_tamirDurumIslemleri;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_hasarUcret;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_hasarAciklama;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtp_hasarTarihi;
-        private System.Windows.Forms.ComboBox cmb_tamirDurumu;
-        private System.Windows.Forms.ComboBox cmb_kiraAciklama;
-        private System.Windows.Forms.ComboBox cmb_aracPlaka;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem araçTamirDurumuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tamirDurumEkleToolStripMenuItem;
@@ -508,5 +522,34 @@
         private System.Windows.Forms.ToolStripMenuItem hasarDurumuSilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hasarDurumuGüncelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hasarDurumuTemizleToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dtp_hasarTarihi;
+        private System.Windows.Forms.ComboBox cmb_tamirDurumu;
+        private System.Windows.Forms.ComboBox cmb_kiraAciklama;
+        private System.Windows.Forms.ComboBox cmb_aracPlaka;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_hasarUcret;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_hasarAciklama;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_aracHasarTemizle;
+        private System.Windows.Forms.Button btn_aracHasarGuncelle;
+        private System.Windows.Forms.Button btn_aracHasarSil;
+        private System.Windows.Forms.Button btn_aracHasarEkle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgv_aracHasarIslemleri;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_tamirDurumTemizle;
+        private System.Windows.Forms.Button btn_tamirDurumGuncelle;
+        private System.Windows.Forms.Button btn_tamirDurumSil;
+        private System.Windows.Forms.Button btn_tamirDurumEkle;
+        private System.Windows.Forms.TextBox txt_tamirDurum;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgv_tamirDurumIslemleri;
     }
 }

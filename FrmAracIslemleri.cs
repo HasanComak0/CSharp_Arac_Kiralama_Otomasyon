@@ -25,6 +25,59 @@ namespace Arac_Kiralama
         private void FrmAracIslemleri_Load(object sender, EventArgs e)
         {
             kullaniciGorev_id = ana.kullaniciGorevID;
+
+            //MARKA DOLDURMA
+            DataTable dt = vt.Select($@"select marka_id,marka_ad from tbl_aracMarka");
+            dgv_MarkaIslemleri.DataSource = dt;
+            dgv_MarkaIslemleri.Columns["marka_id"].Visible = false;
+
+            cmb_markaSec.DataSource = dt;
+            cmb_markaSec.ValueMember = "marka_id";
+            cmb_markaSec.DisplayMember = "marka_ad";
+
+            //MODEL DOLDURMA
+
+            dgv_ModelIslemleri.DataSource = vt.Select($@"select 
+                                                        mdl.model_id,
+                                                        mrk.marka_ad,
+                                                        mdl.model_ad
+                                                    from tbl_aracMarka mrk
+                                                    join tbl_aracModel mdl on mrk.marka_id = mdl.marka_id");
+            dgv_ModelIslemleri.Columns["model_id"].Visible = false;
+
+            //RENK DOLDURMA
+
+            dgv_renkIslemleri.DataSource = vt.Select($@"select renk_id,renkAd from tbl_renk");
+            dgv_renkIslemleri.Columns["renk_id"].Visible = false;
+
+            //VİTES DOLDURMA
+            dgv_vitesIslemleri.DataSource = vt.Select($@"select vites_tur_id,vites_tur from tbl_vitesTur");
+            dgv_vitesIslemleri.Columns["vites_tur_id"].Visible = false;
+
+            //YAKIT DOLDURMA
+            dgv_yakitIslemleri.DataSource = vt.Select($@"select yakit_tur_id,yakit_tur from tbl_yakitTur");
+            dgv_yakitIslemleri.Columns["yakit_tur_id"].Visible = false;
+
+            //DURUM DOLDURMA
+            dgv_durumIslemleri.DataSource = vt.Select($@"select durum_id,durum from tbl_durum");
+            dgv_durumIslemleri.Columns["durum_id"].Visible = false;
+
+            //ARAÇ TAMİR DURUM DOLDURMA
+            dgv_aracTDIslemleri.DataSource = vt.Select($@"select tamirDurum_id,tamirDurum from tbl_AracTamirDurum");
+            dgv_aracTDIslemleri.Columns["tamirDurum_id"].Visible = false;
+
+            //ARAÇ BAKIM DOLDURMA
+            dgv_aracBakimIslemleri.DataSource = vt.Select($@"select bakim_id,aciklama,maliyet,bakim_tarihi from tbl_aracBakim");
+            dgv_aracBakimIslemleri.Columns["bakim_id"].Visible = false;
+
+
+            //KASKO EKLEME
+            dgv_kaskoIslmeleri.DataSource = vt.Select($@"select kasko_id,police_No,baslangic_Tarihi,bitis_Tarihi,kaskoSirketi from tbl_kasko");
+            dgv_kaskoIslmeleri.Columns["kasko_id"].Visible = false;
+
+            //SİGORTA EKLEME
+            dgv_sigortaIslemleri.DataSource = vt.Select($@"select sigorta_id,police_No,baslangicTarihi,bitis_Tarihi,sigortaSirketi from tbl_sigorta");
+            dgv_sigortaIslemleri.Columns["sigorta_id"].Visible = false;
         }
 
 
@@ -551,67 +604,9 @@ namespace Arac_Kiralama
         //DETAYLARRRRRR
 
         #region DGV Doldurma
-        private void tbpg_markaModelRenk_Enter(object sender, EventArgs e)
-        {
-            //dgv_MarkaIslemleri.DataSource = vt.Select($@"select marka_ad from tbl_aracMarka");
+        
 
-
-            //MARKA DOLDURMA
-            DataTable dt = vt.Select($@"select marka_id,marka_ad from tbl_aracMarka");
-            dgv_MarkaIslemleri.DataSource = dt;
-            dgv_MarkaIslemleri.Columns["marka_id"].Visible = false;
-
-            cmb_markaSec.DataSource = dt;
-            cmb_markaSec.ValueMember = "marka_id";
-            cmb_markaSec.DisplayMember = "marka_ad";
-
-            //MODEL DOLDURMA
-
-            dgv_ModelIslemleri.DataSource = vt.Select($@"select 
-                                                        mdl.model_id,
-                                                        mrk.marka_ad,
-                                                        mdl.model_ad
-                                                    from tbl_aracMarka mrk
-                                                    join tbl_aracModel mdl on mrk.marka_id = mdl.marka_id");
-            dgv_ModelIslemleri.Columns["model_id"].Visible = false;
-
-            //RENK DOLDURMA
-
-            dgv_renkIslemleri.DataSource = vt.Select($@"select renk_id,renkAd from tbl_renk");
-            dgv_renkIslemleri.Columns["renk_id"].Visible = false;
-
-            //VİTES DOLDURMA
-            dgv_vitesIslemleri.DataSource = vt.Select($@"select vites_tur_id,vites_tur from tbl_vitesTur");
-            dgv_vitesIslemleri.Columns["vites_tur_id"].Visible = false;
-
-            //YAKIT DOLDURMA
-            dgv_yakitIslemleri.DataSource = vt.Select($@"select yakit_tur_id,yakit_tur from tbl_yakitTur");
-            dgv_yakitIslemleri.Columns["yakit_tur_id"].Visible = false;
-
-            //DURUM DOLDURMA
-            dgv_durumIslemleri.DataSource = vt.Select($@"select durum_id,durum from tbl_durum");
-            dgv_durumIslemleri.Columns["durum_id"].Visible=false;
-
-            //ARAÇ TAMİR DURUM DOLDURMA
-            dgv_aracTDIslemleri.DataSource = vt.Select($@"select tamirDurum_id,tamirDurum from tbl_AracTamirDurum");
-            dgv_aracTDIslemleri.Columns["tamirDurum_id"].Visible = false;
-        }
-
-        private void tbpg_AracDetay_Enter(object sender, EventArgs e)
-        {
-            //ARAÇ BAKIM DOLDURMA
-            dgv_aracBakimIslemleri.DataSource = vt.Select($@"select bakim_id,aciklama,maliyet,bakim_tarihi from tbl_aracBakim");
-            dgv_aracBakimIslemleri.Columns["bakim_id"].Visible = false;
-
-
-            //KASKO EKLEME
-            dgv_kaskoIslmeleri.DataSource = vt.Select($@"select kasko_id,police_No,baslangic_Tarihi,bitis_Tarihi,kaskoSirketi from tbl_kasko");
-            dgv_kaskoIslmeleri.Columns["kasko_id"].Visible= false;
-
-            //SİGORTA EKLEME
-            dgv_sigortaIslemleri.DataSource = vt.Select($@"select sigorta_id,police_No,baslangicTarihi,bitis_Tarihi,sigortaSirketi from tbl_sigorta");
-            dgv_sigortaIslemleri.Columns["sigorta_id"].Visible = false;
-        }
+        
         #endregion
 
         #region DGV Tıklama
@@ -745,7 +740,7 @@ namespace Arac_Kiralama
                     ");
 
             MessageBox.Show("Marka Başarıyla Eklendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_markaSil_Click(object sender, EventArgs e)
@@ -758,7 +753,8 @@ namespace Arac_Kiralama
             int kayitSay = vt.UpdateDelete($@"delete from tbl_aracMarka where marka_ad = '{dgv_MarkaIslemleri.SelectedRows[0].Cells["marka_ad"].Value.ToString()}'");
             if (kayitSay > 0)
             {
-                tbpg_markaModelRenk_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
+
                 MessageBox.Show("Kayıt Başarıyla Silindi");
             }
         }
@@ -790,7 +786,8 @@ namespace Arac_Kiralama
                                 where marka_ad ='{dgv_MarkaIslemleri.SelectedRows[0].Cells["marka_ad"].Value.ToString()}'");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
+
         }
 
         private void btn_markaTemizle_Click(object sender, EventArgs e)
@@ -824,7 +821,8 @@ namespace Arac_Kiralama
                             values ({cmb_markaSec.SelectedValue},'{txt_modelEkle.Text.Replace("'", "''")}')");
 
             MessageBox.Show("Model Başarıyla Eklendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
+
         }
         private void btn_modelSil_Click(object sender, EventArgs e)
         {
@@ -836,7 +834,7 @@ namespace Arac_Kiralama
             int kayitSay = vt.UpdateDelete($@"delete from tbl_aracModel where model_id = '{dgv_ModelIslemleri.SelectedRows[0].Cells["model_id"].Value.ToString()}'");
             if (kayitSay > 0)
             {
-                tbpg_markaModelRenk_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Kayıt Başarıyla Silindi");
             }
         }
@@ -871,7 +869,7 @@ namespace Arac_Kiralama
                             ");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
         private void btn_modelTemizle_Click(object sender, EventArgs e)
         {
@@ -905,7 +903,7 @@ namespace Arac_Kiralama
                                 values('{txt_renkEkleme.Text.Replace("'", "''").ToUpper()}')");
 
             MessageBox.Show("Renk Başarıyla Eklendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_renkSil_Click(object sender, EventArgs e)
@@ -928,7 +926,7 @@ namespace Arac_Kiralama
                                             where renkAd = '{dgv_renkIslemleri.SelectedRows[0].Cells["renkAd"].Value.ToString()}'");
             if (kayitSay > 0)
             {
-                tbpg_markaModelRenk_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Kayıt Başarıyla Silindi");
             }
         }
@@ -960,7 +958,7 @@ namespace Arac_Kiralama
                                 where renk_id = {Convert.ToInt32(dgv_renkIslemleri.SelectedRows[0].Cells["renk_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_renkTemizle_Click(object sender, EventArgs e)
@@ -991,7 +989,7 @@ namespace Arac_Kiralama
                                 values('{txt_vitesEkleme.Text.Replace("'", "''").ToUpper()}')");
 
             MessageBox.Show("Vites Başarıyla Eklendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
         private void btn_vitesSil_Click(object sender, EventArgs e)
         {
@@ -1013,7 +1011,7 @@ namespace Arac_Kiralama
                                             where vites_tur = '{dgv_vitesIslemleri.SelectedRows[0].Cells["vites_tur"].Value.ToString()}'");
             if (kayitSay > 0)
             {
-                tbpg_markaModelRenk_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Kayıt Başarıyla Silindi");
             }
         }
@@ -1046,7 +1044,7 @@ namespace Arac_Kiralama
                                 where renk_id = {Convert.ToInt32(dgv_vitesIslemleri.SelectedRows[0].Cells["vites_tur_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_vitesTemizle_Click(object sender, EventArgs e)
@@ -1079,7 +1077,7 @@ namespace Arac_Kiralama
                                 values('{txt_yakitEkleme.Text.Replace("'", "''").ToUpper()}')");
 
             MessageBox.Show("Yakıt Başarıyla Eklendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_yakitSil_Click(object sender, EventArgs e)
@@ -1102,7 +1100,7 @@ namespace Arac_Kiralama
                                             where yakit_tur_id = '{dgv_yakitIslemleri.SelectedRows[0].Cells["yakit_tur_id"].Value.ToString()}'");
             if (kayitSay > 0)
             {
-                tbpg_markaModelRenk_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Kayıt Başarıyla Silindi");
             }
         }
@@ -1135,7 +1133,7 @@ namespace Arac_Kiralama
                                 where yakit_tur_id = {Convert.ToInt32(dgv_yakitIslemleri.SelectedRows[0].Cells["yakit_tur_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_yakitTemizle_Click(object sender, EventArgs e)
@@ -1167,7 +1165,7 @@ namespace Arac_Kiralama
                                 values('{txt_durumEkleme.Text.Replace("'", "''").ToUpper()}')");
 
             MessageBox.Show("Durum Başarıyla Eklendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_durumSil_Click(object sender, EventArgs e)
@@ -1190,7 +1188,7 @@ namespace Arac_Kiralama
                                             where durum_id = '{dgv_durumIslemleri.SelectedRows[0].Cells["durum_id"].Value.ToString()}'");
             if (kayitSay > 0)
             {
-                tbpg_markaModelRenk_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Durum Başarıyla Silindi");
             }
         }
@@ -1223,7 +1221,7 @@ namespace Arac_Kiralama
                                 where durum_id = {Convert.ToInt32(dgv_durumIslemleri.SelectedRows[0].Cells["durum_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_durumTemizle_Click(object sender, EventArgs e)
@@ -1255,7 +1253,7 @@ namespace Arac_Kiralama
                                 values('{txt_aracTDekleme.Text.Replace("'", "''").ToUpper()}')");
 
             MessageBox.Show("Durum Başarıyla Eklendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_aracTDsil_Click(object sender, EventArgs e)
@@ -1278,7 +1276,7 @@ namespace Arac_Kiralama
                                             where tamirDurum_id = '{dgv_aracTDIslemleri.SelectedRows[0].Cells["tamirDurum_id"].Value.ToString()}'");
             if (kayitSay > 0)
             {
-                tbpg_markaModelRenk_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Durum Başarıyla Silindi");
             }
         }
@@ -1311,7 +1309,7 @@ namespace Arac_Kiralama
                                 where tamirDurum_id = {Convert.ToInt32(dgv_aracTDIslemleri.SelectedRows[0].Cells["tamirDurum_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_markaModelRenk_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_aracTDtemizle_Click(object sender, EventArgs e)
@@ -1361,7 +1359,7 @@ namespace Arac_Kiralama
                     ");
 
             MessageBox.Show("Durum Başarıyla Eklendi");
-            tbpg_AracDetay_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_aracBakimSil_Click(object sender, EventArgs e)
@@ -1386,7 +1384,7 @@ namespace Arac_Kiralama
 
             if (kayitSay > 0)
             {
-                tbpg_AracDetay_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Bakım Başarıyla Silindi");
             }
         }
@@ -1416,7 +1414,7 @@ namespace Arac_Kiralama
                                 where bakim_id = {Convert.ToInt32(dgv_aracBakimIslemleri.SelectedRows[0].Cells["bakim_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_AracDetay_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_aracBakimTemizle_Click(object sender, EventArgs e)
@@ -1471,7 +1469,7 @@ namespace Arac_Kiralama
                         values ('{txt_policeNoEkleme.Text.Replace("'", "''")}','{dtp_baslangicTarihiEkleme.Value.ToString("yyyy-MM-dd")}','{dtp_bitisTarihiEkleme.Value.ToString("yyyy-MM-dd")}','{txt_kaskoSirketiEkleme.Text.Replace("'", "''")}')");
 
             MessageBox.Show("Kasko Başarıyla Eklendi");
-            tbpg_AracDetay_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_kaskoSil_Click(object sender, EventArgs e)
@@ -1496,7 +1494,7 @@ namespace Arac_Kiralama
 
             if (kayitSay > 0)
             {
-                tbpg_AracDetay_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Kasko Başarıyla Silindi");
             }
         }
@@ -1531,7 +1529,7 @@ namespace Arac_Kiralama
                                 where kasko_id = {Convert.ToInt32(dgv_kaskoIslmeleri.SelectedRows[0].Cells["kasko_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_AracDetay_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_kaskoTemizle_Click(object sender, EventArgs e)
@@ -1589,7 +1587,7 @@ namespace Arac_Kiralama
                         values ('{txt_sigortaPoliceNo.Text.Replace("'", "''")}','{dtp_sigortaBaslangicTarihi.Value.ToString("yyyy-MM-dd")}','{dtp_sigortaBitisTarihi.Value.ToString("yyyy-MM-dd")}','{txt_sigortaSirketi.Text.Replace("'", "''")}')");
 
             MessageBox.Show("Sigorta Başarıyla Eklendi");
-            tbpg_AracDetay_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_sigortaSil_Click(object sender, EventArgs e)
@@ -1614,7 +1612,7 @@ namespace Arac_Kiralama
 
             if (kayitSay > 0)
             {
-                tbpg_AracDetay_Enter(null, null);
+                FrmAracIslemleri_Load(null, null);
                 MessageBox.Show("Sigorta Başarıyla Silindi");
             }
         }
@@ -1635,7 +1633,7 @@ namespace Arac_Kiralama
                                 where sigorta_id = {Convert.ToInt32(dgv_sigortaIslemleri.SelectedRows[0].Cells["sigorta_id"].Value.ToString())}");
 
             MessageBox.Show("Kayıt Başarıyla Güncellendi");
-            tbpg_AracDetay_Enter(null, null);
+            FrmAracIslemleri_Load(null, null);
         }
 
         private void btn_sigortaTemizle_Click(object sender, EventArgs e)
@@ -1667,6 +1665,8 @@ namespace Arac_Kiralama
             else if (e.Alt && e.KeyCode == Keys.T)
                 btn_aracTemizle_Click(sender, e);
         }
+
+        
     }
 
 

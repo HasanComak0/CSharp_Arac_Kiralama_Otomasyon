@@ -292,6 +292,15 @@ namespace Arac_Kiralama
                 btn_odemeBilgisiGuncelle_Click(sender, e);
             else if (e.Alt && e.KeyCode == Keys.T)
                 btn_odemebilgisiTemizle_Click(sender, e);
+
+            if (e.Alt && e.KeyCode == Keys.Z)
+                btn_odemeTurEkle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.X)
+                btn_odemeTurSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.C)
+                btn_odemeTurGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.V)
+                btn_odemeTurTemizle_Click(sender, e);
         }
     }
 }

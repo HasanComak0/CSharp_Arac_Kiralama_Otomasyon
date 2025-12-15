@@ -177,9 +177,11 @@
             this.ClientSize = new System.Drawing.Size(1124, 444);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "GirisYap";
             this.Text = "GirisYap";
             this.Load += new System.EventHandler(this.GirisYap_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GirisYap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

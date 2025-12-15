@@ -121,9 +121,11 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pnl_GirisYap);
             this.Controls.Add(this.pnl_KullaniciOlustur);
+            this.KeyPreview = true;
             this.Name = "KullaniciOlusturGirisYap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kullanıcı Oluştur | Giriş Yap";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KullaniciOlusturGirisYap_KeyDown);
             this.pnl_KullaniciOlustur.ResumeLayout(false);
             this.pnl_KullaniciOlustur.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

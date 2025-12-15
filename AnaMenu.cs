@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AracKiralama_HC;
 
 namespace Arac_Kiralama
 {
@@ -17,6 +18,7 @@ namespace Arac_Kiralama
     {
         VTI.Veritabani vt = new VTI.Veritabani();
         GirisYap girisYap = new GirisYap();
+        AracKiralama_HC.DigerIslemler dg = new AracKiralama_HC.DigerIslemler();
         public string anamenuKullaniciAdi;
         public AnaMenu(string gelenKullaniciAdi)
         {
@@ -140,9 +142,9 @@ namespace Arac_Kiralama
             {
                 tbpg_personelEkle.Visible = false;
                 tbpg_MusteriEkle.Visible = false;
-                
+
                 tsb_odemeIslemleri.Enabled = false;
-                tsb_aracIslemleri.Enabled=false;
+                tsb_aracIslemleri.Enabled = false;
                 tsb_kiraEvraklari.Enabled = false;
             }
 
@@ -301,7 +303,7 @@ namespace Arac_Kiralama
                                     INSERT INTO tbl_kullanici (kullaniciAdi, sifre, gorev_id, olusturulma_tarihi, profil_resim_yolu)
                                     VALUES(
                                         '{txt_pKullaniciAdi.Text.Replace("'", "''")}',
-                                        '{girisYap.MD5Sifrele(txt_pSifreTekrar.Text)}',
+                                        '{dg.MD5Sifrele(txt_pSifreTekrar.Text)}',
                                             1,
                                         GETDATE(),
                                         'DenemeResimYolu'
@@ -539,7 +541,7 @@ namespace Arac_Kiralama
                     vt.UpdateDelete($@"
                                     update tbl_kullanici
                                     set  kullaniciAdi = '{txt_pKullaniciAdi.Text.Replace("'", "''")}',
-                                        sifre = '{girisYap.MD5Sifrele(txt_pSifreTekrar.Text)}'
+                                        sifre = '{dg.MD5Sifrele(txt_pSifreTekrar.Text)}'
                                          where kullanici_id = {KullaniciID}");
 
                     MessageBox.Show("Personel Bilgileri Başarıyla Güncellendi");
@@ -683,7 +685,7 @@ namespace Arac_Kiralama
                                     INSERT INTO tbl_kullanici (kullaniciAdi, sifre, gorev_id, olusturulma_tarihi, profil_resim_yolu)
                                     VALUES(
                                         '{txt_mKullaniciAdi.Text.Replace("'", "''")}',
-                                        '{girisYap.MD5Sifrele(txt_mSifreTekrar.Text)}',
+                                        '{dg.MD5Sifrele(txt_mSifreTekrar.Text)}',
                                             2,
                                         GETDATE(),
                                         'DenemeResimYolu'
@@ -920,7 +922,7 @@ namespace Arac_Kiralama
                     vt.UpdateDelete($@"
                                     update tbl_kullanici
                                     set  kullaniciAdi = '{txt_mKullaniciAdi.Text.Replace("'", "''")}',
-                                        sifre = '{girisYap.MD5Sifrele(txt_mSifreTekrar.Text)}' 
+                                        sifre = '{dg.MD5Sifrele(txt_mSifreTekrar.Text)}' 
                                          where kullanici_id = {KullaniciID}");
 
                     MessageBox.Show("Müşteri Bilgileri Başarıyla Güncellendi");
@@ -1026,8 +1028,17 @@ namespace Arac_Kiralama
 
             else
             {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
-                key.DeleteValue("Araç Kiralama");
+                try
+                {
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                    key.DeleteValue("Araç Kiralama");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Uygulama Zaten Manuel Başlatma Durumunda");
+                }
+
+
             }
         }
 
@@ -1071,14 +1082,180 @@ namespace Arac_Kiralama
 
         private void AnaMenu_KeyDown(object sender, KeyEventArgs e)
         {
-                if(e.Alt && e.KeyCode == Keys.E)
-                      btn_kaydet_Click(sender, e);
-                  else if (e.Alt && e.KeyCode == Keys.S)
-                    btn_sil_Click(sender, e);
-                else if (e.Alt && e.KeyCode == Keys.G)
-                    btn_personelGuncelle_Click(sender, e);
-                else if (e.Alt && e.KeyCode == Keys.T)
-                    btn_pTemizle_Click(sender, e);
+            if (e.Alt && e.KeyCode == Keys.E)
+                btn_kaydet_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.S)
+                btn_sil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.G)
+                btn_personelGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.T)
+                btn_pTemizle_Click(sender, e);
+
+            if (e.Alt && e.KeyCode == Keys.Z)
+                btn_musteriKaydet_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.X)
+                btn_musteriSil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.C)
+                btn_musteriGuncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.V)
+                btn_mTemizle_Click(sender, e);
+
+            if (e.Alt && e.KeyCode == Keys.Y)
+                btn_GE_ekle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.U)
+                btn_GE_sil_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.I)
+                btn_GE_guncelle_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.O)
+                btn_GE_temizle_Click(sender, e);
+
+            if (e.Alt && e.KeyCode == Keys.K)
+                btn_kodGonder_Click(sender, e);
+            else if (e.Alt && e.KeyCode == Keys.L)
+                btn_kodGonder2_Click(sender, e);
+          
+        }
+
+        private void n(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbpg_kullaniciEkle_Enter(object sender, EventArgs e)
+        {
+            DataTable dt = vt.Select($@"select kullanici_id,kullaniciAdi,k.gorev_id,g.gorev_adi,olusturulma_tarihi from tbl_kullanici k
+                                        join tbl_gorev g on g.gorev_id=k.gorev_id");
+
+            dgv_kullaniciEkleme.DataSource = dt;
+            dgv_kullaniciEkleme.Columns["kullanici_id"].Visible = false;
+            dgv_kullaniciEkleme.Columns["gorev_id"].Visible = false;
+
+            DataTable dt2 = vt.Select($@"select gorev_id,gorev_adi from tbl_gorev");
+
+            cmb_KEgorev.DataSource = dt2;
+            cmb_KEgorev.ValueMember = "gorev_id";
+            cmb_KEgorev.DisplayMember = "gorev_adi";
+
+        }
+
+        private void dgv_kullaniciEkleme_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            txt_KEkullaniciAdi.Text = dgv_kullaniciEkleme.Rows[e.RowIndex].Cells["kullaniciAdi"].Value.ToString();
+            cmb_KEgorev.Text = dgv_kullaniciEkleme.Rows[e.RowIndex].Cells["gorev_adi"].Value.ToString();
+
+            //if (DateTime.TryParse(dgv_kullaniciEkleme.SelectedRows[0].Cells["olusturulma_tarihi"].Value.ToString(), out DateTime dogum))
+            //    dtp_KE_olusturulmaTarihi.Value = dogum;
+            //else
+            //    dtp_KE_olusturulmaTarihi.Value = DateTime.Now; // hata olursa bugüne set edelim
+
+            dtp_KE_olusturulmaTarihi.Value =
+                                            Convert.ToDateTime(
+                                                dgv_kullaniciEkleme.Rows[e.RowIndex].Cells["olusturulma_tarihi"].Value
+                                            );
+        }
+
+       
+
+        private void tbpg_gorevIslemleri_Enter(object sender, EventArgs e)
+        {
+            DataTable dt2 = vt.Select($@"select gorev_id,gorev_adi from tbl_gorev");
+
+            dgv_GE_goruntule.DataSource = dt2;
+            dgv_GE_goruntule.Columns["gorev_id"].Visible = false;
+
+        }
+
+        private void dgv_GE_goruntule_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            txt_GE_gorevAd.Text = dgv_GE_goruntule.Rows[e.RowIndex].Cells["gorev_adi"].Value.ToString();
+        }
+
+        private void btn_GE_ekle_Click(object sender, EventArgs e)
+        {
+            DataTable dt = vt.Select($@"select gorev_adi from tbl_gorev");
+
+            List<string> list = new List<string>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(row["gorev_adi"].ToString().ToUpper().Trim());
+            }
+
+            if (list.Contains(txt_GE_gorevAd.Text.Trim().ToUpper()))
+            {
+                MessageBox.Show("Bu Görev Listede Zaten Mevcut");
+                return;
+            }
+            if (txt_GE_gorevAd.Text == "")
+            {
+                MessageBox.Show("Görev Türü Boş Bırakılamaz.");
+                return;
+            }
+
+            vt.Insert($@"insert into tbl_gorev(gorev_adi)
+                        values('{txt_GE_gorevAd.Text.Replace("'", "''")}');");
+
+            MessageBox.Show("Görev Başarıyla Eklendi.");
+            tbpg_gorevIslemleri_Enter(null, null);
+
+        }
+
+        private void btn_GE_sil_Click(object sender, EventArgs e)
+        {
+            if (txt_GE_gorevAd.Text == "")
+            {
+                MessageBox.Show("Görev Türü Boş Bırakılamaz.");
+                return;
+            }
+            vt.UpdateDelete($@"delete from tbl_gorev
+                                where gorev_id ={dgv_GE_goruntule.SelectedRows[0].Cells["gorev_id"].Value.ToString()}");
+
+            MessageBox.Show("Görev Başarıyla Silindi");
+            tbpg_gorevIslemleri_Enter(null, null);
+
+        }
+
+        private void btn_GE_guncelle_Click(object sender, EventArgs e)
+        {
+            DataTable dt = vt.Select($@"select gorev_adi from tbl_gorev");
+
+            List<string> list = new List<string>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(row["gorev_adi"].ToString().ToUpper().Trim());
+            }
+
+            if (list.Contains(txt_GE_gorevAd.Text.Trim().ToUpper()))
+            {
+                MessageBox.Show("Bu Görev Listede Zaten Mevcut");
+                return;
+            }
+            if (txt_GE_gorevAd.Text == "")
+            {
+                MessageBox.Show("Görev Türü Boş Bırakılamaz.");
+                return;
+            }
+
+
+            vt.UpdateDelete($@"update tbl_gorev 
+                                set gorev_adi='{txt_GE_gorevAd.Text.Replace("'", "''")}'
+                                where gorev_id={dgv_GE_goruntule.SelectedRows[0].Cells["gorev_id"].Value.ToString()}");
+
+            MessageBox.Show("Görev Başarıyla Güncellendi.");
+            tbpg_gorevIslemleri_Enter(null, null);
+        }
+
+        private void btn_GE_temizle_Click(object sender, EventArgs e)
+        {
+            txt_GE_gorevAd.Text = "";
+            dgv_GE_goruntule.ClearSelection();
         }
     }
 }

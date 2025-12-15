@@ -205,8 +205,10 @@
             this.Controls.Add(this.txt_kullaniciAdi);
             this.Controls.Add(this.btn_SifreDegistirOnay);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "SifreDegistirme";
             this.Text = "SifreDegistirme";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SifreDegistirme_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
