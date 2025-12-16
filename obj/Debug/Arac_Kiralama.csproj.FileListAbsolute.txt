@@ -33,3 +33,7 @@ C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\AracKiralama_HC.dll
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.CodeDom.dll
 C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\System.CodeDom.xml
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\Arac_Kiralama.exe.manifest
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\bin\Debug\Arac_Kiralama.application
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.exe.manifest
+C:\Users\Hasan\source\repos\Arac_Kiralama\Arac_Kiralama\obj\Debug\Arac_Kiralama.application

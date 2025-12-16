@@ -339,5 +339,7 @@ values({cmb_aracPlaka.SelectedValue},{cmb_kiraAciklama.SelectedValue},'{txt_hasa
             else if (e.Alt && e.KeyCode == Keys.V)
                 btn_tamirDurumTemizle_Click(sender, e);
         }
+
+        
     }
 }

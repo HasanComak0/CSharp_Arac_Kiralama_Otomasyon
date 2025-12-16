@@ -42,7 +42,6 @@
             this.hasarDurumuTemizleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_hasarTarihi = new System.Windows.Forms.DateTimePicker();
             this.cmb_tamirDurumu = new System.Windows.Forms.ComboBox();
@@ -61,6 +60,7 @@
             this.btn_aracHasarEkle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_aracHasarIslemleri = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_tamirDurumTemizle = new System.Windows.Forms.Button();
             this.btn_tamirDurumGuncelle = new System.Windows.Forms.Button();
@@ -72,9 +72,9 @@
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_aracHasarIslemleri)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tamirDurumIslemleri)).BeginInit();
             this.SuspendLayout();
@@ -187,17 +187,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hasar İşlemleri";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1916, 1022);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Araç Tamir Durumu";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -388,6 +377,17 @@
             this.dgv_aracHasarIslemleri.TabIndex = 0;
             this.dgv_aracHasarIslemleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_aracHasarIslemleri_CellClick);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1916, 1022);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Araç Tamir Durumu";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_tamirDurumTemizle);
@@ -499,10 +499,10 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_aracHasarIslemleri)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tamirDurumIslemleri)).EndInit();
