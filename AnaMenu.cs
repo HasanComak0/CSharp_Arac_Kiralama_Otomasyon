@@ -51,7 +51,7 @@ namespace Arac_Kiralama
 
             txt_kullaniciAdi.Text = dtKullanici.Rows[0]["kullaniciAdi"].ToString();
 
-            // 2️⃣ Pozisyon combobox
+            
             cbx_pozisyon.DataSource = vt.Select("SELECT gorev_id, gorev_adi FROM tbl_gorev");
             cbx_pozisyon.DisplayMember = "gorev_adi";
             cbx_pozisyon.ValueMember = "gorev_id";
@@ -301,10 +301,7 @@ namespace Arac_Kiralama
 
 
 
-                // ------------------------------------------------------------
-                // PERSONEL SEÇİLİYSE PERSONEL TABLOSUNA EKLE
-                // ------------------------------------------------------------
-
+                
                 vt.Insert($@"
                                     INSERT INTO tbl_personel
                                     (kullanici_id, personelAd, personelSoyad, tc_no, dogum_tarihi, ehliyet_no, telefon, email)
@@ -351,7 +348,7 @@ namespace Arac_Kiralama
             if (DateTime.TryParse(dgv_Personeller.SelectedRows[0].Cells["dogum_Tarihi"].Value.ToString(), out DateTime dogum))
                 dtp_pDogumTarihi.Value = dogum;
             else
-                dtp_pDogumTarihi.Value = DateTime.Now; // hata olursa bugüne set edelim
+                dtp_pDogumTarihi.Value = DateTime.Now; 
 
             txt_pTcNo.Text = dgv_Personeller.SelectedRows[0].Cells["tc_No"].Value.ToString();
             mtb_pTelefon.Text = dgv_Personeller.SelectedRows[0].Cells["telefon"].Value.ToString();
@@ -667,10 +664,7 @@ namespace Arac_Kiralama
 
                 int yeniKullaniciID = Convert.ToInt32(dataT.Rows[0]["kullanici_id"]);
 
-                // ------------------------------------------------------------
-                // MÜŞTERİ SEÇİLİYSE MÜŞTERİ TABLOSUNA EKLE
-                // ------------------------------------------------------------
-
+               
                 vt.Insert($@"
                                     INSERT INTO tbl_musteri
                                     (kullanici_id, tc_no, dogum_tarihi, ehliyet_no, email, telefon, musteriAd, musteriSoyad)

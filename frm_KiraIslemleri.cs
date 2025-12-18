@@ -455,7 +455,7 @@ namespace Arac_Kiralama
 
                 if (dtHasar.Rows.Count > 0)
                 {
-                    // UPDATE
+                    
                     vt.UpdateDelete($@"
                                         UPDATE tbl_aracHasar SET
                                             hasar_aciklama = '{cmb_HasarAciklama.Text.Replace("'", "''")}'
@@ -464,7 +464,6 @@ namespace Arac_Kiralama
                 }
                 else
                 {
-                    // INSERT
                     vt.Insert($@"
                             INSERT INTO tbl_aracHasar (kiralama_id, hasar_aciklama)
                             VALUES ({kiralamaId}, '{cmb_HasarAciklama.Text.Replace("'", "''")}')
@@ -501,7 +500,6 @@ namespace Arac_Kiralama
             dtp_kiralamaTarihi.Value = DateTime.Now;
             dtp_beklenenTeslimTarihi.Value = DateTime.Now;
 
-            // Teslim tarihi opsiyonelse (Checked kullanıyorsan)
             dtp_teslimTarihi.Checked = false;
 
             // DATAGRIDVIEW SEÇİMİ KALDIR
